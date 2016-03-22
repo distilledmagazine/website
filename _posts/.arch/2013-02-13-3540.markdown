@@ -1,0 +1,15 @@
+---
+layout: liveblog_entry
+status: publish
+published: true
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+wordpress_id: 3540
+wordpress_url: http://distilledmagazine.com/?post_type=liveblog_entry&#038;p=3540
+date: '2013-02-13 01:58:01 +0000'
+date_gmt: '2013-02-13 01:58:01 +0000'
+---
+<p>Sure there's pomp and pageantry like The Queen's Speech. <a href="http://www.huffingtonpost.co.uk/2012/12/24/the-queens-christmas-spee_n_2358161.html">But will it be in 3-D?</a></p>

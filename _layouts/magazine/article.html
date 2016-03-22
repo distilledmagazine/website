@@ -1,0 +1,27 @@
+---
+layout: pamphlet
+---
+
+<header>
+    <h1>{{ page.title }}</h1>
+</header>
+
+<main>
+  <article>
+      <h2>
+        {% for author in page.authors %}
+          {% for person in site.categories.authors %}      
+            {% if author == page.authors[0] and person.handle == author %}
+              <a href="{{ person.url }}">{{ person.firstname }} {{ person.surname }}</a>
+              &middot;
+            {% elsif person.handle == author %}
+              <a href="{{ person.url }}">{{ person.firstname }} {{ person.surname }}</a>
+              &middot;
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </h2>
+      {{ content }}
+      <p><em>Published {{ page.date | date_to_string }}</em></p>
+  </article>
+</div>

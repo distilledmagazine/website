@@ -1,0 +1,15 @@
+---
+layout: nav_menu_item
+status: publish
+published: true
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+wordpress_id: 4739
+wordpress_url: http://distilledmagazine.com/?p=4739
+date: '2013-04-02 21:36:49 +0000'
+date_gmt: '2013-04-02 21:36:49 +0000'
+---
+

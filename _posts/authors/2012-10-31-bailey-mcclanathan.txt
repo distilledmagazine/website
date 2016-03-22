@@ -1,0 +1,9 @@
+---
+layout: magazine/author
+handle: bmcclanathan
+firstname: Bailey
+surname: McClanathan
+category: authors
+---
+
+Bailey McClanathan is a Finance and Accounting graduate from the London School of Economics.

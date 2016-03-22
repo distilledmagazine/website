@@ -1,0 +1,7 @@
+---
+layout: magazine/author
+handle: anon-1
+firstname: Anonymous
+surname: contributor
+category: authors
+---

@@ -1,0 +1,15 @@
+---
+layout: liveblog_entry
+status: publish
+published: true
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+wordpress_id: 3584
+wordpress_url: http://distilledmagazine.com/?post_type=liveblog_entry&#038;p=3584
+date: '2013-02-13 02:38:10 +0000'
+date_gmt: '2013-02-13 02:38:10 +0000'
+---
+<p>All together now: "The temperature on this planet is TOO DAMN HIGH!"</p>

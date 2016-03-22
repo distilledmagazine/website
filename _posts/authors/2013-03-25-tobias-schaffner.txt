@@ -1,0 +1,9 @@
+---
+layout: magazine/author
+handle: tschaffner
+firstname: Tobias
+surname: Schaffner
+category: authors
+---
+
+Tobias is a liberal Aristotelian-Thomist, studying at Pembroke College, University of Cambridge. He is currently writing up his doctoral dissertation on the legal and moral philosophy of the Jesuit Francisco Suarez and hopes to start a grassroots movement together with all those who are prepared to publicly affirm an ethical way of living.

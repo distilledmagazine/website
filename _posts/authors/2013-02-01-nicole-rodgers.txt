@@ -1,0 +1,7 @@
+---
+layout: magazine/author
+handle: nrodgers
+firstname: Nicole
+surname: Rodgers
+category: authors
+---

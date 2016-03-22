@@ -1,0 +1,7 @@
+---
+layout: magazine/author
+handle: mhunt
+firstname: Marcus
+surname: Hunt
+category: authors
+---

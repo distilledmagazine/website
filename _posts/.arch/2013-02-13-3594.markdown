@@ -1,0 +1,15 @@
+---
+layout: liveblog_entry
+status: publish
+published: true
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+wordpress_id: 3594
+wordpress_url: http://distilledmagazine.com/?post_type=liveblog_entry&#038;p=3594
+date: '2013-02-13 02:48:41 +0000'
+date_gmt: '2013-02-13 02:48:41 +0000'
+---
+<p>This college score card sounds horrible! Education is more than getting "bang for your buck". What is "bang"? Your average income following graduation? In that case the best colleges will be the ones that focus on business, law, and other high median income jobs. What of the liberal arts and humanities?</p>

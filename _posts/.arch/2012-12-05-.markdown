@@ -1,0 +1,18 @@
+---
+layout: post
+status: publish
+published: true
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+wordpress_id: 2251
+date: '2012-12-05 03:35:13 +0000'
+date_gmt: '2012-12-05 03:35:13 +0000'
+---
+<p>Tristan Tzara, the great Dadaist, once stated that "People envisage the (ever-impending) annihilation of art. Here they are looking for a more art-like art."  This simple statement focuses our attention on not only what one considers "art", but also its purpose within our society.</p>
+<p>Should we as individuals and as a society be producing art that is for art's sake alone?</p>
+<p>Whilst this is a perfectly acceptable ambition, I assert that it falls short of achieving anything substantive.  At its base, the cultural tools of a society — the art forms it produces — are mutli-layered.  One's enjoyment of art can access all these layers, from simple distraction to profound appreciation.  But we are primarily concerned with what one takes away from the cultural tools that we as individuals access on a daily basis.</p>
+<blockquote><p><em>The more that you talk about a person as a social construction or as a confluence of forces or as fragmented or marginalized, what you do is you open up a whole new world of excuses.</em> (Prof. Robert Solomon, University of Texas, Austin)</p></blockquote>
+<p>Solomon expresses a necessary and vital form of cultural engagement and criticism; a form that recognises that the individual, for both their own sake and that of society, is not simply a product of quotidien power structures but is instead an active, involved, socially conscious, and most importantly, responsible individual</p>

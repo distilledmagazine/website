@@ -1,0 +1,9 @@
+---
+layout: magazine/author
+handle: ddessin
+firstname: David
+surname: Dessin
+category: authors
+---
+
+David Dessin is a graduate in philosophy from the KULeuven and currently pursues a Ph.D. in the same subject at the University of Antwerp.

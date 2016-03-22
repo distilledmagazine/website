@@ -1,0 +1,28 @@
+---
+layout: post
+status: publish
+published: true
+title: Sovereign Wealth
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+excerpt: Should markets regulate governments? The case for Sovereign Wealth Funds.
+wordpress_id: 3063
+wordpress_url: http://distilledmagazine.com/?p=3063
+date: '2013-01-30 16:06:23 +0000'
+date_gmt: '2013-01-30 16:06:23 +0000'
+---
+<p style="text-align: justify;"><a href="http://distilledmagazine.com/wp-content/uploads/2013/01/Sovereign_wealth_fund" target="_blank">Sovereign Wealth Funds</a> (SWFs) have been the subject of a rapidly evolving, and thankfully rapidly calming discussion since the term was coined in 2005. SWFs are government-owned pools of cash invested in a wide variety of products, financial and otherwise, styled and managed like private companies. An excellent tool states or central banks can use to catalyse upwardly mobile economic progress, Sovereign Wealth Funds have also been the centre of attention of a relatively quiet discussion about regulation. They gain the most attention however when they invest in publicly available equities in developed countries.</p>
+<p>[caption id="attachment_3064" align="alignleft" width="270"]<a href="http://distilledmagazine.com/sovereign-wealth/citigroup-london/" rel="attachment wp-att-3064"><img class=" wp-image-3064  " alt="Citigroup, one the companies saved in 2008 by a SWF" src="http://distilledmagazine.com/wp-content/uploads/2013/01/citigroup-london.jpg" width="270" height="360" /></a> Citigroup, one the companies saved in 2008 by a SWF[/caption]</p>
+<p style="text-align: justify;">Defenders of the sanctity of the free market — along with many Western governments — argue that the involvement of government-owned entities poses a number of issues. They might cause economic distortion and false incentives by not being maximally profit-seeking. Worse still, they could pursue national interests via the market and in the extreme engage in economic warfare or espionage.</p>
+<p style="text-align: justify;">These are indeed possible scenarios. They are not, however, probable.</p>
+<p style="text-align: justify;">The first Sovereign Wealth Fund was the Kuwait Investment Authority, founded in 1953 to manage that country’s burgeoning petrodollar-lined wallet. In the 60 years since there have been at least another 64 funds initialised. What has not happened in those 60 years is a single instance of abusively non-competitive behaviour from any SWF in a foreign market. Self-discipline and a consensus-based multilateral SWF framework known as the Santiago Principle has prevailed.</p>
+<p style="text-align: justify;">In the 2008 crash, combined Sovereign Wealth Funds lost at least half a trillion US dollars. But they were still some of the most important lenders of last resort to Western capitalism. Abu Dhabi put $7.5 billion into Citi Bank. Singapore’s Temasek bought $5 billion worth of Merrill Lynch stakes. Fortis, a Belgian company, was secured by Libya. These bail-outs were a risk for SWFs, but were also exactly the amount of risk they like to take, balancing their aggressiveness somewhere above a mutual fund but below a hedge fund.</p>
+<p style="text-align: justify;">Such securitisations were also a huge favour done to Western markets, and presented the world with a display of exactly the kind of stabilising role the Sovereign Wealth Funds can, and would like to play. In essence, they demonstrated trustworthiness, and financial sportsmanship. Theoretically they could have taken short positions, sold off American treasury bonds, and watched Western finance crumble. Don’t fix what ain’t broke.</p>
+<p style="text-align: justify;">There is probably a man clutching a rifle in a bunker in Kentucky who is convinced that scenario is still liable to play out. From anything besides the most realist of IR analyses though, SWFs have no incentive to attack the pillars of finance; they want instead to participate in them.</p>
+<p style="text-align: justify;">The principle of a Sovereign Wealth Fund is after all to turn sovereign wealth into more sovereign wealth, faster than governments have historically been capable of doing. By making cautious investment entities out of these reserves they seem to have achieved that. With a mild amount of reflexive infrastructure development, they can equally contribute enormously to domestic development. Additionally, acting as professional vehicles they can play a big role in knowledge and governance spillovers in their home economies and governments.</p>
+<p style="text-align: justify;">Sovereign Wealth Funds can do much more for development as well. For one they can buy and sell reserve currencies to stabilise their own against exogenous shocks and fluctuating commodity prices (since most of these economies run on a staple product). They can help fight off <a href="http://distilledmagazine.com/wp-content/uploads/2013/01/Dutch_disease" target="_blank">Dutch Disease</a>. The also can help develop a vibrant local economy by making private businesses in that country more attractive to international investors. Credit ratings for businesses rarely (if ever) exceed the sovereign rating of the country they are based in.</p>
+<p style="text-align: justify;">Since 1990, in 93% of cases where a country has seen a sovereign ratings change within two years of starting a fund, that change was positive. Downgraded SWF countries are limited to Italy in 2011, and Venezuela the year Chavez was elected.</p>
+<p style="text-align: justify;">(For sources and original research feel free to contact the author at <a href="mailto:greg@distilledmagazine.com" target="_blank">greg@distilledmagazine.com</a>)</p>

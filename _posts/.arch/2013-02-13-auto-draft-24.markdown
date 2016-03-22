@@ -1,0 +1,16 @@
+---
+layout: liveblog_entry
+status: publish
+published: true
+title: Auto Draft
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+wordpress_id: 3583
+wordpress_url: http://distilledmagazine.com/?post_type=liveblog_entry&#038;p=3583
+date: '2013-02-13 02:35:54 +0000'
+date_gmt: '2013-02-13 02:35:54 +0000'
+---
+<p>Don't know about D.C., but here in London it's friggin' cold!</p>

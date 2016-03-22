@@ -1,0 +1,16 @@
+---
+layout: liveblog_entry
+status: publish
+published: true
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+wordpress_id: 3521
+wordpress_url: http://distilledmagazine.com/?post_type=liveblog_entry&#038;p=3521
+date: '2013-02-13 00:56:12 +0000'
+date_gmt: '2013-02-13 00:56:12 +0000'
+---
+<p>This is Sarang, Editor-in-chief of Distilled Magazine. It's now a little over an hour before the State of the Union (SOTU) address. And I'm already exhausted. Good night everyone...</p>
+<p>...</p>

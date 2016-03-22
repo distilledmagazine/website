@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+        <title>{{page.title}} &middot; {{site.title}}</title>
+        <style>
+            * {
+                margin: 0;
+            }
+            body {
+                margin: 1rem auto;
+                max-width: 40rem;
+                padding: 0 1rem;
+
+                color: #222;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+                font-size: 1.2rem;
+                line-height: 2rem;
+            } 
+            h1 {
+                font-family: Courier, monospace;
+                font-size: 1.5rem;
+                text-align: right;
+            }
+            h2, h3, h4, h5, h6 {
+                display: inline;
+                font-size: 1.2rem;
+            }
+            h2 + p,
+            h3 + p,
+            h4 + p,
+            h5 + p,
+            h6 + p {
+                display: inline;
+            }
+            p + p {
+                margin-top: 2rem;
+            }
+            p {
+                margin-bottom: 2rem;
+            }
+            ul {
+                list-style: circle;
+                margin-bottom: 2rem;
+            }
+            a {
+                color: #1485CC;
+            }
+            blockquote {
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+            header {
+                border-bottom: 2px solid #d50000;
+                padding-bottom: .5rem;
+                margin-bottom: 2rem;
+                width: 100%;
+            }
+        </style>
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="alternate" type="aplication/rss+xml" title="RSS" href="/atom.xml">
+    </head>
+    <body>
+        {{content}}
+    </body>
+</html>

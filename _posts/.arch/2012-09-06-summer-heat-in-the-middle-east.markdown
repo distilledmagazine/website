@@ -1,0 +1,31 @@
+---
+layout: post
+status: publish
+published: true
+title: Summer Heat in the Middle East
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+wordpress_id: 323
+wordpress_url: http://www.distilledmagazine.com/blog/?p=323
+date: '2012-09-06 16:23:29 +0000'
+date_gmt: '2012-09-06 16:23:29 +0000'
+---
+<p style="text-align: left;" align="center">There have been talks of an Israeli strike on Iran’s nuclear facilities for years, but the probability of a military operation has increased tremendously in recent weeks.  Indeed, Israel’s window of opportunity – the level of advancement of Iran’s nuclear program up to which an Israeli attack could still be successful – is closing rapidly. Government officials in Jerusalem have lately implied that the country might make a move this summer while military and home front preparedness has stepped up significantly in the past weeks.</p>
+<p style="text-align: left;" align="center">The fear that an operation is in the making was further increased by the recent public plea (an extremely rare occurrence in Israel) from several former security chiefs not to act, as they expect a strike at this point to be disastrous for the country’s long term interests. Yuval Diskin, the previous head of the Shin Beth, Israel’s internal security services, even said that he feared Netanyahu and Barak’s messianic attitude regarding the Iranian issue.</p>
+<p>[caption id="attachment_326" align="alignnone" width="614"]<a href="http://distilledmagazine.com/wp-content/uploads/2012/09/large.jpeg"><img class="size-full wp-image-326" title="large" src="http://distilledmagazine.com/wp-content/uploads/2012/09/large.jpeg" alt="" width="614" height="383" /></a> Summer's so bright, he's gotta wear shades. Ahmedinejad tours Bushehr nuclear facility, photo via www.theatlanticwire.com[/caption]</p>
+<p style="text-align: left;" align="center">So what is happening? Are we really on the eve of a massive Middle Eastern War that would involve Israel, Iran, its proxies Hamas and Hezbollah and even Syria or the US? <em><strong>Distilled Magazine</strong></em> will give its short analysis for this tense end of summer.</p>
+<p><!--more--></p>
+<p>Israel’s highest political echelon is definitely determined to prevent Iran and its Islamic regime from acquiring nuclear capabilities. Nevertheless, the Jewish state also knows that a strike without its allies’ backing could trigger a devastating regional war — a war that could easily spin out of control. Netanyahu and Barak would much prefer to have the logistical and political support of the US or, more ideally, have its American allies do the job themselves.</p>
+<p>However, Iran is soon entering the “immunity zone” at which point Jerusalem would not be able to act anymore, as its military capabilities are not as developed as those of the US. Israeli intelligence chiefs believe that Jerusalem can only take action until the beginning of the winter while Washington could wait until the end of 2013 and still operate an effective air strike. It means that if the US does not act soon or does not give a green light to Jerusalem, Israel will have to rely on someone else for its security, something that is not a very common habit in the Holy Land.</p>
+<p>Here comes the main dilemma: Obama is totally opposed to any action until the US elections are held. Indeed, after an Israeli strike, American interests in the Gulf would probably be targeted by Iran, and Washington would be dragged into an unwanted war that would be disastrous for the Democratic candidate. It would also create a dramatic surge in oil prices, destabilizing the whole election process.</p>
+<p>During the month of August, Israel was as close as it had ever been to launching an attack. As Ephraim Halevy, the respected Mossad former director put it, “I would be very scared right now if I was Iranian”. Should we then expect Jerusalem to take action in the coming weeks, possibly resulting in thousands of missiles raining down on Israel from Gaza, Iran and South Lebanon, while the Ayatollahs simultaneously target the Gulf’s oil fields and US military assets in the region?</p>
+<p>Wait a second! We're not there yet. The Obama administration judiciously used both carrots and sticks to calm down its frightened ally, and reduce the chance of war this summer.</p>
+<p>On the one hand, the US president made it extremely clear to Israel that it was totally opposed to making any moves in the coming weeks. First, Washington significantly reduced the scope of a strategic joint military exercise with Tsahal planned for October. Furthermore, General Dempsey, US Chairman of the Joint Chiefs of Staff, declared last week that he does not want to be complicit in an Israeli attack on Iran and according to reliable sources, the US would have even sent a message to Iran asking it not to target its interests in the Gulf in case of an Israeli attack.</p>
+<p>Those moves gave a clear sign of American discontent with Israel and made Netanyahu understand that the US would not tolerate any more warmongering attitudes at this point. On the other hand, Obama reiterated that he would not let Iran get the bomb, and the US President is currently weighing publicly whether to give Iran red lines that would trigger an American military action. According to several news outlets, the US has also ordered an increase in covert operations and cyber attacks targeting the Iranian nuclear program. These actions have reassured Israel that Washington would not abandon its closest ally and would eventually  ensure Iran does not go nuclear.</p>
+<p>Therefore, it is pretty safe to say that the temperature in the Middle East has gone down a couple degrees this past week. The <em><strong>Distilled</strong></em> index for an Israeli strike on Iran before the US elections is therefore currently standing at 35%.</p>
+<p>However, as soon as elections are over, an Israeli move would not have as much of a negative impact on its closest ally. As such, unless the US stops the Iranian nuclear program itself, it will then take the White House a lot more than a couple threats and a nice declaration on TV to prevent Jerusalem from taking the matter into its own hands. To be continued…</p>
+<p><em>Simon Clément is an international relations graduate of Wolfson College, University of Cambridge.</em></p>
+<p>&nbsp;</p>

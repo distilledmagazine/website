@@ -1,0 +1,9 @@
+---
+layout: magazine/author
+handle: sclement
+firstname: Simon
+surname: Clément
+category: authors
+---
+
+Simon Clément holds an MPhil in International Relations from the University of Cambridge, Wolfson College

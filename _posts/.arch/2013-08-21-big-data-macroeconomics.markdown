@@ -1,0 +1,39 @@
+---
+layout: post
+status: publish
+published: true
+title: Big Data Will Not Solve Macroeconomics
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+excerpt: Big Data cannot and will not give us definitive or reliable answers within
+  the relevant time period for economic analysis, where many time horizons span decades.
+wordpress_id: 7369
+wordpress_url: http://distilledmagazine.com/?p=7369
+date: '2013-08-21 23:34:09 +0000'
+date_gmt: '2013-08-21 23:34:09 +0000'
+---
+<p><a href="http://distilledmagazine.com/wall-street-odds/"> </a>Economic variables are not <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/Fractal" target="_blank">fractal</a>.  Because variable such as preferences are not fractal, Big Data will not solve even basic macroeconomic problems over a meaningful time period.  Big Data will not be the solution to understanding the macroeconomy.</p>
+<p>&nbsp;</p>
+<p dir="ltr">As described by the father of fractal geometry, <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/Benoit_Mandelbrot" target="_blank">Benoit Mandelbrot</a> in <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/The_Misbehavior_of_Markets.html?id=GMKeUqufPQ0C" target="_blank">The (mis)Behavior of Markets</a>,  “A fractal … is a pattern or shape whose parts echo the whole.  If you look closely at the frond of a fern, for instance, you see it is made up of smaller fronds that, in turn, consist of even-smaller leaf clusters.  Of course, you can run such thinking forwards as well as backwards; you can analyze the fern down into its smaller parts, as well as synthesize the fern up from its smaller parts.” (p. 118)  The shape and variation of a fractal are the same as you zoom in on individual parts, so that clearly understanding any particular section of the fractal gives a good idea of the behavior of the whole.  The parts echo the whole.</p>
+<p>&nbsp;</p>
+<p dir="ltr">Preferences, unfortunately, do not echo the whole.  In other words, there is no reason to believe that people’s spending decisions and economic data will be as volatile over the course of a week as they are over the course of several years.  Budgets do not change over the course of a week.  Fads do not change over the course of a week.  Booms and recessions do not ebb and flow with the weekly calendar, and monetary policy is essentially constant.  None of these is true over a long time period.  Budgets, fads, monetary policy, and macroeconomic conditions all change and impact consumer and business choices over longer time periods.</p>
+<p>&nbsp;</p>
+<p dir="ltr">If this point seems obvious, it is, but it also presents a very difficult problem for proposed solutions from Big Data.  Big Data massively increases the sample data available to economists and statisticians intending to model individual behavior.  Rather than broad data summarizing spending over the course of a month, Big Data allows economists to look at innumerable individual spending decisions in the same time period.  It greatly increases sample size, and therefore statistical power, within the same time horizon.  Gigantic sample sizes allow statisticians to definitively eliminate random chance from interfering with prediction.</p>
+<p>&nbsp;</p>
+<p><img class="wp-image-7377 alignleft" alt="Photo Courtesy of Fractalive.com http://flic.kr/p/4i45pq , big data, Fractal, Madelbrot, Mandelbrot Set, Geometry, Big Data Sets, Macroeconomics, Macro, data, wave, " src="http://distilledmagazine.com/wp-content/uploads/2013/08/2162050886_c139aa4d80_o-1.jpg" width="252" height="252" /></p>
+<p>Unfortunately, random chance is not and has not been the real issue in economic prediction. Even after removing all random chance, we would still expect consumer behavior to change drastically over time.  Spending patterns during a recession are likely to be fundamentally distinct from spending patterns during a boom.  Fads ebb and flow over time in ways that would not be apparent in a short time period.  Even generational shifts change spending patterns; from Cadillacs to Volkswagen buses to Priuses, cultural context makes an undeniable difference.</p>
+<p>&nbsp;</p>
+<p dir="ltr"><span style="text-align: center;"> This is where we come back to fractals.  If preferences were like </span><a style="text-align: center;" href="http://distilledmagazine.com/wp-content/uploads/2013/08/Fractal.html" target="_blank">fractals</a><span style="text-align: center;">, then gathering more data on a small period of time would give us a good idea of behavior over time.  If preferences are not like fractals, then focusing on a specific time period inherently gives us a mistaken impression about the behavior over time.  We cannot simply subdivide a sample time period to get a larger sample size because we cannot expect a short time period to contain all of the variation of the longer time.  We take only a section of the total variation.</span></p>
+<p>&nbsp;</p>
+<p dir="ltr">Specifically, we would expect to miss particularly important impacts of macroeconomic conditions on microeconomic variables.  Macroeconomic variables like recessions and monetary policy happen over time horizons measured in years and even decades, rather than weeks and months.  Data points spanning a short time will be a small data set no matter how many individual data points are included.  We saw this phenomenon when financial analysts used statistical analysis to conclude that a significant fall in national housing prices was extremely unlikely, basing their conclusion on 50 years of corroborating data.  As described in <a href="http://distilledmagazine.com/wall-street-odds/" target="_blank">Against the Odds of Wall Street Failure</a>, this mistaken use of data led to catastrophic financial failure.  Housing prices, it seems, depend on credit conditions that vary over a much longer time horizon than 50 years, an idea forcefully <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/080204taco_talk_cassidy" target="_blank">postulated by Hyman Minsky</a>.</p>
+<p>&nbsp;</p>
+<p dir="ltr">Zooming in on too small a time horizon, even with the massive amount of data points that Big Data provides, will lead to fundamentally misleading predictions.  It is analogous to studying aging by measuring changing characteristics from ages 25 to 29.  If a scientist collected a data point every minute between a person’s 25th and 29th birthdays, would you listen to her theory about aging over an entire lifespan?  Even with 2.1 million data points, there is still insufficient data.  This study might be a fantastic study of aging in your 20s, but there is no reason to believe it would explain life in your 70s or 80s.  No matter how many data points are collected, the time considered is fundamentally insufficient for the question asked.</p>
+<p>&nbsp;</p>
+<p dir="ltr">This drawback of Big Data is especially acute in economics, where many of the relevant time horizons span decades.  Exact descriptions of relationships within each decade do not give an accurate picture of relationships over centuries.  As a result, Big Data will not be able to provide illumination of the myriad underlying relationships that vary over a long time horizon.  It is fundamentally insufficient to meet the task.</p>
+<p>&nbsp;</p>
+<p>Big Data will and does have many applications to businesses trying to gather data on immediate spending patterns, but it will not solve the underlying issues of macroeconomic theory.  Generations pass and institutions change on far too prolonged a period to pull all the meaningful interactions from smaller and smaller slices of the same period.  So long as economic institutions and cultural generations change so significantly within the relevant period for economic analysis, Big Data will not give us definitive or reliable answers.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

@@ -1,0 +1,17 @@
+---
+layout: nav_menu_item
+status: publish
+published: true
+author:
+  display_name: admin
+  login: admin
+  email: brecht.savelkoul@gmail.com
+  url: ''
+author_login: admin
+author_email: brecht.savelkoul@gmail.com
+wordpress_id: 5214
+wordpress_url: http://distilledmagazine.com/?p=5214
+date: '2013-04-23 04:55:42 +0000'
+date_gmt: '2013-04-23 04:55:42 +0000'
+---
+

@@ -1,0 +1,18 @@
+---
+layout: nav_menu_item
+status: publish
+published: true
+title: '3: The Origin of Principles'
+author:
+  display_name: admin
+  login: admin
+  email: brecht.savelkoul@gmail.com
+  url: ''
+author_login: admin
+author_email: brecht.savelkoul@gmail.com
+wordpress_id: 5218
+wordpress_url: http://distilledmagazine.com/?p=5218
+date: '2013-04-23 05:06:35 +0000'
+date_gmt: '2013-04-23 05:06:35 +0000'
+---
+
