@@ -5,6 +5,7 @@ date: '2013-03-25 17:15:23 +0000'
 authors:
 - tschaffner
 category: issue-3
+publication: The Origin of Principles
 ---
 
 The crisis through which the Western world is currently passing is misleadingly spoken of as "a financial crisis". We are first and foremost in a moral and cultural crisis. The misleading characterisation of the current situation as an economic or financial crisis prevents us from identifying the right remedies to overcome it. We do not just need new institutional mechanisms — these affect only the symptoms of the crisis. We also need to tackle the root cause of the crisis: the lack of belief in ethical principles and the lack of the qualities of character or virtue that allow us to act upon these principles.

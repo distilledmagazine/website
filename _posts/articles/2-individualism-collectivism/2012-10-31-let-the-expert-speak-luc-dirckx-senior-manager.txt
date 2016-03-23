@@ -5,6 +5,7 @@ date: '2012-10-31 17:00:03 +0000'
 authors:
 - bderidder
 category: issue-2
+publication: Individualism vs Collectivism
 ---
 
 Already long before the global economic crisis, people tended to be critical of large corporations. They were seen as gargantuan institutions, beasts of production that were only concerned with amassing ever more wealth and influence. Global brands such as Coca-Cola or Nike never completely got rid of this image, and after 2008, these criticisms became ever more widespread. But despite the criticism and the current crisis, these companies nevertheless remain standing: seen from the companies’ perspective they were highly successful.

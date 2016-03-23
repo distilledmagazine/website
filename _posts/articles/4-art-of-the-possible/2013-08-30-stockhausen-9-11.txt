@@ -5,6 +5,7 @@ date: '2013-08-30 16:20:04 +0000'
 authors:
 - bsavelkoul
 category: issue-4
+publication: The Art of the Possible
 ---
 
 It definitely wasn't the most diplomatic thing to say on 16 September 2001. On that day Karlheinz Stockhausen went from being a modern classical composer of enormous stature, an early pioneer of electronic music, to an intellectual pariah. From that point until his death in 2007, his monumental career was eclipsed by a single quote about the terrorist attacks of 9/11. Tact aside though, this controversial quote remains the most interesting, challenging, and indeed instructive analysis of the events to date. According to Stockhausen, the terrorist attacks on New York and Washington that week were "the greatest work of art that ever existed".

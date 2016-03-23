@@ -5,6 +5,7 @@ date: '2013-03-25 17:15:09 +0000'
 authors:
 - ggillette
 category: issue-3
+publication: The Origin of Principles
 ---
 
 Akko is a town in Northern Israel that besides being the holiest city in the Baha'i religion is relatively unimportant in the modern world. In 1291 however, Acre, as it was called, became the last bastion of Christianity in the Holy Land, before it fell to the Sultan’s forces after siege and bloody invasion. It was here that Christianity gathered its forces for the strongest stand that could be mustered against the changing world around it.

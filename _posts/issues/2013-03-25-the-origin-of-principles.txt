@@ -5,6 +5,7 @@ date: '2013-03-25 17:40:52 +0000'
 authors:
 - sshah
 category: issue-3
+publication: The Origin of Principles
 ---
 
 In <a href="http://distilledmagazine.com/individualism-vs-collectivism/" target="_blank">the second issue of *Distilled*</a>, we explored the debate between the organizing principles of individualism versus collectivism in the areas of politics, economics, and culture. We had a lively debate about these principles that took us from labour unions in the US and Canada, EU obstinacy in landlocked Switzerland, patchwork communities in the UAE, Maoist rebels in India, and finally, to China where it seems the Chinese are trying to have both.

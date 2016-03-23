@@ -5,6 +5,7 @@ date: '2012-10-31 17:00:07 +0000'
 authors:
 - bderidder
 category: issue-2
+publication: Individualism vs Collectivism
 ---
 
 How many people would call themselves Machiavellists these days? Probably no one, and certainly not those who contemplate a political career in a democratic country. The cold and strict <em>ragion di stato</em> (reasons of state) that is often identified with the Renaissance writer seems highly unfit for political communities build on negotiation, consensus, and inclusive thinking. Nevertheless, many politicians are real machiavellists, although they are often not aware of it. They would never put it so succulently, but the following two quotes from the Floretine politician would almost certainly receive a lot of endorsement:
