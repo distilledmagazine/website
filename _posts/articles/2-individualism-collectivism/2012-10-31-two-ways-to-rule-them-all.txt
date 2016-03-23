@@ -5,6 +5,7 @@ date: '2012-10-31 17:00:39 +0000'
 authors:
 - bsavelkoul
 category: issue-2
+publication: Individualism vs Collectivism
 ---
 What killed Siegfried? And who saved Frodo? And most of all, should we even care anyway?
 

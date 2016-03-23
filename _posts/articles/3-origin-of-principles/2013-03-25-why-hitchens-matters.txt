@@ -5,6 +5,7 @@ date: '2013-03-25 17:17:21 +0000'
 authors:
 - bjones
 category: issue-3
+publication: The Origin of Principles
 ---
 
 I must make one thing clear: Christopher Hitchens is one of my childhood heroes.

@@ -5,6 +5,7 @@ date: '2012-10-31 17:00:58 +0000'
 authors:
 - gwatson
 category: issue-2
+publication: Individualism vs Collectivism
 ---
 
 How effective are North American unions in the 21st century? For an answer, let’s look at Toronto, the continent’s fifth most populated metropolis and the largest city in Canada. The Toronto Transit Commission (TTC) was recently declared an essential service and stripped of its right to strike. Even garbage removal is being privatized away from union control.

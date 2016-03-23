@@ -5,6 +5,7 @@ date: '2013-03-25 17:19:11 +0000'
 authors:
 - amayersohn
 category: issue-3
+publication: The Origin of Principles
 ---
 
 The American political debate is dominated by the massive, growing gap between the left and right poles of public opinion on everything from petty scandals to fundamental questions about morality. On the <a href="http://www.people-press.org/2012/06/04/partisan-polarization-surges-in-bush-obama-years/">Pew Research Center’s index</a> of 48 “political values measures”, the gap between Republicans and Democrats is now larger than at any time in the past 25 years, twice as large as it was during the Clinton era.
