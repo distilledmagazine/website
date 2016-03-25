@@ -7,20 +7,10 @@ title: Distilled Magazine
     <h1>{{ page.title }}</h1>
 </header>
 
-<h2>Issue 1: The Global Crisis in Confidence</h2>
-<p>&middot; July 2012</p>
+<h2>Issue 4: The Art of the Possible</h2>
+<p>&middot; August 2013</p>
 <ul>
-  {% for article in site.categories.issue-1 %}  
-    <li>
-      <a href="{{ article.url }}">{{ article.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
-
-<h2>Issue 2: Individualism vs Collectivism</h2>
-<p>&middot; October 2012</p>
-<ul>
-  {% for article in site.categories.issue-2 %}  
+  {% for article in site.categories.issue-4 %}  
     <li>
       <a href="{{ article.url }}">{{ article.title }}</a>
     </li>
@@ -37,10 +27,20 @@ title: Distilled Magazine
   {% endfor %}
 </ul>
 
-<h2>Issue 4: The Art of the Possible</h2>
-<p>&middot; August 2013</p>
+<h2>Issue 2: Individualism vs Collectivism</h2>
+<p>&middot; October 2012</p>
 <ul>
-  {% for article in site.categories.issue-4 %}  
+  {% for article in site.categories.issue-2 %}  
+    <li>
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<h2>Issue 1: The Global Crisis in Confidence</h2>
+<p>&middot; July 2012</p>
+<ul>
+  {% for article in site.categories.issue-1 %}  
     <li>
       <a href="{{ article.url }}">{{ article.title }}</a>
     </li>
