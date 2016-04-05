@@ -1,0 +1,6 @@
+---
+layout: magazine/author
+handle: rivory
+firstname: Rob
+surname: Ivory
+---

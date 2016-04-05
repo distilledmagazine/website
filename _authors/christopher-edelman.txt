@@ -1,0 +1,8 @@
+---
+layout: magazine/author
+handle: cedelman
+firstname: Christopher
+surname: Edelman
+---
+
+Christopher Edelman serves as the Princeton in Latin America Fellow at the Arias Foundation for Peace & Human Progress in San José, Costa Rica.  He holds an M.Phil. in International Relations from the University of Cambridge and a B.A. in Decision Science and Latin American Studies from Duke University.  He will be at Stanford Law School beginning in 2013 to complete his J.D.

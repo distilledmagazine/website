@@ -1,9 +1,0 @@
----
-layout: magazine/author
-handle: hhind
-firstname: Heather
-surname: Hind
-category: authors
----
-
-Heather Hind is a student of English at Wolfson College, University of Cambridge.

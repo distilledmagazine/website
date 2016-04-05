@@ -1,0 +1,6 @@
+---
+layout: magazine/author
+handle: mhacaga
+firstname: Maciek
+surname: Hacaga
+---

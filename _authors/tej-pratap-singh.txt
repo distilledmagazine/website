@@ -1,0 +1,8 @@
+---
+layout: magazine/author
+handle: tpratapsingh
+firstname: Tej
+surname: Pratap Singh
+---
+
+Tej Pratap Singh is Associate Professor in the Dept. of Political Science, Banaras Hindu University, Varanasi, India. He has been Charles Wallace Visiting Fellow in the Centre of South Asian Studies, University of Cambridge and Shastri Visiting Faculty Research Fellow in the Centre for International Governance Innovation (CIGI), Waterloo, Canada. He is also a Salzburg Global Seminar Fellow and fellow of Wolfson College, University of Cambridge.

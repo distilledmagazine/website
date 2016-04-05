@@ -1,0 +1,8 @@
+---
+layout: magazine/author
+handle: amayersohn
+firstname: Andrew
+surname: Mayersohn
+---
+
+Andrew Mayersohn graduated from Yale University in 2011 with a degree in political science. He lives in Washington, DC and works for a nonprofit that tracks money in politics.

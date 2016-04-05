@@ -1,9 +1,0 @@
----
-layout: magazine/author
-handle: tbarker
-firstname: Tom
-surname: Barker
-category: authors
----
-
-Tom Barker is a PhD student of political economy at the University of Cambridge in the Department of Politics and International Studies.

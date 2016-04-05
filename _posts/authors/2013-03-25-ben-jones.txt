@@ -1,9 +1,0 @@
----
-layout: magazine/author
-handle: bjones
-firstname: Ben
-surname: Jones
-category: authors
----
-
-Ben Jones, 24, Second year undergraduate studying Education with History at Wolfson College, University of Cambridge. He can be found @linkedin.co.uk <a href="http://uk.linkedin.com/pub/ben-jones/65/492/6b">here</a>.

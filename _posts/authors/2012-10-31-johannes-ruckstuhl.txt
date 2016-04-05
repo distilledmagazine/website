@@ -1,9 +1,0 @@
----
-layout: magazine/author
-handle: jruckstuhl
-firstname: Johannes
-surname: Ruckstuhl
-category: authors
----
-
-Johannes Ruckstuhl is currently studying for a BA in English Literature at Wolfson College, University of Cambridge.

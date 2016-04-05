@@ -1,0 +1,6 @@
+---
+layout: magazine/author
+handle: mkoska
+firstname: Martyna
+surname: Koska
+---

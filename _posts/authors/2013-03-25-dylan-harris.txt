@@ -1,9 +1,0 @@
----
-layout: magazine/author
-handle: dharris
-firstname: Dylan
-surname: Harris
-category: authors
----
-
-Dylan Harris is a freelance writer living and working in New Orleans with a cocktail of majors and minors from the University of Southern Mississippi and will begin his MSc in Environment and Development at the London School of Economics in the fall.

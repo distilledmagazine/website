@@ -1,7 +1,0 @@
----
-layout: magazine/author
-handle: dbaker
-firstname: Dan
-surname: Baker
-category: authors
----

@@ -1,7 +1,0 @@
----
-layout: magazine/author
-handle: dtestuggine
-firstname: Davide 
-surname: Testuggine
-category: authors
----

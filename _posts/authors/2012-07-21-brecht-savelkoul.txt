@@ -1,7 +1,0 @@
----
-layout: magazine/author
-handle: bsavelkoul
-firstname: Brecht
-surname: Savelkoul
-category: authors
----

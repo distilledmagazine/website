@@ -3,6 +3,10 @@ title:         Distilled Archives
 permalink:     /:title/
 paginate_path: /page:num
 timezone:      null
+collections:
+    authors:
+        output: true
+        permalink: /:title/
 
 # Handling Reading
 safe:         false

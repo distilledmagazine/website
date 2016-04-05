@@ -1,9 +1,0 @@
----
-layout: magazine/author
-handle: mmarin
-firstname: Mike
-surname: Marin
-category: authors
----
-
-Mike Marin is an LLM graduate of Wolfson College, University of Cambridge, and is an assistant professor at the University of Ottawa.

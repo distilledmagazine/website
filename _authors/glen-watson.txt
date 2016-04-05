@@ -1,0 +1,8 @@
+---
+layout: magazine/author
+handle: gwatson
+firstname: Glen
+surname: Watson
+---
+
+Glen Watson is currently completing a law degree at the University of Cambridge. He holds a Master's in Industrial Relations from the University of Toronto, and spent time doing public sector collective bargaining on behalf of the province of Ontario.

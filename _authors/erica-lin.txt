@@ -1,0 +1,8 @@
+---
+layout: magazine/author
+handle: linzw
+firstname: Erica Z.
+surname: Lin
+---
+
+Erica Z. Lin is a graduate from the London School of Economic and the University of International Business and Economics in Beijing.

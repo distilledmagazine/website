@@ -1,0 +1,8 @@
+---
+layout: magazine/author
+handle: sdegeest
+firstname: Sarah
+surname: De Geest
+---
+
+Sarah De Geest graduated Cum Laude at the University of Leuven (KULeuven). During her Master in Law she mainly focussed on civil and criminal law, but wrote her thesis in comparative law. This way she came in to contact with Chinese Law. The text below is an adaptation of this thesis, written under the supervision of Prof. Dr. W. Devroe and originally titled ‘Grondwettelijke toetsing in China. Het Westen als model?’. She is currently enrolled in the LLM in Chinese Law at the School of Oriental and African Studies in London.
