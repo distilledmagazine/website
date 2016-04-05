@@ -3,5 +3,4 @@ layout: magazine/author
 handle: sshah
 firstname: Sarang
 surname: Shah
-category: authors
 ---

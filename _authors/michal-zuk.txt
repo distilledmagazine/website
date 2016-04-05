@@ -3,7 +3,6 @@ layout: magazine/author
 handle: mzuk
 firstname: Michal
 surname: Zuk
-category: authors
 ---
 
 Michal Zuk is a journalist based in London. He holds a B.A. from McGill University in Philosophy and Political Science, and an M.Sc. from the London School of Economics in European Studies. You can also find him on Twitter <a href="https://twitter.com/michalzuktweets">@MichalZukTweets</a>.

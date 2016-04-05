@@ -3,7 +3,6 @@ layout: magazine/author
 handle: jwest
 firstname: Jonathan
 surname: West
-category: authors
 ---
 
 Jonathan West studied at the Columbia Theological Seminary in Decatur, Georgia. The text below is the result of a research project originally titled "Christian Just War Ethics in Response to Grave Human Rights Violations: Economic Sanctions and Armed Intervention", carried out under the auspices of Dr. Mark Douglas, Professor of Christian Ethics. Jonathan West currently holds the position of Director of High School Ministries at Roswell Presbyterian Church in Roswell, Georgia.

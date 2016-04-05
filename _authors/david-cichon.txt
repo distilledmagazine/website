@@ -3,5 +3,4 @@ layout: magazine/author
 handle: dcichon
 firstname: David
 surname: Cichon
-category: authors
 ---

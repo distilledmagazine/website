@@ -3,5 +3,4 @@ layout: magazine/author
 handle: ycolijn
 firstname: Yasmine
 surname: Colijn
-category: authors
 ---

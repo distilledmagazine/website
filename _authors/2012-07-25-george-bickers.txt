@@ -3,7 +3,6 @@ layout: magazine/author
 handle: gbickers
 firstname: George
 surname: Bickers
-category: authors
 ---
 
 George Bickers is an undergraduate at Wolfson College, University of Cambridge, reading for a B.A in English. He is also the Editor and Co-Founder of the <a href="http://posthumanpress.com/" target="_blank">Post-Human Press</a> and an Intern and Contributor for the <a href="http://ieet.org/" target="_blank">Institute of Ethics and Emerging Technologies</a>.
