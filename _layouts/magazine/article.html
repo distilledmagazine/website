@@ -12,17 +12,14 @@ layout: pamphlet
           ({% if page.publication %}{{ page.publication }}, {% endif %}{{ page.date | date_to_string }})
       </p>
       <h2>
-        {% for author in page.authors %}
-          {% for person in site.categories.authors %}      
-            {% if author == page.authors[0] and person.handle == author %}
-              <a href="{{ person.url }}">{{ person.firstname }} {{ person.surname }}</a>
-              &middot;
-            {% elsif person.handle == author %}
-              <a href="{{ person.url }}">{{ person.firstname }} {{ person.surname }}</a>
-              &middot;
-            {% endif %}
+          {% for this in page.authors %}
+              {% for author in site.authors %}      
+                  {% if author.handle == this %}
+                      <a href="{{ author.url }}">{{ author.firstname }} {{ author.surname }}</a>
+                      &middot;
+                  {% endif %}
+              {% endfor %}
           {% endfor %}
-        {% endfor %}
       </h2>
       {{ content }}
   </article>
