@@ -1,5 +1,5 @@
 # Site Settings
-title:         Distilled Archives
+title:         Distilled Magazine
 permalink:     /:title/
 paginate_path: /page:num
 timezone:      null
