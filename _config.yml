@@ -14,5 +14,5 @@ keep_files:   [".git"]
 
 # Conversion
 markdown:     kramdown
-markdown_ext: "md|txt"
+markdown_ext: "md,txt"
 encoding:     "utf-8"
