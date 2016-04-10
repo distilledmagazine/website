@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: The Gramscian Escape Route
+publication: The Origin of Principles
 date: '2013-03-25 17:18:45 +0000'
 authors:
 - dharris
-category: issue-3
-publication: The Origin of Principles
 ---
 
 Think about democracy. Think about alternatives to democracy. What comes to mind?

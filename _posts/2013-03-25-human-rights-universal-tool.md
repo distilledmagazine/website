@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: Making Human Rights a Universal Tool
+publication: The Origin of Principles
 date: '2013-03-25 17:10:45 +0000'
 authors:
 - obeys
-category: issue-3
-publication: The Origin of Principles
 ---
 
 Even though human rights are an entirely artificial construct, a human rights approach can be a truly universal tool in addressing world problems on a practical level. To that specific end, these rights should not be seen as normative soft law but rather as instruments to enforce minimum standards. Potentially, they could rally people with different belief systems around a common goal. By doing so, they can guide our principles in a very different way than ideological or religious concepts.

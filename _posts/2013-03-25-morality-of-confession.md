@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: Turning Yourself In
+publication: The Origin of Principles
 date: '2013-03-25 17:35:27 +0000'
 authors:
 - mzuk
-category: issue-3
-publication: The Origin of Principles
 ---
 
 Why do we turn ourselves in?

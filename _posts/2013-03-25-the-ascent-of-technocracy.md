@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: The Ascent of Technocracy
+publication: The Origin of Principles
 date: '2013-03-25 17:15:11 +0000'
 authors:
 - sshah
-category: issue-3
-publication: The Origin of Principles
 ---
 
 Washington is on fire. Potomac parlours and palaces are ablaze with talk of the impending destruction of civility and credit ratings.
