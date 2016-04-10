@@ -13,7 +13,8 @@ collections:
         output: true
         permalink: /:title/
 defaults:
-    scope:
-        path: "magazine"
-    values:
-        layout: "magazine/article"
+    -
+        scope:
+            path: "magazine"
+        values:
+            layout: "magazine/article"
