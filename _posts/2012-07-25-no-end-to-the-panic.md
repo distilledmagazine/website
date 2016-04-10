@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: No End to the Panic
+publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
 - dbaker
-category: issue-1
-publication: The Global Crisis in Confidence
 ---
 
 Rushing from one brush fire to the next with a leaky bucket, the European reaction to its sovereign debt crisis has been long on panic and short on comprehensive solutions.  Rightly intent to prevent a Lehman-Brothers type contagion, but also hesitant to overreach politically, European leaders have followed Germany through a muddled reaction.  Each new measure has been more strained than the previous.  As of writing, the Euro leaders have staved off the existential threat, but have accomplished little else.  Survival may be essential, but there also must be critical examination of the piecemeal strategy to return to economic stability.

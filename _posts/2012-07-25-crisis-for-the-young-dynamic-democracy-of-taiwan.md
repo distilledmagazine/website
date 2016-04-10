@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: Crisis for the Young, Dynamic Democracy of Taiwan
+publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
 - anon-1
-category: issue-1
-publication: The Global Crisis in Confidence
 ---
 
 Taiwan has often been touted as the most dynamic democracy in Asia. With a consistently high average voter turnout of approximately 77% over the past five direct presidential elections since 1996, the island may hold one of the most participatory democratic processes in the world. On January 14th, Taiwan held its 5th presidential election. This year, the island had three candidates competing for the presidency: the incumbent Ma Ying-Jeou of the Chinese Nationalist Party (KMT), Tsai Ing-Wen of the Democratic Progressive Party (DPP), and Soong Chu-Yu of the People’s First Party (PFP).

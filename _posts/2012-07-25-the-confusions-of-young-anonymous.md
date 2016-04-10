@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: Confusions of Young Anonymous
+publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
 - ddessin
-category: issue-1
-publication: The Global Crisis in Confidence
 ---
 
 We are no longer the post-ideological generation; we are now the generation at the heart of the fight-back.” Remember these words?  After young Barnaby Raine cried them out at the Coalition of Resistance Conference in 2010, they quickly started to lead their own life on YouTube and the Internet.  Columnists referred to them; journalists quoted them, they were mentioned in speeches and discussed in debates.  Politicians applauded this herald of a new generation, cheered at the very idea that youngsters would finally become critical thinkers, begin to question, and fight the challenges of this world.

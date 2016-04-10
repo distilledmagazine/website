@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: The Disconnected Society
+publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
 - tbarker
-category: issue-1
-publication: The Global Crisis in Confidence
 ---
 
 We live, we are told, in an increasingly connected world.  The communications revolution, which began in earnest some twenty-five years ago, has brought us closer together, ‘shrunk’ our planet, and facilitated revolutions of an economic and political kind.  Financial transactions take place at lightning fast speed, scenes from distant warzones are beamed daily into our living rooms, while friends and family are never further away than the reach to our mobile phones.  The wireless signal and the fibre-optic cable are the railroads and highways of the twenty-first century.
