@@ -1,18 +1,19 @@
 # Site Settings
-title:         Distilled Magazine
-permalink:     /:title/
+title: Distilled Magazine
+permalink: /:title/
 paginate_path: /page:num
-timezone:      null
+timezone: null
+
+# Content Settings
+markdown: kramdown
+markdown_ext: "md,txt"
+encoding: "utf-8"
 collections:
     authors:
         output: true
         permalink: /:title/
-
-# Handling Reading
-safe:         false
-keep_files:   [".git"]
-
-# Conversion
-markdown:     kramdown
-markdown_ext: "md,txt"
-encoding:     "utf-8"
+defaults:
+    scope:
+        path: "magazine"
+    values:
+        layout: "magazine/article"
