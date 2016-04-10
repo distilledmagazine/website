@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: Don't Click Click the Guilt Away
+publication: The Art of the Possible
 date: '2013-08-26 20:33:16 +0000'
 authors:
 - ycolijn
-category: issue-4
-publication: The Art of the Possible
 ---
 
 “Everyone’s bad. There’s nothing we can do. Let’s just stay at home and have tea.” That was the sentiment expressed in Adam Curtis’ 2009 short film <em>The Rise of Oh-Dearism</em>. In it, he chronicled how he believed the Western public had become overwhelmed with images of poverty and despair across their borders since the Biafran crisis, culminating in a sense of dread and apathy in which every new NGO campaign or news report  about far-away tragedy triggered a reaction of "Oh Dear… well let’s just stay at home and have tea".

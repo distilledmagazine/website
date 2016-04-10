@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: 'Energy: A Deadlock for Humanity?'
+publication: The Art of the Possible
 date: '2013-08-28 15:23:25 +0000'
 authors:
 - mhacaga
-category: issue-4
-publication: The Art of the Possible
 ---
 
 Energy has become a “hot topic” in recent years. From green energy over climate change and geopolitics, to the unaddressed and growing needs of the emerging countries, it's an issue that has been discussed all over the world. To escape the crash course set out by our (not always wise) activities, we are advised to start looking for alternative patterns of development. We are told that more efficiency and better technology will lead us to a “green society”. Because of that, both the environment and our lifestyle will be saved and can go on indefinitely. 

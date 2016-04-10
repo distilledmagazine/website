@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: Is Libertarianism Impossible?
+publication: The Art of the Possible
 date: '2013-08-27 18:46:25 +0000'
 authors:
 - mhunt
-category: issue-4
-publication: The Art of the Possible
 ---
 
 There are a group of people who cause me distress. These people are those who say ‘X is wrong’ and ‘X is harmful to society’, but nevertheless ‘X should be legal’. I call these people Libertarians. In any matter of social policy they interject their view: that the matter in hand should always be left to the choice of the individual. What is their basis for their belief in freedom – conceived as the idea that people should be allowed to do whatever they want, so long as it doesn’t interfere with the ability of others to do the same? It seems to be a naïve sort of rationalism, a descendent of the Enlightenment view of man, that people will always do what is rational and best for themselves, so that we had better not interfere. Moreover it is one of those insidious beliefs which sees its confirmation in everything. From such a perspective, the fact that someone has chosen something is already a confirmation of the fact that it was the best thing for them. Why did John buy the sweeties? “Well because he derives pleasure from the sweeties and so, as a rational agent, he sought to maximize his happiness and pleasure by buying them” the Libertarian says.</p>

@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: 'The Expert: Interview with Ambassador Neelam Deo'
+publication: The Art of the Possible
 date: '2013-08-29 18:38:36 +0000'
 authors:
 - bderidder
-category: issue-4
-publication: The Art of the Possible
 ---
 
 For Issue IV of <em>Distilled Magazine</em>, our goal is the possible. How do we make things happen the way we want them to happen? How do we successfully contribute to change in an immensely complex global world? One simple answer could be by looking at people who already did so. Therefore, <em>Distilled Magazine</em> spoke to Ambassador Neelam Deo, a distinguished representative of the Republic of India. Ambassador Deo holds a degree from the Delhi School of Economics, and amongst her numerous postings have been Denmark, Ivory Coast, Washington D.C. and New York. Besides her function in the Indian Foreign Service (IFS), she is also active in numerous political and nonpolitical organizations, such as Breakthrough, Oxfam India and Gateway House. For <em>Distilled Magazine</em>, she was prepared to shed light on her own work and career, and how she managed to procure change through them.

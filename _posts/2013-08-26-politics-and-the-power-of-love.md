@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: Politics and the Power of Love
+publication: The Art of the Possible
 date: '2013-08-26 20:33:15 +0000'
 authors:
 - tschaffner
-category: issue-4
-publication: The Art of the Possible
 ---
 
 
