@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: 'Becoming Superheroes, the Race to Post-humanism'
+publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:39 +0000'
 authors:
 - gbickers
-category: issue-2
-publication: Individualism vs Collectivism
 ---
 
 Images of post-humans permeate every aspect of both popular and high culture. They can be seen in anything from children’s television show to Sir Arthur Conan Doyle’s Sherlock Holmes. Even stage magicians appropriate post-human fronts. With such huge levels of exposure across a broad range of culture, we as a society must crave ever more of the post-human. But why? And is the race towards collective post- humanism an important goal that we should actively pursue?

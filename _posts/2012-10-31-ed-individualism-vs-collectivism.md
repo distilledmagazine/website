@@ -1,13 +1,11 @@
 ---
-layout: magazine/article
 title: Letter from the Editors
+publication: Individualism vs Collectivism
 date: '2012-10-31 17:02:03 +0000'
 authors:
 - sshah
 - bderidder
 - bsavelkoul
-category: issue-2
-publication: Individualism vs Collectivism
 ---
 
 We’re facing a global crisis in confidence. That was the conclusion of the first issue of Distilled Magazine. In it, our contributors gave their views on where, why, and how this feeling of unease influences the people's lives. Some wrote about the consequences of this crisis while others of the way to restore our belief in the future. But what exactly do we do now? That’s why this second issue of Distilled Magazine wants to pick up the debate where we last left off.

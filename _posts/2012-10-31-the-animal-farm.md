@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: The Animal Farm?
+publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:17 +0000'
 authors:
 - bmcclanathan
-category: issue-2
-publication: Individualism vs Collectivism
 ---
 
 Agricultural policy in the United States, on its face, is seen as a series of innocent measures to safeguard the bucolic American farmer, and thus the U.S. food supply. Pursuing this ideal, however, has led to inefficient market behavior and some insidious consequences throughout the country and the world.

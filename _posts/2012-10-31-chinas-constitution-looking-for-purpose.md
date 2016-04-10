@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: China’s Constitution Looking for Purpose
+publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:08 +0000'
 authors:
 - sdegeest
-category: issue-2
-publication: Individualism vs Collectivism
 ---
 
 Over the past 60 years the Western world has constitutionalised the protection of fundamental human rights. Nowadays, national and supranational judicial organs grant citizens a high level of protection against infringements against their most important individual rights. This was however thanks to a lengthy process that has been going on ever since the 18th century. With this movement of perfecting the protection of human rights, the West however also perfected its own superior attitude towards non-Western countries such as China.

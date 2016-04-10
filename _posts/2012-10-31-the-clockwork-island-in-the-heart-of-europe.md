@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: The Clockwork Island in the Heart of Europe
+publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:45 +0000'
 authors:
 - jruckstuhl
-category: issue-2
-publication: Individualism vs Collectivism
 ---
 
 While the philosophies of euro-visionaries Robert Schumann and Jean Monnet have brought Western Europe closer together, one country at the continent’s heart has strongly resisted being part of such an enterprise. It is a country of immense paradox, its citizens enjoying a standard of living that is among the highest in the world, its economy continuing to prosper, yet at the same time moving ever further to the political right. In the wake of the Lehmann Brothers collapse, which plunged much of the world’s economy into recession, the advocates of the individual nation versus the collective in this country find themselves vindicated more than ever.

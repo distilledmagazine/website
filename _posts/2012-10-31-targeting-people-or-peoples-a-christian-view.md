@@ -1,11 +1,9 @@
 ---
-layout: magazine/article
 title: 'Targeting People or Peoples, a Christian View'
+publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:55 +0000'
 authors:
 - jwest
-category: issue-2
-publication: Individualism vs Collectivism
 ---
 
 In the quarter-century since the end of the Cold War, the U.S. has repeatedly been confronted with a spectre of governments committing terrible violence against their own people. More often than not, the U.S. has preferred to address these conflicts from afar. For the most part, the American people have been allergic to the prospect of their government sending their military – their relatives, friends, and fellow citizens - to intervene in conflicts that do not seem to have much to do with them. So instead, the favourite alternative has been the imposition of economic sanctions on the countries and regimes in which this violence is taking place. Right now, we are seeing this play out before our eyes in Syria. And though the situation is much different in Iran, we can see how popular this tool has become for addressing conflicts that Americans do not foresee coming to their own shores any time soon. How are we to assess this situation? Should we see it as perhaps an indication that the U.S. is not as militaristic as it is often accused of being? Or should we see it as a sign that self-interest has completely won the day in U.S. foreign policy, to the exclusion of considerations of what is best for people thousands of miles beyond their shores? Though it may be uncomfortable to do so, we need to consider that the latter may best reflect U.S. motivations. Economic sanctions, I want to argue, are either too destructive to be just or too weak to be effective. As an American Christian myself, I am convinced that their popularity represents a lack of political will to actually come to the aid of our attacked neighbours, men and women for whom Christ also died.
