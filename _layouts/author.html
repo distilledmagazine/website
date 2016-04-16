@@ -10,7 +10,7 @@ layout: base
     {% if post.authors contains page.handle %}
          <div style="margin-bottom: 4rem;">
             <h2>{{ post.title }}</h2>
-            <p>&middot; {{ post.date | date_to_string }}</p>
+            <time>&middot; {{ post.date | date_to_string }}</time>
             <p>
                 {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
                 <a href="{{ post.url }}">(Read more)</a>
