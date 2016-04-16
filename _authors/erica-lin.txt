@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: linzw
 firstname: Erica Z.
 surname: Lin

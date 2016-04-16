@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: bderidder
 firstname: Bram
 surname: De Ridder

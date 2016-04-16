@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: jruckstuhl
 firstname: Johannes
 surname: Ruckstuhl

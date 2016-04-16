@@ -17,4 +17,4 @@ defaults:
         scope:
             path: "magazine"
         values:
-            layout: "magazine/article"
+            layout: "magazine"

@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: tschaffner
 firstname: Tobias
 surname: Schaffner

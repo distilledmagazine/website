@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: mlenarz
 firstname: Maggie
 surname: Lenarz

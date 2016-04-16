@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: tpratapsingh
 firstname: Tej
 surname: Pratap Singh

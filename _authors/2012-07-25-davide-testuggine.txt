@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: dtestuggine
 firstname: Davide 
 surname: Testuggine

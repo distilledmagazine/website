@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: mzuk
 firstname: Michal
 surname: Zuk

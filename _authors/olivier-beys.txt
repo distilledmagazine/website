@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: obeys
 firstname: Olivier
 surname: Beys

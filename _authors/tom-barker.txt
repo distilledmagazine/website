@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: tbarker
 firstname: Tom
 surname: Barker

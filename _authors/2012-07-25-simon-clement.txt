@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: sclement
 firstname: Simon
 surname: Clément

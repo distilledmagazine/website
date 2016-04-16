@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: hhind
 firstname: Heather
 surname: Hind

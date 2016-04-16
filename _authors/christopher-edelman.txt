@@ -1,5 +1,5 @@
 ---
-layout: magazine/author
+layout: author
 handle: cedelman
 firstname: Christopher
 surname: Edelman
