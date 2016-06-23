@@ -10,3 +10,6 @@
 [submodule "magazine/issue-4"]
 	path = magazine/issue-4
 	url = https://github.com/distilledpm/issue-4.git
+[submodule "_includes/style"]
+	path = _includes/style
+	url = https://github.com/distilledpm/style
