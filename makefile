@@ -1,6 +1,6 @@
 .PHONY: proof live content
 
-_site: _layouts _config.yml index.html content
+_site: _design _config.yml index.html content
 	jekyll build
 	
 content: 

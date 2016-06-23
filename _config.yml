@@ -18,3 +18,7 @@ defaults:
             path: "magazine"
         values:
             layout: "magazine"
+
+# Design folders
+layouts_dir:  ./_design/layouts
+includes_dir: ./_design/style
