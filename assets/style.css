@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: serif;
+}
+body {
+  background-color: rgba(253, 246, 227, .93);
+  color: rgb(98, 34, 48);
+  font-size: 1.4rem;
+}
+header {
+  background-color: rgba(98, 34, 48, .07);
+  font-weight: bold;
+  padding: 1rem;
+}
+header small {
+  float: right;
+  font-weight: normal;
+  margin-top: .62em;
+}
+article + article {
+  border-top: 5px solid rgb(213, 34, 48);
+  margin-top: 62vh;
+}
+article > hr {
+  border: none;
+  border-top: 5px solid rgb(213, 34, 48);
+  margin-bottom: 1.62em;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+article section {
+  display: inline-block;
+  padding: 1rem;
+}
+article .content {
+  width: 40rem;
+}
+article .info {
+  background-color: rgb(253, 246, 227);
+  float: right;
+  max-width: 20rem;
+  position: sticky;
+  top: 0;
+  text-align: right;
+}
+article .author {
+  display: block;
+  font-size: 1rem;
+  margin-top: 1.4em;
+}
+article .author + .author {
+  margin-top: .4em;
+}
+
+time {
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+time + p {
+  display: inline;
+}
+time + p:before {
+  content: ' · ';
+}
+p + p,
+* + p,
+p + * {
+  margin-top: 1em;
+}
+h1 {
+  font-size: 2.8rem;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+small {
+  font-size: .62em;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 60rem) {
+  article .title {
+    float: unset;
+    max-width: 62%;
+    position: static;
+    text-align: left;
+  }
+}
+@media (min-width: 72rem) {
+  html {
+    font-size: 110%;
+  }
+}
+@media (min-width: 96rem) {
+  html {
+    font-size: 125%;
+  }
+}

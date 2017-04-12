@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "choo": "^5.1.0",
+    "level": "^1.6.0",
+    "quill-render": "^1.0.5"
+  },
+  "devDependencies": {
+    "create-html": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "minimatch": "^3.0.3",
+    "request": "^2.81.0",
+    "through2": "^2.0.3",
+    "vinyl": "^2.0.1"
+  }
+}
