@@ -3,17 +3,19 @@ var render = require('quill-render')
 
 module.exports = function (state, emit) {
   return html`
-    <article>
-      <header>
-        Distilled Pamphlets
-        <small>Issue ${state.entry.issue}, Volume ${state.entry.volume}</small>
-      </header>
-      <hr>
-      <section class="info">
-        <h1>${state.entry.title}</h1>
-        ${state.entry.authors.sort().map(author)}
-      </section>
-      ${content(state.entry.content.ops, state.entry.updated)}
+    <article style="background-image:url('${state.entry.cover}')">
+      <div class="container">
+        <header>
+          Distilled Pamphlets
+          <small>Issue ${state.entry.issue}, Volume ${state.entry.volume}</small>
+        </header>
+        <hr>
+        <section class="info">
+          <h1>${state.entry.title}</h1>
+          ${state.entry.authors.sort().map(author)}
+        </section>
+        ${content(state.entry.content.ops, state.entry.updated)}
+      </div>
     </article>
   `
 }
@@ -26,7 +28,7 @@ function author (name) {
 
 function content (ops, time) {
   var section = html`<section class="content"></section>`
-  section.innerHTML = time ? date(time) + render(ops) : render(ops)
+  section.innerHTML = time ? render(ops) + date(time) : render(ops)
 
   return section
 }
