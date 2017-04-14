@@ -89,11 +89,12 @@ header + hr {
   z-index: 1;
 }
 article {
-  background-size: 100vw;
+  background-position: center;
+  background-size: cover;
   background-attachment: fixed;
 }
 article .container {
-  background-color: rgba(253, 246, 227, .85);
+  background-color: rgba(253, 246, 227, .87);
   padding-bottom: 100vh;
 }
 article:first-child .container {
@@ -107,6 +108,7 @@ article section {
   padding: 1rem;
 }
 article .content {
+  max-width: 100vw;
   width: 40rem;
 }
 article .info {
@@ -128,8 +130,8 @@ article .author + .author {
 @media (max-width: 60rem) {
   article .info {
     float: unset;
-    max-width: 62%;
     position: static;
     text-align: left;
+    width: 100vw;
   }
 }
