@@ -3,9 +3,9 @@ var target = 'www'
 var type = 'pamphlet'
 
 var gulp = require('gulp')
-var concat = require('gulp-concat')
 var html = require('create-html')
 var minimatch = require('minimatch')
+var path = require('path')
 var request = require('request')
 var stream = require('through2')
 var Vinyl = require('vinyl')
@@ -24,17 +24,16 @@ gulp.task('homepage', function() {
   var query = {
     gt: type,
     lt: type + '\\',
-    reverse: true,
-    limit: 5
+    reverse: true
   }
 
   return db.createKeyStream(query)
     .pipe(get(db, `${type}/**`))
     .pipe(transform(layout))
     .pipe(stringify())
-    .pipe(vinylise())
-    .pipe(concat('index.html'))
-    .pipe(boiler(false))
+    .pipe(page(false))
+    .pipe(concat(type + '/index'))
+    .pipe(vinylise(null, '.html'))
     .pipe(gulp.dest(target))
 })
 
@@ -49,8 +48,9 @@ gulp.task('pamphlets', function() {
     .pipe(get(db, `${type}/**`))
     .pipe(transform(layout))
     .pipe(stringify())
-    .pipe(vinylise('/index.html'))
-    .pipe(boiler(true))
+    .pipe(page(true))
+    .pipe(concat())
+    .pipe(vinylise(null, '/index.html'))
     .pipe(gulp.dest(target))
 })
 
@@ -69,18 +69,22 @@ gulp.task('replicate', function() {
 /**
  * Custom streams:
  */
-function boiler (params) {
-  return stream.obj(function (data, encoding, cb) {
-    var file = new Vinyl(data)
-    var title = params && file.params.entry.title
-    var content = html({
-      title: title ? title + ' · ' + site : site,
-      body: data.contents.toString(),
-      css: '/style.css'
-    })
-    file.contents = new Buffer(content)
+function concat (fixedKey) {
+  var key = fixedKey
+  var value = ''
 
-    cb(null, file)
+  return stream.obj(function (data, encoding, cb) {
+    if (!key) {
+      key = data.key
+    }
+    value += data.value ? data.value : ''
+
+    cb()
+  }, function (cb) {
+    cb(null, {
+      key: fixedKey ? fixedKey : key,
+      value: value
+    })
   })
 }
 
@@ -98,6 +102,30 @@ function get (db, pattern) {
         })
       })
     }
+  })
+}
+
+function page (detail) {
+  var ongoing
+
+  return stream.obj(function (data, encoding, cb) {
+    if (!ongoing) {
+      var ongoing = true
+      var tags = require('./layouts/tags')
+      var domain = 'https://distilled.pm/'
+      var entry = detail ? data.params.entry : {}
+      entry.url = detail ? domain + path.basename(data.key) : domain
+
+      this.push({key: data.key})
+      this.push({value: '<!doctype html><html lang="en"><head>'})
+      this.push({value: tags.head(entry)})
+      this.push({value: '<body>'})
+    }
+    this.push({value: data.value})
+    cb()
+  }, function (cb) {
+    this.push({value: '</body></html>'})
+    cb()
   })
 }
 
@@ -119,27 +147,29 @@ function transform (fn) {
     }
     else {
       cb(null, {
+        params: value,
         key: data.key,
-        value: fn(value),
-        params: value
+        value: fn(value)
       })
     }
   })
 }
 
-function vinylise () {
+function vinylise (subfolder, append) {
   return stream.obj(function (data, encoding, cb) {
-    var opts = {contents: new Buffer(data.value)}
-    opts.path = data.params.entry.link
-    opts.params = data.params
+    var base = path.basename(data.key)
+    var file = append ? base + append : base
 
-    cb(null, new Vinyl(opts))
+    cb(null, new Vinyl({
+      path: subfolder ? path.join(subfolder, file) : file,
+      contents: new Buffer(data.value)
+    }))
   })
 }
 
-function inspect () {
+function inspect (prop) {
   return stream.obj(function (data, encoding, cb) {
-    console.info('ENTRY:', data.key, data.value)
+    console.info('CHUNK:', prop ? data[prop] : data)
     cb(null, data)
   })
 }
