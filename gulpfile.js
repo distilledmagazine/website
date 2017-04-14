@@ -33,6 +33,7 @@ gulp.task('homepage', function() {
     .pipe(stringify())
     .pipe(page(false))
     .pipe(concat(type + '/index'))
+    .pipe(diverge())
     .pipe(vinylise(null, '.html'))
     .pipe(gulp.dest(target))
 })
@@ -50,6 +51,7 @@ gulp.task('pamphlets', function() {
     .pipe(stringify())
     .pipe(page(true))
     .pipe(concat())
+    .pipe(diverge())
     .pipe(vinylise(null, '/index.html'))
     .pipe(gulp.dest(target))
 })
@@ -69,22 +71,31 @@ gulp.task('replicate', function() {
 /**
  * Custom streams:
  */
-function concat (fixedKey) {
-  var key = fixedKey
-  var value = ''
+function concat (merge) {
+  var key = merge
+  var values = {}
 
   return stream.obj(function (data, encoding, cb) {
-    if (!key) {
+    if (!merge) {
       key = data.key
     }
-    value += data.value ? data.value : ''
-
+    if (!values[key]) {
+      values[key] = ''
+    }
+    values[key] += data.value ? data.value : ''
     cb()
   }, function (cb) {
-    cb(null, {
-      key: fixedKey ? fixedKey : key,
-      value: value
+    cb(null, values)
+  })
+}
+
+function diverge () {
+  return stream.obj(function (values, encoding, cb) {
+    var self = this
+    Object.keys(values).forEach(function (key) {
+      self.push({key: key, value: values[key]})
     })
+    cb()
   })
 }
 
@@ -107,6 +118,7 @@ function get (db, pattern) {
 
 function page (detail) {
   var ongoing
+  var prev
 
   return stream.obj(function (data, encoding, cb) {
     if (!ongoing) {
@@ -116,15 +128,16 @@ function page (detail) {
       var entry = detail ? data.params.entry : {}
       entry.url = detail ? domain + path.basename(data.key) : domain
 
-      this.push({key: data.key})
-      this.push({value: '<!doctype html><html lang="en"><head>'})
-      this.push({value: tags.head(entry)})
-      this.push({value: '<body>'})
+      this.push({key: data.key, value: '<!doctype html><html lang="en">'})
+      this.push({key: data.key, value: tags.head(entry)})
+      this.push({key: data.key, value: '<body>'})
     }
-    this.push({value: data.value})
-    cb()
-  }, function (cb) {
-    this.push({value: '</body></html>'})
+    this.push({key: data.key, value: data.value})
+
+    if (detail && data.key !== prev) {
+      this.push({key: data.key, value: '</body></html>'})
+      prev = data.key
+    }
     cb()
   })
 }
