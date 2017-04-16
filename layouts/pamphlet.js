@@ -34,13 +34,8 @@ function content (ops, time) {
 }
 
 function date (input) {
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
   var date = new Date(input)
-  var display = months[date.getMonth()] + ' '
-    + date.getDate() + ', '
-    + (date.getYear() + 1900)
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-  return `
-    <time>${display}</time>
-  `
+  return `<time>${months[date.getMonth()]} ${date.getYear() + 1900}</time>`
 }
