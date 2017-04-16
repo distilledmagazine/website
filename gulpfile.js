@@ -3,7 +3,9 @@ var target = 'www'
 var type = 'pamphlet'
 
 var gulp = require('gulp')
-var html = require('create-html')
+var postcss = require('gulp-postcss')
+var autoprefixer = require('autoprefixer')
+var cssnano = require('cssnano')
 var minimatch = require('minimatch')
 var path = require('path')
 var request = require('request')
@@ -16,6 +18,7 @@ var db = level('./data')
 gulp.task('default', [
   'homepage',
   'pamphlets',
+  'styles',
   'assets'
 ])
 
@@ -56,8 +59,19 @@ gulp.task('pamphlets', function() {
     .pipe(gulp.dest(target))
 })
 
+gulp.task('styles', function() {
+  var plugins = [
+    autoprefixer(),
+    cssnano()
+  ]
+
+  return gulp.src('assets/style.css')
+    .pipe(postcss(plugins))
+    .pipe(gulp.dest(target))
+})
+
 gulp.task('assets', function() {
-  return gulp.src('assets/**').pipe(gulp.dest(target))
+  return gulp.src(['assets/**', '!**/*.css']).pipe(gulp.dest(target))
 })
 
 gulp.task('replicate', function() {
