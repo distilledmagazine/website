@@ -91,7 +91,7 @@ article:first-child .surface {
   padding-top: calc(100vh - 4em);
 }
 article:last-child {
-  border-bottom: 5px solid rgb(98, 34, 48);
+  border-bottom: 5px solid rgb(213, 34, 48);
 }
 article section {
   display: inline-block;
@@ -133,10 +133,15 @@ article .author + .author {
   html {
     font-size: 110%;
   }
-  header,
-  article section {
+  header {
     padding-right: 2rem;
     padding-left: 2rem;
+  }
+  article .content {
+    margin-left: 1rem;
+  }
+  article .info {
+    margin-right: 1rem;
   }
 }
 @media (min-width: 72rem) {
@@ -148,10 +153,15 @@ article .author + .author {
   html {
     font-size: 150%;
   }
-  header,
-  article section {
+  header {
     padding-right: 3rem;
     padding-left: 3rem;
+  }
+  article .content {
+    margin-left: 2rem;
+  }
+  article .info {
+    margin-right: 2rem;
   }
 }
 @media (min-width: 96rem) {
