@@ -83,11 +83,11 @@ article {
   background-size: cover;
   background-attachment: fixed;
 }
-article .container {
+article .surface {
   background-color: rgba(253, 246, 227, .87);
   padding-bottom: 100vh;
 }
-article:first-child .container {
+article:first-child .surface {
   padding-top: calc(100vh - 4em);
 }
 article:last-child {
@@ -133,6 +133,11 @@ article .author + .author {
   html {
     font-size: 110%;
   }
+  header,
+  article section {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
 }
 @media (min-width: 72rem) {
   html {
@@ -142,6 +147,11 @@ article .author + .author {
 @media (min-width: 84rem) {
   html {
     font-size: 150%;
+  }
+  header,
+  article section {
+    padding-right: 3rem;
+    padding-left: 3rem;
   }
 }
 @media (min-width: 96rem) {
