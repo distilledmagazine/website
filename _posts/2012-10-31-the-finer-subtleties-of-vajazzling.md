@@ -3,7 +3,7 @@ title: The Finer Subtleties of Vajazzling
 publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:47 +0000'
 authors:
-- hhind
+- Heather Hind
 ---
 
 A few months ago I picked up my little sister’s copy of Cosmopolitan. Having read Cosmogirl as a young teenager, I was exposed to the strong messages of the campaign "be sexy: be sussed" promoting STI awareness and the confidence to "say no". Both the images in the magazine and the articles themselves were designed with positive body image in mind — a wet-haired girl with no makeup on, bouncing on her bed smiling, flashing her braces to the camera "20 things to do before you’re 16". I remember the list included "eating a doughnut without licking your lips".

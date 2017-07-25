@@ -3,7 +3,7 @@ title: Of Hornets and Honeybees
 publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:17 +0000'
 authors:
-- ggillette
+- Gregory Gillette
 ---
 
 In under a minute the Asian hornet can decapitate over 40 helpless victims. It does so with skull-crushing mandibles so powerful it need not even resort to its lethal stinger, capable of killing humans with a potent neurotoxin. This creature, a triumph of evolutionary perfection when taking on enemy hordes could easily be described as the spartan of the animal kingdom. For creationists, this must be proof God has a sadistic side.

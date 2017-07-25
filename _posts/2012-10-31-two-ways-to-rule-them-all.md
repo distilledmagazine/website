@@ -3,7 +3,7 @@ title: Two Ways to Rule Them All
 publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:39 +0000'
 authors:
-- bsavelkoul
+- Brecht Savelkoul
 ---
 What killed Siegfried? And who saved Frodo? And most of all, should we even care anyway?
 

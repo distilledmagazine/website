@@ -3,7 +3,7 @@ title: State Capitalism in China
 publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:47 +0000'
 authors:
-- linzw
+- Erica Z. Lin
 ---
 
 In recent years state capitalism has become an increasingly popular term among political economists. Its rise is a joint effect of sapped confidence in the West due to the lasting global recession, East Asian countries, whose successes are attributed to active government intervention in the economy.

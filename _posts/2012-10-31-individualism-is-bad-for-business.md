@@ -3,7 +3,7 @@ title: Individualism is Bad for Business
 publication: Individualism vs Collectivism
 date: '2012-10-31 17:00:24 +0000'
 authors:
-- mmarin
+- Mike Marin
 ---
 
 According to the likes of Mitt Romney, the individual’s relentless pursuit of profit – the organizing principle of the capitalist economy – is as relevant today as it was when Adam Smith published the Wealth of Nations in 1776. Individualism, say its adherents, has always been, and continues to be, the best engine of collective prosperity.
