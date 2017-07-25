@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "autoprefixer": "^7.1.2",
+    "choo": "^5.6.2",
+    "cssnano": "^3.10.0",
+    "gulp-folders": "^1.1.0",
+    "gulp-postcss": "^7.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "js-yaml": "^3.9.0",
+    "marked": "^0.3.6",
+    "through2": "^2.0.3",
+    "vinyl": "^2.1.0"
+  }
+}

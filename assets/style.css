@@ -1,0 +1,171 @@
+/**
+ * Reset & cascade:
+ */
+* {
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * General styles:
+ */
+html {
+  font-family: serif;
+}
+body {
+  background-color: rgb(253, 246, 227);
+  color: rgb(98, 34, 48);
+  font-size: 1.4rem;
+}
+
+/**
+ * Basic elements:
+ */
+h1 {
+  font-size: 2.4rem;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+* + p,
+p + * {
+  margin-top: 1em;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+small {
+  font-size: .62em;
+}
+time {
+  display: block;
+  font-variant: small-caps;
+}
+a, button {
+  text-decoration: underline dotted;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/**
+ * Layout styles:
+ */
+header {
+  background-color: rgb(253, 246, 227);
+  border-top: 5px solid rgb(213, 34, 48);
+  font-weight: bold;
+  padding: 1rem;
+}
+header small {
+  float: right;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: normal;
+  margin-top: .62em;
+}
+header + hr {
+  border: none;
+  border-top: 5px solid rgb(213, 34, 48);
+  margin-bottom: 1.62em;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+article {
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+article .surface {
+  background-color: rgba(253, 246, 227, .87);
+  padding-bottom: 100vh;
+}
+article:first-child .surface {
+  padding-top: calc(100vh - 4em);
+}
+article:last-child {
+  border-bottom: 5px solid rgb(213, 34, 48);
+}
+article section {
+  display: inline-block;
+  padding: 1rem;
+}
+article .content {
+  max-width: 100vw;
+  width: 31rem;
+}
+article .info {
+  float: right;
+  max-width: 19rem;
+  position: sticky;
+  top: 0;
+  text-align: right;
+}
+article .author {
+  display: block;
+  font-size: 1rem;
+  margin-top: 1.4em;
+}
+article .author + .author {
+  margin-top: .4em;
+}
+
+@media (max-width: 50rem) {
+  article .info {
+    float: unset;
+    max-width: 100%;
+    position: static;
+    text-align: left;
+    width: 100%;
+  }
+  article .content {
+    width: 100%;
+  }
+}
+@media (min-width: 58rem) {
+  html {
+    font-size: 110%;
+  }
+  header {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+  article .content {
+    margin-left: 1rem;
+  }
+  article .info {
+    margin-right: 1rem;
+  }
+}
+@media (min-width: 72rem) {
+  html {
+    font-size: 125%;
+  }
+}
+@media (min-width: 84rem) {
+  html {
+    font-size: 150%;
+  }
+  header {
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+  article .content {
+    margin-left: 2rem;
+  }
+  article .info {
+    margin-right: 2rem;
+  }
+}
+@media (min-width: 96rem) {
+  html {
+    font-size: 200%;
+  }
+}
