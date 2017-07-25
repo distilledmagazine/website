@@ -1,6 +1,0 @@
----
-layout: author
-handle: sshah
-firstname: Sarang
-surname: Shah
----

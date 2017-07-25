@@ -1,8 +1,0 @@
----
-layout: author
-handle: bderidder
-firstname: Bram
-surname: De Ridder
----
-
-Bram De Ridder studied history at the KULeuven and International Relations at Wolfson College, University of Cambridge. Currently he is a Ph.D. Fellow of the Research Foundation – Flanders (FWO).

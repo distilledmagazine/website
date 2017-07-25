@@ -1,6 +1,0 @@
----
-layout: author
-handle: mhunt
-firstname: Marcus
-surname: Hunt
----

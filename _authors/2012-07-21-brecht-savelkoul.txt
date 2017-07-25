@@ -1,6 +1,0 @@
----
-layout: author
-handle: bsavelkoul
-firstname: Brecht
-surname: Savelkoul
----

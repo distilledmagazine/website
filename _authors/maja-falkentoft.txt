@@ -1,6 +1,0 @@
----
-layout: author
-handle: mfalkentoft
-firstname: Maja
-surname: Falkentoft
----

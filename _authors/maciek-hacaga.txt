@@ -1,6 +1,0 @@
----
-layout: author
-handle: mhacaga
-firstname: Maciek
-surname: Hacaga
----

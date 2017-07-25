@@ -1,6 +1,0 @@
----
-layout: author
-handle: dcichon
-firstname: David
-surname: Cichon
----

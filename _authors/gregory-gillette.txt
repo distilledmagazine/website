@@ -1,8 +1,0 @@
----
-layout: author
-handle: ggillette
-firstname: Gregory
-surname: Gillette
----
-
-Gregory Gillette is a graduate of the London School of Economics in Global History and currently studies Global Political Economy as part of the Erasmus Mundus programme at Roskilde University in Denmark. You can also find him on Twitter <a href="https://twitter.com/gregorygillette">@gregorygillette</a>.
