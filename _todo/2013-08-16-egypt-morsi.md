@@ -1,0 +1,52 @@
+---
+layout: post
+status: publish
+published: true
+title: 'Populism in Egypt: Morsi or Lessi'
+author:
+  display_name: ''
+  login: ''
+  email: ''
+  url: ''
+excerpt: Egypt is yet again on fire. Political uprisings are not unheard of or a new
+  thing. Between 1875 and 2004, there have been 117 transitions to democracy.
+wordpress_id: 7278
+wordpress_url: http://distilledmagazine.com/?p=7278
+date: '2013-08-16 23:33:29 +0000'
+date_gmt: '2013-08-16 23:33:29 +0000'
+---
+<p dir="ltr">Alas, it seems as if Egypt is yet again on fire. The Egyptian army has cleared the sites of several pro-Morsi/pro-Muslim Brotherhood protests, and in the process, has killed over 600 Egyptians. These protests follow a coup in which President Mohammed Morsi was overthrown by the army after little more than a year in office.</p>
+<p>&nbsp;</p>
+<p dir="ltr">When we last left <a href="http://distilledmagazine.com/democracy-and-the-arab-uprisings/" target="_blank">the story</a>, Egypt was seemingly emerging from the shadow of Mubarak and into the light of liberal democracy. Since then, constitutions have been written and rewritten, and elections held in ways favoring the Muslim Brotherhood (a movement that has long waited in the wings in opposition to Egypt’s many dictators). Mohammed Morsi was elected President, and Egypt came under a rule legitimized by democratic process.</p>
+<p>&nbsp;</p>
+<p dir="ltr">But the turmoil never ceased after the election. Morsi and the Muslim Brotherhood made powerful political enemies, namely the army and liberal parties – the ostensible keepers of the secular spirit that they claimed animated the initial protests that overthrew Mubarak in 2011.</p>
+<p>&nbsp;</p>
+<p dir="ltr">Following his overthrow, supporters of Morsi began protesting in the streets of Cairo and other Egyptian cities, much like in 2011. There have been counter-protests, and counter-counter-protests. For followers of Egyptian affairs, the questions “who are protesting” and “what are their grievances” has become rather difficult to answer.</p>
+<p>&nbsp;</p>
+<p dir="ltr">One of the problems with discussing the Arab Spring is that many commentators seek to portray it as a fairly unique and disruptive event in the history of Egypt and the Middle East.</p>
+<p>&nbsp;</p>
+<p dir="ltr">What’s happening in the Middle East is not as new as we think it is. Societies are possessed of an stubborn inertia. They rarely undergo wholesale changes that seeming revolutions would have us believe. Rather than a break with the past, the protests that led to the eventual downfall of Mubarak in 2011 were a rebalancing of power in a country with various competing stakeholders: the army, the police, the Muslim Brotherhood, liberals and secularists, etc.</p>
+<p>&nbsp;</p>
+<p dir="ltr"><a href="http://distilledmagazine.com/wp-content/uploads/2013/08/faculty-1?lid=289" target="_blank">James L. Gelvin</a>, a professor of modern Middle East history at the University of California, Los Angeles, points out how uprisings and <a href="http://www.nytimes.com/roomfordebate/2013/08/14/is-this-the-end-of-the-arab-spring/spring-uprisings-are-nothing-new]" target="_blank">crackdowns are not an unusual event</a> in recent Middle Eastern history:</p>
+<p>&nbsp;</p>
+<p dir="ltr">[quote align="center" color="#999999"]<br />
+The wave of uprisings we have been witnessing is not a discrete event; rather, it is the culmination of decades of struggle against autocracy and privilege. Any account of the current battle for human rights and democratic governance in the Arab world must go back at least as far as <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/Berber_Spring" target="_blank">Algeria’s “Berber Spring”</a> (1980), and must include the <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/1990s_uprising_in_Bahrain" target="_blank">Bahraini intifada</a> (1994-99),<a href="http://distilledmagazine.com/wp-content/uploads/2013/08/Damascus_Spring" target="_blank">Syria’s “Damascus Spring”</a> (2000), <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/Cedar_Revolution" target="_blank">Lebanon’s “Cedar Revolution”</a> (2005), and <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/kuwaiti-women-struggle-suffrage-blue-revolution-2002-2005" target="_blank">Kuwait’s “Blue”</a> and <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/6372-kuwaiti-orange-revolution.html" target="_blank">“Orange” revolutions</a> (2002-5, 2006), among other upheavals—not to mention the <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/the-egyptian-movement-for-change-kifaya" target="_blank">“Kifaya” (Enough!)</a> movement in Egypt, which demanded the resignation of Hosni Mubarak seven years before the 2011 occupation of Tahrir Square. Likewise, any account of the current struggle for economic and social justice in the region must go back at least as far as the <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/1977_Egyptian_Bread_Riots" target="_blank">IMF riots</a> in Egypt in 1977 and continue through the current wave of labor activism which has challenged Arab governments to hold to the commitments they had made before they succumbed to the neo-liberal agenda.[/quote]</p>
+<p>&nbsp;</p>
+<p dir="ltr">Often when discussing complex social phenomena, it seems only the historians can see the forest from the trees. To understand what is happening in Egypt requires a sense of historical and social context.</p>
+<p>&nbsp;</p>
+<p dir="ltr">Other scholars are troublesome, those who increasingly see the region as a patchwork of religions, ethnic groups, languages, historical rivalries, and natural resources. They believe that the troubles of the region can be subdivided into increasingly granular distinctions between peoples and groups. Or worse, they believe like <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/~albertus" target="_blank">Michael Albertus</a> of the University of Chicago and <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/vmenaldo" target="_blank">Victor Menaldo</a> of the University of Washington that <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/democracy-slowly-won-out-over-other-coups" target="_blank">a broad, vaguely quantified survey</a> of previous coups can give us some sense of where Egypt is headed in the coming years:</p>
+<p dir="ltr">[quote align="center" color="#999999"]Between 1875 and 2004, there have been 117 transitions to democracy. Of these transitions, 25 were quickly overturned by military coups in a manner similar to what happened in Egypt.</p>
+<p dir="ltr">The good news for Egypt is that in nine of the 25 cases, there was a return to democracy within five years...[/quote]</p>
+<p dir="ltr">Surveys such as these, comparing Egypt in 2013 to other countries at different times and contexts, often have very weak conclusions where seemingly any future possibility is viable.</p>
+<p>&nbsp;</p>
+<p dir="ltr">How then should we attempt to understand and deliberate on what is transpiring in Egypt? We certainly can’t assign the labels of “good guys” and “bad guys” to various actors. Are we to sympathize with the Muslim Brotherhood when they are brutalized by the army and demonize them when they are in power? Should we praise the army when it overthrows the president, but condemn it when it clears out protest camps? A Manichean world view is inherently at odds with the evolving realities of a complex society such as Egypt’s.</p>
+<p>&nbsp;</p>
+<p dir="ltr">We should follow the lead of Chris Hedges who looks at the broader picture. Egypt’s troubles aren’t the result of internecine fighting. Rather, they are indicative of <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/murdering_the_wretched_of_the_earth_20130814" target="_blank">a global wealthy elite fighting an even larger global poor</a>.</p>
+<p dir="ltr">Some pundits, such as <a href="http://distilledmagazine.com/wp-content/uploads/2013/08/hope-for-the-arab-spring-if-the-west-steps-up" target="_blank">Ed Husain</a> of the Council on Foreign Relations are offering greater liberalization, free trade, aid, buttressed democratic institutions, and diminished religious extremism as solutions to Egypt’s problems. These pundits argue that with enough Western intervention in favor of technocratic constitutions and liberal institutions, even a country like Egypt can become a flourishing stable state.</p>
+<p>&nbsp;</p>
+<p dir="ltr">Alas, these one-size-fits-all solutions ignore the full scope of Egyptian history and political culture (which has been inextricably tied up with the rich tradition of Islam for hundreds of years). As the Washington Consensus policies and neoliberalism have shown us – liberalization, free trade, and Western-style democracy will likely ensure that the poor will get poorer and the rich will get richer. Broadening income inequality would mean more people will flock towards radical ideologies, such as radical Islam, in hope of salvation. Unfortunately for Ed Husain, the goals of liberalizing the economy and reducing religious extremism may be fundamentally at odds with each other.</p>
+<p>&nbsp;</p>
+<p dir="ltr">Other commentators on Egypt are focused on the minutiae of whether Egypt has already slipped back into the bonds of dictatorship or on how the West should tactically respond to this latest coup. While these are important considerations, it is important to remember that they are made with the broad assumption that history is marching towards a utopian global liberal order. Unfortunately, that order is failing in the West and around the world because it remains too wedded to <a href="http://distilledmagazine.com/economic-models-analysis/" target="_blank">general solutions and models</a>, and refuses to acknowledge the depth and wondrous variety of<a href="http://distilledmagazine.com/social-dynamics-theory/" target="_blank"> human social dynamics</a>.</p>
+<p>&nbsp;</p>
+<p dir="ltr">Given this failure, many Egyptians cannot see a clear vision of their future, one that unites several wretchedly divided factions. If there isn’t an alternative vision or hope, all that is left are human sentiments of persistent fear and resentment. That’s why it is best to pursue a global narrative for the future, of which Egypt is a stakeholder, rather than attempt to lay our narrative upon theirs.</p>
+<p>&nbsp;</p>

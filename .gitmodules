@@ -1,0 +1,18 @@
+[submodule "magazine/issue-1"]
+	path = magazine/issue-1
+	url = https://github.com/distilledpm/issue-1.git
+[submodule "magazine/issue-2"]
+	path = magazine/issue-2
+	url = https://github.com/distilledpm/issue-2.git
+[submodule "magazine/issue-3"]
+	path = magazine/issue-3
+	url = https://github.com/distilledpm/issue-3.git
+[submodule "magazine/issue-4"]
+	path = magazine/issue-4
+	url = https://github.com/distilledpm/issue-4.git
+[submodule "_design/style"]
+	path = _design/style
+	url = https://github.com/distilledpm/style
+[submodule "_design/layouts"]
+	path = _design/layouts
+	url = https://github.com/distilledpm/layouts

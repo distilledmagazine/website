@@ -1,0 +1,6 @@
+---
+layout: author
+handle: nrodgers
+firstname: Nicole
+surname: Rodgers
+---

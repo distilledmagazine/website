@@ -1,0 +1,8 @@
+---
+layout: author
+handle: mlenarz
+firstname: Maggie
+surname: Lenarz
+---
+
+Maggie Lenarz is a writer, journalist, and airline stewardess based out of the UAE.

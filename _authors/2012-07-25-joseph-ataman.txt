@@ -1,0 +1,8 @@
+---
+layout: author
+handle: jataman
+firstname: Joseph
+surname: Ataman
+---
+
+Joseph Ataman is a student of St. John’s College, University of Cambridge.

@@ -1,0 +1,8 @@
+---
+layout: author
+handle: obeys
+firstname: Olivier
+surname: Beys
+---
+
+Olivier Beys holds degrees in archaeology, international relations and conflict management. He currently works for a Belgian MP and is active as a youth representative for sustainable development in Belgium and at the United Nations.

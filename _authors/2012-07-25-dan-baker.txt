@@ -1,0 +1,6 @@
+---
+layout: author
+handle: dbaker
+firstname: Dan
+surname: Baker
+---
