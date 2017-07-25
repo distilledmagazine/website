@@ -3,7 +3,7 @@ title: Letter from the Executive Director
 publication: The Art of the Possible
 date: '2013-08-26 19:55:04 +0000'
 authors:
-- nrodgers
+- Nicole Rodgers
 ---
 ### Dear Partners,
 

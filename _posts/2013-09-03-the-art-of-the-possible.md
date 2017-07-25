@@ -3,7 +3,7 @@ title: Letter from the Editor-in-chief
 publication: The Art of the Possible
 date: '2013-09-03 14:01:51 +0000'
 authors:
-- sshah
+- Sarang Shah
 ---
 
 I found myself on a greyhound bus driving through Kansas. I was on a trip across the USA, from Georgia to California, and everything and everyone in my life were far away. Following years of wandering, I was attempting to start over again. After a rough night trying to sleep on metallic benches under the fluorescent lights of a Kansas City, Missouri, bus station, I was awakened that morning in Kansas by a warm sensation across my chest. It was the rays of the rising sun at 6am, reflecting off fields of wheat so gold and endless undulating on either side of me. In that ethereal barely conscious state, I realized that the art of the possible was not about how we could achieve some end goal, but about the pursuit of the humanity within each waking moment of the journey that fills the gap between birth and death.

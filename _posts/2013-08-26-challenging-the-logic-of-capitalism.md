@@ -3,7 +3,7 @@ title: Aim for the Impos­si­ble
 publication: The Art of the Possible
 date: '2013-08-26 20:33:16 +0000'
 authors:
-- dcichon
+- David Cichon
 ---
 "Getting rich does not happen in a space outside the state and community, but involves (as a rule) a violent process of appropriation that casts serious doubt on the right of the rich achiever to own the wealth he may then go on to give generously." In his most recent book the popular philosopher Slavoj Zizek reiterates some of his earlier critiques of contemporary capitalism by challenging the underlying logic of charity giving. By emphasising the importance of charity giving, fair trade coffee at Starbucks (or as I will argue social entrepreneurship) we are only reiterating the social structures and relations that have caused the problems in the first place. By misinterpreting the ‘possible’ and being determined to change the world we live in we are often driven to act on a fallacy that attempts to solve the problems through the same mechanism that have created them in the first place.
 

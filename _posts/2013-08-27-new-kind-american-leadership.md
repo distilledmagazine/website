@@ -3,7 +3,7 @@ title: Restoring “America the Brave”
 publication: The Art of the Possible
 date: '2013-08-27 16:55:58 +0000'
 authors:
-- rivory
+- Rob Ivory
 ---
 
 Since September 11th, America’s international reputation has seen a downward spin from the most respected superpower status it held from World War II onwards. From the economic wealth and innovation that saw the lives of its citizens ranking supreme to its military prowess and involvement in international security affairs, America was the standard by which most other nations set their principles. However, the rise of China has spearheaded a rapidly developing group of countries to challenge the US in economic terms. Even more so, terrorism and non-state actors have presented America with security and foreign-policy challenges that test the very principles of the nation.

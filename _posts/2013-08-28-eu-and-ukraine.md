@@ -3,7 +3,7 @@ title: European Perspectives for Ukraine
 publication: The Art of the Possible
 date: '2013-08-28 12:21:18 +0000'
 authors:
-- mkoska
+- Martyna Koska
 ---
 
 On February 25th 2013, the 16th European Union-Ukraine Summit took place in Brussels. We could say that these summits have become a tradition in recent years, but strangely enough there was no 2012 summit. How did it happen that a perfect – or so it seemed – example of international cooperation has changed into a simple exchange of opinions? Why did ambitious plans turn out to be not very important, and why was the Association Agreement between the two (which just needed to be signed) postponed as if it was completely useless?

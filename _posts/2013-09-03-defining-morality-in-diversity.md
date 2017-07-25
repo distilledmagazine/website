@@ -3,7 +3,7 @@ title: We Are the Possible
 publication: The Art of the Possible
 date: '2013-09-03 13:13:53 +0000'
 authors:
-- mfalkentoft
+- Maja Falkentoft
 ---
 
 Everyday, I witness events wherein people all over the world occupy streets, parks and pavements. And as spaces, media, and even people are being taken hostage, it is hard not to notice how the power to define the rules atis lay — this sovereign power — seems to have trickled long down from ideas of divinity and monarchy. As such, the recent increase and subsequent legitimization of uprisings and civil disobedience tells me a story about how the power to define has hit the streets and found a place in the people. It is a story about how questions of ‘what is possible’ and ‘what should be’ have been pluralized and democratized. However, as the consequences of this story are still unfolding – and as the end results seem yet to be defined – I allow myself to make a small appeal directed towards those with the power to define: namely you.
