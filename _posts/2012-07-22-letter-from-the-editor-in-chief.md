@@ -3,7 +3,7 @@ title: Letter from the Editor-in-chief
 publication: The Global Crisis in Confidence
 date: '2012-07-25 23:55:21 +0000'
 authors:
-- sshah
+- Sarang Shah
 ---
 
 Telling the story of who we are and where we are going is daunting. "Current affairs", with its ever-expanding cast and byzantine networks of relationships, is the longest-running, most difficult soap opera to describe.

@@ -3,7 +3,7 @@ title: The Financial Crisis of Shareholder Primacy
 publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
-- mmarin
+- Mike Marin
 ---
 
 Unfortunately, most official accounts of the crisis, and how to avoid the next one, have missed the mark. They have overlooked the fundamental problem: a corporate governance model of financial institutions that the puts the private interest ahead of the public interest.

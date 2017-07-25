@@ -3,7 +3,7 @@ title: The Neverending Sack of Rome
 publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
-- dtestuggine
+- Davide Testuginne
 ---
 
 Italy has been attracting attention from the whole world since last summer, when the credit spread (i.e. the difference  between the interest on the Italian debt and that of the Germany) rose to more than 400: the threshold beyond which the economy of a country is considered seriously compromised.

@@ -3,7 +3,7 @@ title: Democracy and the Arab Uprisings
 publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
-- sclement
+- Simon Clément
 ---
 
 In February 2011, in the impoverished southern Tunisian town of Sidi Bouzid, Muhamad Bouazizi, a young street seller set himself on fire to protest the unfair treatment he had received from a female police officer. His self-immolation unleashed the most intense and surprising social movement that swept through the Arab world in the past 50 years. In less than a year, the autocratic, corrupt, and violent regimes of Tunisia, Libya, Egypt and Yemen were brought down by a wave of young, mostly secular, and liberal crowds calling for dignity, freedom, justice, and democracy. Consequently, the monarchies of Jordan and Morocco quickly liberalised in order to avoid the fate of their neighbours. Bahrain, Algeria, Iraq and Saudi Arabia saw widespread protest. Syria is still in the midst of a full-scale revolution.

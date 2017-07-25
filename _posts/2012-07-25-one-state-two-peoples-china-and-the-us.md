@@ -3,7 +3,7 @@ title: 'One State, Two Peoples: China and the US'
 publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
-- jataman
+- Joseph Ataman
 ---
 
 February saw the green lawns of 1600 Pennsylvania Avenue play host to a meeting of two world leaders — two men in whose hands will soon rest the balance of world power. And yet, while the world’s media crowded the pristine grass, the true significance of the visit went largely unnoticed.

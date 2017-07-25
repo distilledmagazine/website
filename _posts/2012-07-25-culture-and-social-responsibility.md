@@ -3,7 +3,7 @@ title: Culture and Social Responsibility
 publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
-- gbickers
+- George Bickers
 ---
 
 Tristan Tzara, the great Dadaist, once stated that "People envisage the (ever-impending) annihilation of art. Here they are looking for a more art-like art."  This simple statement focuses our attention on not only what one considers "art", but also its purpose within our society.

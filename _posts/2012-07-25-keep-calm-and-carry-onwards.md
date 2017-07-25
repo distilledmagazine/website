@@ -3,7 +3,7 @@ title: Keep calm and carry on(wards)
 publication: The Global Crisis in Confidence
 date: '2012-07-25 12:21:00 +0000'
 authors:
-- bderidder
+- Bram De Ridder
 ---
 
 “If the euro explodes, Europe would explode. It’s the guarantee of peace in a continent where there were terrible wars.” With this statement Nicolas Sarkozy acted as spokesman for a new approach to the Eurozone crisis, one that hinted at the repetition of a dreadful European past. He was joined in this strategy by Angela Merkel and Herman van Rompuy, who respectively declared that “History has taught us that countries with a joint currency don't go to war with one another”, and that "Together with the euro the Union will fall, and with the Union our greatest guarantee of peace”. Apart from the obvious rhetoric behind such statements, we can indeed wonder whether or not there is a danger that things are going to become a lot worse. Disturbing as this might seem, the historical record to which these politicians allude nevertheless allows us to argue that as long as we keep our reactions relatively moderate, a disaster surely does not need to come about.
