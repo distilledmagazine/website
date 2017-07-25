@@ -1,3 +1,4 @@
+var baseUrl = 'https://distilled.pm/'
 var target = 'www'
 
 var autoprefixer = require('autoprefixer')
@@ -29,12 +30,16 @@ gulp.task('magazine:articles', function () {
 })
 
 gulp.task('magazine:issues', folders('magazine', function (folder) {
-    var meta = {
-        url: 'https://distilled.pm/' + folder
+    var issueOpts = {
+        concat: true,
+        path: 'magazine-' + folder + '/index.html',
+        meta: {
+            url: baseUrl + folder
+        }
     }
 
     return gulp.src(path.join('magazine', folder, '**/*.md'))
-        .pipe(press({concat: true, path: 'magazine-' + folder + '/index.html', meta: meta}))
+        .pipe(press(issueOpts))
         .pipe(gulp.dest(target))
 })) 
 
@@ -82,7 +87,7 @@ function press (opts) {
 
         cb(null, new Vinyl({
             path: opts.path || 'index.html',
-            contents: new Buffer(doc(opts.meta || {url: 'https://distilled.pm'}, concat))
+            contents: new Buffer(doc(opts.meta || {url: baseUrl}, concat))
         }))
     })
 }
@@ -107,7 +112,7 @@ function jekyll (txt, slug) {
         content = txt
     }
     doc.content = marked(content)
-    doc.url = 'https://distilled.pm/' + slug
+    doc.url = baseUrl + slug
     
     return doc
 }
