@@ -3,7 +3,7 @@ title: Why Hitchens Matters
 publication: The Origin of Principles
 date: '2013-03-25 17:17:21 +0000'
 authors:
-- bjones
+- Ben Jones
 ---
 
 I must make one thing clear: Christopher Hitchens is one of my childhood heroes.

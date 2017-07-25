@@ -3,7 +3,7 @@ title: Roadmap to an Arms Trade Treaty
 publication: The Origin of Principles
 date: '2013-03-25 17:15:04 +0000'
 authors: 
-- cedelman
+- Christopher Edelman
 ---
 
 <a href="http://kabiza.com/Surviving-Rwanda-Genocide-story-of-girl.html">Monie</a>, age eight, lay shaking among a pile of dead corpses, waiting for the safety of nightfall to come so that she could make her way to Kigali. Only weeks earlier, she had witnessed Tutsis beating and shooting her father and raping and killing both her mother and sisters. Monie was now alone in the world, but somehow she managed to make her way to an orphanage where she found shelter, after being taken for dead like the many bodies strewn around her.

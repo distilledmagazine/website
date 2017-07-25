@@ -3,7 +3,7 @@ title: The Ascent of Technocracy
 publication: The Origin of Principles
 date: '2013-03-25 17:15:11 +0000'
 authors:
-- sshah
+- Sarang Shah
 ---
 
 Washington is on fire. Potomac parlours and palaces are ablaze with talk of the impending destruction of civility and credit ratings.

@@ -3,7 +3,7 @@ title: Turning Yourself In
 publication: The Origin of Principles
 date: '2013-03-25 17:35:27 +0000'
 authors:
-- mzuk
+- Michal Zuk
 ---
 
 Why do we turn ourselves in?

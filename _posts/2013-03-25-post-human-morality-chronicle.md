@@ -3,7 +3,7 @@ title: The Transhumanist Pendulum
 publication: The Origin of Principles
 date: '2013-03-25 17:16:53 +0000'
 authors:
-- gbickers
+- George Bickers
 ---
 
 Josh Trank and Matt Landis’ 2012 film <em>Chronicle</em> confronts an audience with what is ostensibly newly broken ground in the superhero genre. But even slightly scrape this outer facade and what one begins to see is a detailed - yet unvocalised - discussion on the ethical and moral standpoints occupied by trans-human characters within a definitively human social structure.

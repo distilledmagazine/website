@@ -3,7 +3,7 @@ title: The Gramscian Escape Route
 publication: The Origin of Principles
 date: '2013-03-25 17:18:45 +0000'
 authors:
-- dharris
+- Dylan Harris
 ---
 
 Think about democracy. Think about alternatives to democracy. What comes to mind?
