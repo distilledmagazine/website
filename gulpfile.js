@@ -14,7 +14,12 @@ var yml = require('js-yaml')
 var article = require('./elements/article.js')
 var head = require('./elements/head')
 
-gulp.task('default', ['assets', 'magazine:articles', 'styles'])
+gulp.task('default', [
+    'assets',
+    'magazine:articles',
+    'magazine:issues',
+    'styles'
+])
 
 gulp.task('magazine:articles', function () {
     return gulp.src('magazine/**/*.md')
@@ -29,7 +34,7 @@ gulp.task('magazine:issues', folders('magazine', function (folder) {
     }
 
     return gulp.src(path.join('magazine', folder, '**/*.md'))
-        .pipe(press({concat: true, path: folder + '/index.html', meta: meta}))
+        .pipe(press({concat: true, path: 'magazine-' + folder + '/index.html', meta: meta}))
         .pipe(gulp.dest(target))
 })) 
 
