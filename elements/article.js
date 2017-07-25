@@ -2,7 +2,7 @@ var html = require('choo/html')
 
 module.exports = function (article, emit) {
   return html`
-    <article style="background-image:url('${article.cover || '/fallback.jpg'}')">
+    <article style="background-image:url('${article.cover || '/covers/fallback.jpg'}')">
       <div class="surface">
         <header>
           Distilled Pamphlets

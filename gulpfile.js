@@ -8,6 +8,7 @@ var gulp = require('gulp')
 var marked = require('marked')
 var path = require('path')
 var postcss = require('gulp-postcss')
+var sort = require('gulp-sort')
 var through = require('through2')
 var Vinyl = require('vinyl')
 var yml = require('js-yaml')
@@ -16,20 +17,31 @@ var article = require('./elements/article.js')
 var head = require('./elements/head')
 
 gulp.task('default', [
-    'assets',
-    'magazine:articles',
-    'magazine:issues',
-    'styles'
+    'articles',
+    'landing',
+    'magazines',
+    'static',
+    'style'
 ])
 
-gulp.task('magazine:articles', function () {
-    return gulp.src('magazine/**/*.md')
+gulp.task('articles', function () {
+    return gulp.src(['magazine/**/*.md', 'pamphlets/*.md'])
         .pipe(press())
         .pipe(gulp.dest(target))
-    
 })
 
-gulp.task('magazine:issues', folders('magazine', function (folder) {
+gulp.task('landing', function() {
+    var landingOpts = {
+        concat: true
+    }
+
+    return gulp.src('pamphlets/*.md')
+        .pipe(sort({asc: false}))
+        .pipe(press(landingOpts))
+        .pipe(gulp.dest(target))
+})
+
+gulp.task('magazines', folders('magazine', function (folder) {
     var issueOpts = {
         concat: true,
         path: 'magazine-' + folder + '/index.html',
@@ -43,19 +55,19 @@ gulp.task('magazine:issues', folders('magazine', function (folder) {
         .pipe(gulp.dest(target))
 })) 
 
-gulp.task('styles', function() {
-  var plugins = [
-    autoprefixer(),
-    cssnano()
-  ]
+gulp.task('style', function() {
+    var plugins = [
+        autoprefixer(),
+        cssnano()
+    ]
 
-  return gulp.src('assets/style.css')
-    .pipe(postcss(plugins))
-    .pipe(gulp.dest(target))
+    return gulp.src('assets/style.css')
+        .pipe(postcss(plugins))
+        .pipe(gulp.dest(target))
 })
 
-gulp.task('assets', function() {
-  return gulp.src(['assets/**', '!**/*.css']).pipe(gulp.dest(target))
+gulp.task('static', function() {
+    return gulp.src(['assets/**', '!**/*.css']).pipe(gulp.dest(target))
 })
 
 /**
