@@ -17,7 +17,7 @@ module.exports.entry = function (doc) {
     <id>${doc.url}</id>
     <link href="${doc.url}" />
     <updated>${new Date(doc.date).toISOString()}</updated>
-    <content type="html">${doc.content}</content>
+    <content type="html">${escape(doc.content)}</content>
     ${doc.authors.map(author).join('\n')}
   </entry>`
 }
@@ -26,4 +26,13 @@ function author (name) {
   return `<author>
     <name>${name}</name>
   </author>`
+}
+
+function escape (content) {
+    return content
+        .replace(/\&/g, '&amp;')
+        .replace(/\>/g, '&gt;')
+        .replace(/\</g, '&lt;')
+        .replace(/\'/g, '&apos;')
+        .replace(/\"/g, '&quot;')
 }
