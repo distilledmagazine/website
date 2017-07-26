@@ -10,6 +10,7 @@ module.exports = function (opts) {
       ${link('canonical')(opts.url)}
       ${link('stylesheet')('/style.css')}
       ${opts.cover ? link('prefetch')(opts.cover) : ''}
+      <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Atom 0.3">
 
       ${opts.description ? meta('name', 'description')(opts.description) : ''}
       ${meta('name', 'google')('notranslate')}
@@ -17,7 +18,6 @@ module.exports = function (opts) {
       ${meta('name', 'subject')('Current affairs and culture')}
       ${meta('name', 'url')('https://distilled.pm')}
       ${meta('name', 'referrer')('origin')}
-
 
       ${meta('property', 'og:url')(opts.url)}
       ${opts.title ? meta('property', 'og:title')(opts.title) : ''}

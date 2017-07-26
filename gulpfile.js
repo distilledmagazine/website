@@ -1,6 +1,7 @@
 var baseUrl = 'https://distilled.pm/'
 var target = 'www'
 
+var atom = require('./atom')
 var autoprefixer = require('autoprefixer')
 var cssnano = require('cssnano')
 var folders = require('gulp-folders')
@@ -18,6 +19,7 @@ var head = require('./elements/head')
 
 gulp.task('default', [
     'articles',
+    'feed',
     'landing',
     'magazines',
     'static',
@@ -27,6 +29,18 @@ gulp.task('default', [
 gulp.task('articles', function () {
     return gulp.src(['magazine/**/*.md', 'pamphlets/*.md'])
         .pipe(press())
+        .pipe(gulp.dest(target))
+})
+
+gulp.task('feed', function () {
+    feedOpts = {
+        atom: true,
+        path: 'feed.xml'
+    }
+
+    return gulp.src('pamphlets/*.md')
+        .pipe(sort({asc: false}))
+        .pipe(press(feedOpts))
         .pipe(gulp.dest(target))
 })
 
@@ -78,28 +92,38 @@ function press (opts) {
         opts = {}
     }
     var concat = ''
+    var updated
 
     return through.obj(function (post, encoding, cb) {
         var name = path.basename(post.path, '.md').split('-').slice(3).join('-')
         var parsed = jekyll(post.contents.toString(), name)
-        var content = article(parsed).toString()
+        var content = opts.atom ? atom.entry(parsed) : article(parsed).toString()
+        updated = updated || parsed.date
 
-        if (opts.concat) {
+        if (opts.atom || opts.concat) {
             concat += content
             return cb()
         }
         cb(null, new Vinyl({
             path: name + '/index.html',
-            contents: new Buffer(doc(parsed, content))
+            contents: new Buffer(html(parsed, content))
         }))
     }, function (cb) {
         if (concat === '') {
             return cb()
         }
 
+        var contents
+        if (opts.atom) {
+            contents = atom.feed(concat, updated)
+        }
+        else {
+            contents = html(opts.meta || {url: baseUrl}, concat)
+        }
+
         cb(null, new Vinyl({
             path: opts.path || 'index.html',
-            contents: new Buffer(doc(opts.meta || {url: baseUrl}, concat))
+            contents: new Buffer(contents)
         }))
     })
 }
@@ -107,7 +131,7 @@ function press (opts) {
 /**
  * Helpers:
  */
-function doc (parsed, content) {
+function html (parsed, content) {
     return '<!doctype html><html>' + head(parsed) + '<body>' + content + '</body></html>'
 }
 
