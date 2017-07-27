@@ -1,9 +1,11 @@
 var baseUrl = 'https://distilled.pm/'
 var target = 'www'
 
+var Vinyl = require('vinyl')
 var atom = require('./atom')
 var autoprefixer = require('autoprefixer')
 var cssnano = require('cssnano')
+var deploy = require('gulp-deploy-ssh')
 var folders = require('gulp-folders')
 var gulp = require('gulp')
 var marked = require('marked')
@@ -11,7 +13,6 @@ var path = require('path')
 var postcss = require('gulp-postcss')
 var sort = require('gulp-sort')
 var through = require('through2')
-var Vinyl = require('vinyl')
 var yml = require('js-yaml')
 
 var article = require('./elements/article.js')
@@ -26,6 +27,19 @@ gulp.task('default', [
     'style'
 ])
 
+/**
+ * Deploy tasks
+ */
+gulp.task('login', deploy.login('pamphlets.me'))
+
+gulp.task('deploy', ['login'], function () {
+    return gulp.src(target + '/**/*').pipe(deploy['pamphlets.me'].dest('/var/www/distilled.pm'))
+})
+
+
+/**
+ * Build tasks
+ */
 gulp.task('articles', function () {
     return gulp.src(['magazine/**/*.md', 'pamphlets/*.md'])
         .pipe(press())
