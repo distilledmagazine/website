@@ -72,13 +72,14 @@ gulp.task('landing', function() {
 gulp.task('magazines', folders('magazine', function (folder) {
     var issueOpts = {
         concat: true,
-        path: 'magazine-' + folder + '/index.html',
+        path: 'distilled-magazine-' + folder + '/index.html',
         meta: {
             url: baseUrl + folder
         }
     }
 
     return gulp.src(path.join('magazine', folder, '**/*.md'))
+        .pipe(sort(editorials(folder)))
         .pipe(press(issueOpts))
         .pipe(gulp.dest(target))
 })) 
@@ -165,4 +166,30 @@ function jekyll (txt, slug) {
     doc.url = baseUrl + slug
     
     return doc
+}
+
+function editorials (folder) {
+    var files = [
+        '2012-07-22-letter-from-the-editor-in-chief.md',
+        '2012-10-31-ed-individualism-vs-collectivism.md',
+        '2013-03-25-the-origin-of-principles.md',
+        '2013-09-03-the-art-of-the-possible.md'
+    ]
+
+    if (folder === 'extra') {
+        return {asc : false}
+    }
+
+    return  {
+        asc: false,
+        comparator: function (a, b) {
+            if (files.indexOf(path.basename(a.path)) > -1) {
+                return 1
+            }
+            else if (files.indexOf(path.basename(b.path)) === -1) {
+                return -1
+            }
+            return 0
+        }
+    }
 }
