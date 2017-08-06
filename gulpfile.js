@@ -13,6 +13,7 @@ var path = require('path')
 var postcss = require('gulp-postcss')
 var sort = require('gulp-sort')
 var through = require('through2')
+var variables = require('postcss-css-variables')
 var yml = require('js-yaml')
 
 var article = require('./elements/article.js')
@@ -87,6 +88,7 @@ gulp.task('magazines', folders('magazine', function (folder) {
 gulp.task('style', function() {
     var plugins = [
         autoprefixer(),
+        variables(),
         cssnano()
     ]
 
