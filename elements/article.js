@@ -5,7 +5,7 @@ module.exports = function (article, emit) {
     <article style="background-image:url('${article.cover || '/covers/fallback.jpg'}')">
       <div class="surface">
         <header>
-          Distilled Pamphlets
+          ${article.header}
           <small>${article.publication}</small>
         </header>
         <hr>

@@ -114,6 +114,10 @@ function press (opts) {
     return through.obj(function (post, encoding, cb) {
         var name = path.basename(post.path, '.md').split('-').slice(3).join('-')
         var parsed = jekyll(post.contents.toString(), name)
+        parsed.header = path.dirname(post.path).includes('magazine')
+            ? 'Distilled Magazine'
+            : 'Distilled Pamphlets'
+
         var content = opts.atom ? atom.entry(parsed) : article(parsed).toString()
         updated = updated || parsed.date
 
