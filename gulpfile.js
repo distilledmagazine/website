@@ -16,8 +16,9 @@ var through = require('through2')
 var variables = require('postcss-css-variables')
 var yml = require('js-yaml')
 
-var article = require('./elements/article.js')
+var article = require('./elements/article')
 var head = require('./elements/head')
+var navigation = require('./elements/navigation')
 
 gulp.task('default', [
     'articles',
@@ -153,7 +154,7 @@ function press (opts) {
  * Helpers:
  */
 function html (parsed, content) {
-    return '<!doctype html><html>' + head(parsed) + '<body>' + content + '</body></html>'
+    return '<!doctype html><html>' + head(parsed) + '<body>' + content + navigation() + '</body></html>'
 }
 
 function jekyll (txt, slug) {
