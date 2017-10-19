@@ -1,11 +1,10 @@
 var baseUrl = 'https://distilled.pm/'
-var target = 'www'
+var target = 'public'
 
 var Vinyl = require('vinyl')
 var atom = require('./atom')
 var autoprefixer = require('autoprefixer')
 var cssnano = require('cssnano')
-var deploy = require('gulp-deploy-ssh')
 var folders = require('gulp-folders')
 var gulp = require('gulp')
 var marked = require('marked')
@@ -29,13 +28,43 @@ gulp.task('default', [
     'style'
 ])
 
-/**
- * Deploy tasks
- */
-gulp.task('login', deploy.login('pamphlets.me'))
 
-gulp.task('deploy', ['login'], function () {
-    return gulp.src(target + '/**/*').pipe(deploy['pamphlets.me'].dest('/var/www/distilled.pm'))
+/**
+ * Package tasks
+ */
+gulp.task('assets', ['default'], function () {
+    return gulp.src([target + '/**/*', '!' + target + '/**/index.html'])
+        .pipe(getRoutes())
+        .pipe(rust('assets.rs'))
+        .pipe(gulp.dest('src'))
+
+    function getRoutes() {
+        return through.obj(function (asset, _, cb) {
+            if (asset.isDirectory()) {
+                return cb()
+            }
+            cb(null, {
+                url: asset.path.replace(asset.base, ''),
+                file: asset.path
+            })
+        })
+    }
+})
+
+gulp.task('pages', ['default'], function () {
+    return gulp.src(target + '/**/index.html')
+        .pipe(getRoutes())
+        .pipe(rust('pages.rs'))
+        .pipe(gulp.dest('src'))
+
+    function getRoutes() {
+        return through.obj(function (page, _, cb) {
+            cb(null, {
+                url: page.path.replace(page.base, '').replace(/[\/]?index.html$/, ''),
+                file: page.path
+            })
+        })
+    }
 })
 
 
@@ -153,6 +182,36 @@ function press (opts) {
 /**
  * Helpers:
  */
+function rust (name) {
+    var routes = []
+
+    return through.obj(function (route, _, cb) {
+        routes.push(route)
+        cb()
+    }, function (cb) {
+        var module = `
+            #[derive(Clone, Debug, Hash, PartialEq)]
+            pub struct Route {
+                pub url: &'static str,
+                pub file: &'static [u8]
+            }
+
+            pub static ROUTES: &[Route; ${routes.length}] = &[
+                ${routes.map(struct).join(',\n')}
+            ];
+        `
+
+        cb(null, new Vinyl({
+            path: name,
+            contents: new Buffer(module)
+        }))
+    })
+
+    function struct (route) {
+        return `Route { url: "${route.url}", file: include_bytes!("${route.file}") }`
+    }
+} 
+
 function html (parsed, content) {
     return '<!doctype html><html>' + head(parsed) + '<body>' + content + navigation() + '</body></html>'
 }

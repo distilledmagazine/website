@@ -1,2 +1,5 @@
 node_modules
-www
+public
+src/assets.rs
+src/pages.rs
+target
