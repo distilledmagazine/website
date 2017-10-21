@@ -47,7 +47,7 @@ gulp.task('assets', function() {
 gulp.task('feed', function () {
     feedOpts = {
         atom: true,
-        path: 'feed.xml'
+        path: 'feed.atom'
     }
 
     return gulp.src('pamphlets/*.md')

@@ -10,7 +10,7 @@ module.exports = function (opts) {
       ${link('canonical')(opts.url)}
       ${link('stylesheet')('/style.css')}
       ${opts.cover ? link('prefetch')(opts.cover) : ''}
-      <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="Atom 0.3">
+      <link rel="alternate" href="/feed.atom" type="application/atom+xml" title="Atom 0.3">
 
       ${opts.description ? meta('name', 'description')(opts.description) : ''}
       ${meta('name', 'google')('notranslate')}
