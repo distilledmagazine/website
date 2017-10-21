@@ -3,5 +3,6 @@ name = "distilled"
 version = "0.0.0"
 
 [dependencies]
+argparse = "0.2"
 futures = "0.1"
 hyper = "0.11"

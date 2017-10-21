@@ -1,18 +1,31 @@
+extern crate argparse;
 extern crate futures;
 extern crate hyper;
 
 mod routes;
 
+use std::net::SocketAddr;
+use argparse::{ArgumentParser, Store};
 use futures::future::Future;
-use hyper::{Method, StatusCode};
+use hyper::StatusCode;
 use hyper::header::ContentType;
 use hyper::mime::Mime;
 use hyper::server::{Http, Request, Response, Service};
 use routes::{Route, ROUTES};
 
 fn main() {
-    let addr = "127.0.0.1:4000".parse().unwrap();
+    let mut port = 8080;
+    {
+        let mut ap = ArgumentParser::new();
+        ap.refer(&mut port).add_option(&["-p", "--port"], Store, "Port to start pamphlet server on");
+        ap.parse_args_or_exit();
+    }
+
+    let host = "0.0.0.0".parse().unwrap();
+    let addr = SocketAddr::new(host, port);
     let server = Http::new().bind(&addr, || Ok(Pamphlet)).unwrap();
+
+    println!("Pamphlet server running on http://localhost:{}", port);
     server.run().unwrap();
 }
 
