@@ -8,6 +8,7 @@ var cssnano = require('cssnano')
 var folders = require('gulp-folders')
 var gulp = require('gulp')
 var marked = require('marked')
+var mime = require('mime-types')
 var path = require('path')
 var postcss = require('gulp-postcss')
 var sort = require('gulp-sort')
@@ -161,7 +162,8 @@ function rustRoutes (name) {
             #[derive(Clone, Debug, Hash, PartialEq)]
             pub struct Route {
                 pub url: &'static str,
-                pub bytes: &'static [u8]
+                pub bytes: &'static [u8],
+                pub mime: &'static str
             }
 
             pub static ROUTES: &[Route; ${routes.length}] = &[
@@ -176,7 +178,7 @@ function rustRoutes (name) {
     })
 
     function struct (route) {
-        return `Route { url: "${route.url}", bytes: include_bytes!("${route.file}") }`
+        return `Route { url: "${route.url}", bytes: include_bytes!("${route.file}"), mime: "${mime.lookup(route.file)}" }`
     }
 } 
 
