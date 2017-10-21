@@ -142,9 +142,6 @@ function press (opts) {
     })
 }
 
-/**
- * Helpers:
- */
 function rustRoutes (name) {
     var routes = []
 
@@ -182,6 +179,10 @@ function rustRoutes (name) {
     }
 } 
 
+
+/**
+ * Helpers:
+ */
 function html (parsed, content) {
     return '<!doctype html><html>' + head(parsed) + '<body>' + content + navigation() + '</body></html>'
 }
