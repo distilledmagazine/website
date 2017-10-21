@@ -184,7 +184,7 @@ function rustRoutes (name) {
  * Helpers:
  */
 function html (parsed, content) {
-    return '<!doctype html><html>' + head(parsed) + '<body>' + content + navigation() + '</body></html>'
+    return '<!doctype html><html>' + head(parsed) + '<body>' + content /*+ navigation()*/ + '</body></html>'
 }
 
 function jekyll (txt, slug) {
