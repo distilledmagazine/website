@@ -1,5 +1,4 @@
 node_modules
 public
-src/assets.rs
-src/pages.rs
+src/routes.rs
 target

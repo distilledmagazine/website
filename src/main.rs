@@ -1,11 +1,7 @@
-mod assets;
-mod pages;
+mod routes;
 
 fn main() {
-    for route in pages::ROUTES.iter() {
-        println!("{:?}", route.url);
-    }
-    for route in assets::ROUTES.iter() {
+    for route in routes::ROUTES.iter() {
         println!("{:?}", route.url);
     }
 }

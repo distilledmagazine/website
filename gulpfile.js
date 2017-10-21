@@ -19,52 +19,14 @@ var article = require('./elements/article')
 var head = require('./elements/head')
 var navigation = require('./elements/navigation')
 
-gulp.task('default', [
-    'articles',
-    'feed',
-    'landing',
-    'magazines',
-    'static',
-    'style'
-])
-
 
 /**
  * Package tasks
  */
-gulp.task('assets', ['default'], function () {
-    return gulp.src([target + '/**/*', '!' + target + '/**/index.html'])
-        .pipe(getRoutes())
-        .pipe(rust('assets.rs'))
+gulp.task('routes', ['articles', 'assets', 'feed', 'landing', 'magazines', 'style'], function () {
+    return gulp.src(target + '/**/*')
+        .pipe(rustRoutes())
         .pipe(gulp.dest('src'))
-
-    function getRoutes() {
-        return through.obj(function (asset, _, cb) {
-            if (asset.isDirectory()) {
-                return cb()
-            }
-            cb(null, {
-                url: asset.path.replace(asset.base, ''),
-                file: asset.path
-            })
-        })
-    }
-})
-
-gulp.task('pages', ['default'], function () {
-    return gulp.src(target + '/**/index.html')
-        .pipe(getRoutes())
-        .pipe(rust('pages.rs'))
-        .pipe(gulp.dest('src'))
-
-    function getRoutes() {
-        return through.obj(function (page, _, cb) {
-            cb(null, {
-                url: page.path.replace(page.base, '').replace(/[\/]?index.html$/, ''),
-                file: page.path
-            })
-        })
-    }
 })
 
 
@@ -75,6 +37,10 @@ gulp.task('articles', function () {
     return gulp.src(['magazine/**/*.md', 'pamphlets/*.md'])
         .pipe(press())
         .pipe(gulp.dest(target))
+})
+
+gulp.task('assets', function() {
+    return gulp.src(['assets/**', '!**/*.css']).pipe(gulp.dest(target))
 })
 
 gulp.task('feed', function () {
@@ -125,10 +91,6 @@ gulp.task('style', function() {
     return gulp.src('assets/style.css')
         .pipe(postcss(plugins))
         .pipe(gulp.dest(target))
-})
-
-gulp.task('static', function() {
-    return gulp.src(['assets/**', '!**/*.css']).pipe(gulp.dest(target))
 })
 
 /**
@@ -182,18 +144,24 @@ function press (opts) {
 /**
  * Helpers:
  */
-function rust (name) {
+function rustRoutes (name) {
     var routes = []
 
-    return through.obj(function (route, _, cb) {
-        routes.push(route)
+    return through.obj(function (entry, _, cb) {
+        if (entry.isDirectory()) {
+            return cb()
+        }
+        routes.push({
+            url: entry.path.replace(entry.base, '').replace(/[\/]?index.html$/, ''),
+            file: entry.path
+        })
         cb()
     }, function (cb) {
         var module = `
             #[derive(Clone, Debug, Hash, PartialEq)]
             pub struct Route {
                 pub url: &'static str,
-                pub file: &'static [u8]
+                pub bytes: &'static [u8]
             }
 
             pub static ROUTES: &[Route; ${routes.length}] = &[
@@ -202,13 +170,13 @@ function rust (name) {
         `
 
         cb(null, new Vinyl({
-            path: name,
+            path: name || 'routes.rs',
             contents: new Buffer(module)
         }))
     })
 
     function struct (route) {
-        return `Route { url: "${route.url}", file: include_bytes!("${route.file}") }`
+        return `Route { url: "${route.url}", bytes: include_bytes!("${route.file}") }`
     }
 } 
 
