@@ -4,5 +4,8 @@ version = "0.0.0"
 
 [dependencies]
 argparse = "0.2"
+dns-parser = "0.7"
 futures = "0.1"
 hyper = "0.11"
+
+mdns = { git = "https://github.com/plietar/rust-mdns" }

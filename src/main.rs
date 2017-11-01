@@ -1,6 +1,8 @@
 extern crate argparse;
+extern crate dns_parser;
 extern crate futures;
 extern crate hyper;
+extern crate mdns;
 
 mod routes;
 
@@ -24,6 +26,9 @@ fn main() {
     let host = "0.0.0.0".parse().unwrap();
     let addr = SocketAddr::new(host, port);
     let server = Http::new().bind(&addr, || Ok(Pamphlet)).unwrap();
+
+    let responder = mdns::Responder::new().unwrap();
+    let _service = responder.register("_http._tcp".to_owned(), "Distilled Pamphlets".to_owned(), port, &["path=/"]);
 
     println!("Pamphlet server running on http://localhost:{}", port);
     server.run().unwrap();
