@@ -10,7 +10,7 @@ use std::net::SocketAddr;
 use argparse::{ArgumentParser, Store};
 use futures::future::Future;
 use hyper::StatusCode;
-use hyper::header::ContentType;
+use hyper::header::{ContentLength, ContentType};
 use hyper::mime::Mime;
 use hyper::server::{Http, Request, Response, Service};
 use routes::{Route, ROUTES};
@@ -65,6 +65,7 @@ impl Service for Pamphlet {
         match Pamphlet::match_route(req.path()) {
             Some(route) => {
                 let mime: Mime = route.mime.parse().unwrap();
+                response.headers_mut().set(ContentLength(route.bytes.len() as u64));
                 response.headers_mut().set(ContentType(mime));
                 response.set_body(route.bytes);
             },
