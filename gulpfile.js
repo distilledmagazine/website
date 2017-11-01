@@ -4,6 +4,7 @@ var target = 'public'
 var Vinyl = require('vinyl')
 var atom = require('./atom')
 var autoprefixer = require('autoprefixer')
+var cp = require('child_process')
 var cssnano = require('cssnano')
 var folders = require('gulp-folders')
 var gulp = require('gulp')
@@ -24,6 +25,13 @@ var navigation = require('./elements/navigation')
 /**
  * Package tasks
  */
+gulp.task('default', ['routes'], function (done) {
+    var cargo = cp.spawn('cargo', ['build', '--release'])
+    cargo.stdout.pipe(process.stdout)
+    cargo.stderr.pipe(process.stderr)
+    cargo.on('close', done)
+})
+
 gulp.task('routes', ['articles', 'assets', 'feed', 'landing', 'magazines', 'style'], function () {
     return gulp.src(target + '/**/*')
         .pipe(rustRoutes())
