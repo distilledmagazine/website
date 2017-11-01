@@ -35,7 +35,7 @@ gulp.task('routes', ['articles', 'assets', 'feed', 'landing', 'magazines', 'styl
  * Build tasks
  */
 gulp.task('articles', function () {
-    return gulp.src(['magazine/**/*.md', 'pamphlets/*.md'])
+    return gulp.src(['content/magazine/**/*.md', 'content/pamphlets/*.md'])
         .pipe(press())
         .pipe(gulp.dest(target))
 })
@@ -50,7 +50,7 @@ gulp.task('feed', function () {
         path: 'feed.atom'
     }
 
-    return gulp.src('pamphlets/*.md')
+    return gulp.src('content/pamphlets/*.md')
         .pipe(sort({asc: false}))
         .pipe(press(feedOpts))
         .pipe(gulp.dest(target))
@@ -61,13 +61,13 @@ gulp.task('landing', function() {
         concat: true
     }
 
-    return gulp.src('pamphlets/*.md')
+    return gulp.src('content/pamphlets/*.md')
         .pipe(sort({asc: false}))
         .pipe(press(landingOpts))
         .pipe(gulp.dest(target))
 })
 
-gulp.task('magazines', folders('magazine', function (folder) {
+gulp.task('magazines', folders('content/magazine', function (folder) {
     var issueOpts = {
         concat: true,
         path: 'distilled-magazine-' + folder + '/index.html',
@@ -76,7 +76,7 @@ gulp.task('magazines', folders('magazine', function (folder) {
         }
     }
 
-    return gulp.src(path.join('magazine', folder, '**/*.md'))
+    return gulp.src(path.join('content', 'magazine', folder, '**/*.md'))
         .pipe(sort(editorials(folder)))
         .pipe(press(issueOpts))
         .pipe(gulp.dest(target))
