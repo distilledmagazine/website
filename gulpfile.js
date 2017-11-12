@@ -23,6 +23,13 @@ var navigation = require('./elements/navigation')
 
 
 /**
+ * Content sources
+ */
+var articles = gulp.src(['content/magazine/**/*.md', 'content/pamphlets/*.md'])
+var pamphlets = gulp.src('content/pamphlets/*.md')
+
+
+/**
  * Package tasks
  */
 gulp.task('default', ['routes'], function (done) {
@@ -32,7 +39,7 @@ gulp.task('default', ['routes'], function (done) {
     cargo.on('close', done)
 })
 
-gulp.task('routes', ['articles', 'assets', 'feed', 'landing', 'magazines', 'style'], function () {
+gulp.task('routes', ['site'], function () {
     return gulp.src(target + '/**/*')
         .pipe(rustRoutes())
         .pipe(gulp.dest('src'))
@@ -42,14 +49,10 @@ gulp.task('routes', ['articles', 'assets', 'feed', 'landing', 'magazines', 'styl
 /**
  * Build tasks
  */
-gulp.task('articles', function () {
-    return gulp.src(['content/magazine/**/*.md', 'content/pamphlets/*.md'])
-        .pipe(press())
-        .pipe(gulp.dest(target))
-})
+gulp.task('site', ['articles', 'feed', 'landing', 'magazines', 'style', 'assets'])
 
-gulp.task('assets', function() {
-    return gulp.src(['assets/**', '!**/*.css']).pipe(gulp.dest(target))
+gulp.task('articles', function () {
+    return articles.pipe(press()).pipe(gulp.dest(target))
 })
 
 gulp.task('feed', function () {
@@ -58,8 +61,7 @@ gulp.task('feed', function () {
         path: 'feed.atom'
     }
 
-    return gulp.src('content/pamphlets/*.md')
-        .pipe(sort({asc: false}))
+    return pamphlets.pipe(sort({asc: false}))
         .pipe(press(feedOpts))
         .pipe(gulp.dest(target))
 })
@@ -69,8 +71,7 @@ gulp.task('landing', function() {
         concat: true
     }
 
-    return gulp.src('content/pamphlets/*.md')
-        .pipe(sort({asc: false}))
+    return pamphlets.pipe(sort({asc: false}))
         .pipe(press(landingOpts))
         .pipe(gulp.dest(target))
 })
@@ -101,6 +102,11 @@ gulp.task('style', function() {
         .pipe(postcss(plugins))
         .pipe(gulp.dest(target))
 })
+
+gulp.task('assets', function() {
+    return gulp.src(['assets/**', '!**/*.css']).pipe(gulp.dest(target))
+})
+
 
 /**
  * Plugins:
