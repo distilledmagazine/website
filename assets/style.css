@@ -25,6 +25,7 @@ body {
   color: var(--txt);
   font-family: var(--serif);
   font-size: 1.4rem;
+  -webkit-text-stroke: .05px black;
 }
 
 /**
