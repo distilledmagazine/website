@@ -146,7 +146,7 @@ article {
   background-attachment: fixed;
 }
 article .surface {
-  background-color: hsl(31, 87%, 94%, .87);
+  background-color: hsl(31, 87%, 94%, .91);
   padding-bottom: 100vh;
 }
 article .surface > hr {
