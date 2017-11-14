@@ -25,8 +25,16 @@ var navigation = require('./elements/navigation')
 /**
  * Content sources
  */
-var articles = gulp.src(['content/magazine/**/*.md', 'content/pamphlets/*.md'])
-var pamphlets = gulp.src('content/pamphlets/*.md')
+var globs = {
+    articles: ['content/magazine/**/*.md', 'content/pamphlets/*.md'],
+    assets: ['assets/**', '!**/*.css'],
+    magazine: 'content/magazine/**/*.md',
+    pamphlets: 'content/pamphlets/*.md',
+    style: 'assets/style.css'
+}
+
+var articles = gulp.src(globs['articles'])
+var pamphlets = gulp.src(globs['pamphlets'])
 
 
 /**
@@ -98,13 +106,13 @@ gulp.task('style', function() {
         cssnano()
     ]
 
-    return gulp.src('assets/style.css')
+    return gulp.src(globs['style'])
         .pipe(postcss(plugins))
         .pipe(gulp.dest(target))
 })
 
 gulp.task('assets', function() {
-    return gulp.src(['assets/**', '!**/*.css']).pipe(gulp.dest(target))
+    return gulp.src(globs.assets).pipe(gulp.dest(target))
 })
 
 
