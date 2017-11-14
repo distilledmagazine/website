@@ -147,7 +147,7 @@ article {
 }
 article .surface {
   background-color: hsl(31, 87%, 94%, .91);
-  padding-bottom: 100vh;
+  padding-bottom: 62vh;
 }
 article .surface > hr {
   border: none;
