@@ -122,7 +122,7 @@ gulp.task('assets', function() {
  */
 gulp.task('watch', ['site'], function() {
     gulp.watch(globs['articles'], ['articles'])
-    gulp.watch(globs['pamphlets'], ['feed', 'landig'])
+    gulp.watch(globs['pamphlets'], ['feed', 'landing'])
     gulp.watch(globs['magazines'], ['magazines'])
     gulp.watch(globs['style'], ['style'])
     gulp.watch(globs['assets'], ['assets'])
