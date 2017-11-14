@@ -8,6 +8,7 @@ var cp = require('child_process')
 var cssnano = require('cssnano')
 var folders = require('gulp-folders')
 var gulp = require('gulp')
+var live = require('live-server')
 var marked = require('marked')
 var mime = require('mime-types')
 var path = require('path')
@@ -28,7 +29,7 @@ var navigation = require('./elements/navigation')
 var globs = {
     articles: ['content/magazine/**/*.md', 'content/pamphlets/*.md'],
     assets: ['assets/**', '!**/*.css'],
-    magazine: 'content/magazine/**/*.md',
+    magazines: 'content/magazine/**/*.md',
     pamphlets: 'content/pamphlets/*.md',
     style: 'assets/style.css'
 }
@@ -113,6 +114,27 @@ gulp.task('style', function() {
 
 gulp.task('assets', function() {
     return gulp.src(globs.assets).pipe(gulp.dest(target))
+})
+
+
+/**
+ * Development tasks
+ */
+gulp.task('watch', ['site'], function() {
+    gulp.watch(globs['articles'], ['articles'])
+    gulp.watch(globs['pamphlets'], ['feed', 'landig'])
+    gulp.watch(globs['magazines'], ['magazines'])
+    gulp.watch(globs['style'], ['style'])
+    gulp.watch(globs['assets'], ['assets'])
+})
+
+gulp.task('serve', ['watch'], function() {
+    live.start({
+        port: 1789,
+        root: './public',
+        open: false,
+        logLevel: 2
+    })
 })
 
 

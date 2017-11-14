@@ -8,6 +8,7 @@
     "gulp-postcss": "^7.0.0",
     "gulp-sort": "^2.0.0",
     "js-yaml": "^3.9.0",
+    "live-server": "^1.2.0",
     "marked": "^0.3.6",
     "mime-types": "^2.1.17",
     "postcss-css-variables": "^0.7.0",
