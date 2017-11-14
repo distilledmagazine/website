@@ -18,17 +18,14 @@ var through = require('through2')
 var variables = require('postcss-css-variables')
 var yml = require('js-yaml')
 
-var article = require('./elements/article')
-var head = require('./elements/head')
-var navigation = require('./elements/navigation')
-
 
 /**
  * Content sources
  */
 var globs = {
     articles: ['content/magazine/**/*.md', 'content/pamphlets/*.md'],
-    assets: ['assets/**', '!**/*.css'],
+    assets: ['assets/**', '!assets/**/*.css'],
+    elements: 'elements/*.js',
     magazines: 'content/magazine/**/*.md',
     pamphlets: 'content/pamphlets/*.md',
     style: 'assets/style.css'
@@ -124,6 +121,7 @@ gulp.task('watch', ['site'], function() {
     gulp.watch(globs['articles'], ['articles'])
     gulp.watch(globs['pamphlets'], ['feed', 'landing'])
     gulp.watch(globs['magazines'], ['magazines'])
+    gulp.watch(globs['elements'], ['articles', 'landing'])
     gulp.watch(globs['style'], ['style'])
     gulp.watch(globs['assets'], ['assets'])
 })
@@ -155,7 +153,7 @@ function press (opts) {
             ? 'Distilled Magazine'
             : 'Distilled Pamphlets'
 
-        var content = opts.atom ? atom.entry(parsed) : article(parsed).toString()
+        var content = opts.atom ? atom.entry(parsed) : require('./elements/article')(parsed).toString()
         updated = updated || parsed.date
 
         if (opts.atom || opts.concat) {
@@ -228,7 +226,7 @@ function rustRoutes (name) {
  * Helpers:
  */
 function html (parsed, content) {
-    return '<!doctype html><html>' + head(parsed) + '<body>' + content /*+ navigation()*/ + '</body></html>'
+    return '<!doctype html><html>' + require('./elements/head')(parsed) + '<body>' + content /*+ require('./elements/navigation')()*/ + '</body></html>'
 }
 
 function jekyll (txt, slug) {
