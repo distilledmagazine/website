@@ -10,7 +10,7 @@ module.exports = function (article, emit) {
           <small>${article.publication}</small>
         </header>
         <section class="info">
-          <h1><a href=${article.url}>${article.title}</a></h1>
+          <h1><a href=${article.slug}>${article.title}</a></h1>
           ${article.authors.sort().map(author)}
         </section>
         ${content(article)}

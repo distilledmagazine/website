@@ -242,6 +242,7 @@ function jekyll (txt, slug) {
         content = txt
     }
     doc.content = marked(content)
+    doc.slug = '/' + slug
     doc.url = baseUrl + slug
     
     return doc
