@@ -31,9 +31,11 @@ body {
 /**
  * Basic elements:
  */
+h1, h2 {
+  font-variant: small-caps;
+}
 h1 {
   font-size: 2.4rem;
-  font-variant: small-caps;
   font-weight: bold;
 }
 * + p,
