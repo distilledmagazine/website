@@ -79,11 +79,13 @@ button {
  */
 header {
   background-color: var(--surface);
-  border-bottom: 5px solid;
-  border-bottom-color: var(--accent);
+  border-bottom: 5px solid var(--accent);
+  border-top: 5px solid var(--accent);
   font-weight: bold;
-  margin-bottom: 1.62em;
   padding: 1rem;
+  position: sticky;
+  top: 1rem;
+  z-index: 1;
 }
 header small {
   float: right;
@@ -98,17 +100,7 @@ article {
 }
 article .surface {
   background-color: hsl(31, 87%, 94%, .91);
-  padding-bottom: 62vh;
-}
-article .surface > hr {
-  border: none;
-  border-top: 5px solid var(--accent);
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-article .surface > hr:before {
-  content: '';
+  padding-bottom: 100vh;
 }
 article:first-child .surface {
   padding-top: calc(100vh - 4em);
@@ -118,6 +110,7 @@ article:last-child {
 }
 article section {
   display: inline-block;
+  margin-top: 1.62em;
   padding: 1rem;
 }
 article .content {
@@ -128,7 +121,7 @@ article .info {
   float: right;
   max-width: 19rem;
   position: sticky;
-  top: 0;
+  top: 5rem;
   text-align: right;
 }
 article .author {
@@ -141,6 +134,9 @@ article .author + .author {
 }
 
 @media (max-width: 50rem) {
+  header {
+    position: static;
+  }
   article .info {
     float: unset;
     max-width: 100%;
