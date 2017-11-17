@@ -137,7 +137,7 @@ gulp.task('serve', ['watch'], function() {
 gulp.task('routes', ['site'], function () {
     return gulp.src(target + '/**/*')
         .pipe(staticFilesToRust())
-        .pipe(gulp.dest('src'))
+        .pipe(gulp.dest('server'))
 })
 
 gulp.task('default', ['routes'], function (done) {

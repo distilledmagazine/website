@@ -2,6 +2,10 @@
 name = "distilled"
 version = "0.0.0"
 
+[[bin]]
+name = "distilled"
+path = "server/main.rs"
+
 [dependencies]
 argparse = "0.2"
 dns-parser = "0.7"

@@ -1,4 +1,4 @@
 node_modules
 public
-src/routes.rs
+server/routes.rs
 target
