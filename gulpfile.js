@@ -11,6 +11,7 @@ var cssnano = require('cssnano')
 var del =  require('del')
 var folders = require('gulp-folders')
 var gulp = require('gulp')
+var gutil = require('gulp-util')
 var live = require('live-server')
 var marked = require('marked')
 var mime = require('mime-types')
@@ -299,9 +300,17 @@ function editorials (folder) {
 }
 
 function stream (path, contents, cb) {
+    if (verbose()) {
+        gutil.log('Streaming', path)
+    }
+
     var file = new Vinyl({
         path: path,
         contents: new Buffer(contents)
     })
     cb(null, file)
+}
+
+function verbose () {
+    return process.argv.indexOf('--verbose') !== -1
 }

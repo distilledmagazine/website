@@ -9,6 +9,7 @@
     "gulp-folders": "^1.1.0",
     "gulp-postcss": "^7.0.0",
     "gulp-sort": "^2.0.0",
+    "gulp-util": "^3.0.8",
     "js-yaml": "^3.10.0",
     "live-server": "^1.2.0",
     "marked": "^0.3.6",
