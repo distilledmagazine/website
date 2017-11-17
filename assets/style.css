@@ -81,6 +81,7 @@ header {
   background-color: var(--surface);
   border-bottom: 5px solid var(--accent);
   border-top: 5px solid var(--accent);
+  display: block !important;
   font-weight: bold;
   padding: 1rem;
   position: sticky;
