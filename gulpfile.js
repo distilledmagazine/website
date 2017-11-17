@@ -116,9 +116,12 @@ gulp.task('watch', ['site'], function() {
     gulp.watch(globs['articles'], ['articles'])
     gulp.watch(globs['pamphlets'], ['feed', 'landing'])
     gulp.watch(globs['magazines'], ['magazines'])
-    gulp.watch(globs['elements'], ['articles', 'landing'])
     gulp.watch(globs['style'], ['style'])
     gulp.watch(globs['assets'], ['assets'])
+
+    gulp.watch(globs['elements'], ['articles', 'landing', 'magazines']).on('change', function(change) {
+        delete require.cache[change.path]
+    })
 })
 
 gulp.task('serve', ['watch'], function() {
