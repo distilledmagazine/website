@@ -210,7 +210,7 @@ function jsonPostsToPage (filename, data) {
     })
 
     function wrap (data, content) {
-        return '<!doctype html><html>' + require('./elements/head')(data) + '<body>' + content /*+ require('./elements/navigation')()*/ + '</body></html>'
+        return '<!doctype html><html>' + require('./elements/head')(data) + '<body>' + content + '</body></html>'
     }
 }
 

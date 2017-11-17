@@ -75,55 +75,6 @@ button {
 }
 
 /**
- * Site navigation:
- */
-nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-
-  display: flex;
-  font-size: 1rem;
-  opacity: .38;
-  overflow: hidden;
-  padding: 1rem;
-}
-nav:hover {
-  background-color: var(--surface);
-  border-bottom: 5px solid;
-  border-bottom-color: var(--accent);
-  opacity: 1;
-}
-nav * {
-  display: inline;
-}
-nav label {
-  font-weight: bold;
-}
-nav label:after {
-  content: ':';
-}
-nav ul {
-  list-style: none;
-  margin-left: .5em;
-  white-space: nowrap;
-}
-nav li {
-  padding: 0 .5em;
-}
-nav > ul {
-  animation: slide 15s infinite linear;
-}
-nav:hover > ul {
-  animation-play-state: paused;
-}
-@keyframes slide {
-  from { transform: translate(100%); }
-  to { transform: translate(-100%); }
-}
-
-/**
  * Layout styles:
  */
 header {
