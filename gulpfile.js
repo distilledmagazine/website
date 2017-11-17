@@ -44,6 +44,7 @@ gulp.task('prepare', function() {
         .pipe(changed(target))
         .pipe(sort({asc: false}))
         .pipe(jekyllPostToJson())
+        .pipe(collectJsonPosts())
 })
 
 gulp.task('clean', function () {
@@ -75,14 +76,12 @@ gulp.task('assets', function() {
 })
 
 gulp.task('feed', ['prepare'], function () {
-    return pamphlets.pipe(collectJsonPosts())
-        .pipe(jsonPostsToFeed('feed.atom'))
+    return pamphlets.pipe(jsonPostsToFeed('feed.atom'))
         .pipe(gulp.dest(target))
 })
 
 gulp.task('landing', ['prepare'], function() {
-    return pamphlets.pipe(collectJsonPosts())
-        .pipe(jsonPostsToPage('index.html'))
+    return pamphlets.pipe(jsonPostsToPage('index.html'))
         .pipe(gulp.dest(target))
 })
 
