@@ -1,11 +1,14 @@
+var articles, pamphlets
 var baseUrl = 'https://distilled.pm/'
 var target = 'public'
 
 var Vinyl = require('vinyl')
 var atom = require('./atom')
 var autoprefixer = require('autoprefixer')
+var changed = require('gulp-changed')
 var cp = require('child_process')
 var cssnano = require('cssnano')
+var del =  require('del')
 var folders = require('gulp-folders')
 var gulp = require('gulp')
 var live = require('live-server')
@@ -31,69 +34,64 @@ var globs = {
     style: 'assets/style.css'
 }
 
-var articles = gulp.src(globs['articles'])
-var pamphlets = gulp.src(globs['pamphlets'])
+gulp.task('prepare', function() {
+    articles = gulp.src(globs['articles'])
+        .pipe(changed(target))
+        .pipe(jekyllPostToJson())
 
-
-/**
- * Package tasks
- */
-gulp.task('default', ['routes'], function (done) {
-    var cargo = cp.spawn('cargo', ['build', '--release'])
-    cargo.stdout.pipe(process.stdout)
-    cargo.stderr.pipe(process.stderr)
-    cargo.on('close', done)
+    pamphlets = gulp.src(globs['pamphlets'])
+        .pipe(changed(target))
+        .pipe(sort({asc: false}))
+        .pipe(jekyllPostToJson())
 })
 
-gulp.task('routes', ['site'], function () {
-    return gulp.src(target + '/**/*')
-        .pipe(rustRoutes())
-        .pipe(gulp.dest('src'))
+gulp.task('clean', function () {
+    return del(target)
 })
 
 
 /**
  * Build tasks
  */
-gulp.task('site', ['articles', 'feed', 'landing', 'magazines', 'style', 'assets'])
+gulp.task('site', [
+    'articles',
+    'assets',
+    'feed',
+    'landing',
+    'magazines',
+    'style'
+])
 
-gulp.task('articles', function () {
-    return articles.pipe(press()).pipe(gulp.dest(target))
-})
-
-gulp.task('feed', function () {
-    feedOpts = {
-        atom: true,
-        path: 'feed.atom'
-    }
-
-    return pamphlets.pipe(sort({asc: false}))
-        .pipe(press(feedOpts))
+gulp.task('articles', ['prepare'], function () {
+    return articles.pipe(jsonPostsToPage())
         .pipe(gulp.dest(target))
 })
 
-gulp.task('landing', function() {
-    var landingOpts = {
-        concat: true
-    }
+gulp.task('assets', function() {
+    return gulp.src(globs['assets'])
+        .pipe(changed(target))
+        .pipe(gulp.dest(target))
+})
 
-    return pamphlets.pipe(sort({asc: false}))
-        .pipe(press(landingOpts))
+gulp.task('feed', ['prepare'], function () {
+    return pamphlets.pipe(collectJsonPosts())
+        .pipe(jsonPostsToFeed('feed.atom'))
+        .pipe(gulp.dest(target))
+})
+
+gulp.task('landing', ['prepare'], function() {
+    return pamphlets.pipe(collectJsonPosts())
+        .pipe(jsonPostsToPage('index.html'))
         .pipe(gulp.dest(target))
 })
 
 gulp.task('magazines', folders('content/magazine', function (folder) {
-    var issueOpts = {
-        concat: true,
-        path: 'distilled-magazine-' + folder + '/index.html',
-        meta: {
-            url: baseUrl + folder
-        }
-    }
-
     return gulp.src(path.join('content', 'magazine', folder, '**/*.md'))
+        .pipe(changed(target))
         .pipe(sort(editorials(folder)))
-        .pipe(press(issueOpts))
+        .pipe(jekyllPostToJson())
+        .pipe(collectJsonPosts('distilled-magazine-' + folder + '.json'))
+        .pipe(jsonPostsToPage(false, {url: baseUrl + folder}))
         .pipe(gulp.dest(target))
 })) 
 
@@ -105,12 +103,9 @@ gulp.task('style', function() {
     ]
 
     return gulp.src(globs['style'])
+        .pipe(changed(target))
         .pipe(postcss(plugins))
         .pipe(gulp.dest(target))
-})
-
-gulp.task('assets', function() {
-    return gulp.src(globs.assets).pipe(gulp.dest(target))
 })
 
 
@@ -137,54 +132,105 @@ gulp.task('serve', ['watch'], function() {
 
 
 /**
+ * Package tasks
+ */
+gulp.task('routes', ['site'], function () {
+    return gulp.src(target + '/**/*')
+        .pipe(staticFilesToRust())
+        .pipe(gulp.dest('src'))
+})
+
+gulp.task('default', ['routes'], function (done) {
+    var cargo = cp.spawn('cargo', ['build', '--release'])
+    cargo.stdout.pipe(process.stdout)
+    cargo.stderr.pipe(process.stderr)
+    cargo.on('close', done)
+})
+
+
+/**
  * Plugins:
  */
-function press (opts) {
+function jekyllPostToJson (opts) {
     if (!opts) {
         opts = {}
     }
-    var concat = ''
-    var updated
 
-    return through.obj(function (post, encoding, cb) {
-        var name = path.basename(post.path, '.md').split('-').slice(3).join('-')
-        var parsed = jekyll(post.contents.toString(), name)
-        parsed.header = path.dirname(post.path).includes('magazine')
-            ? 'Distilled Magazine'
-            : 'Distilled Pamphlets'
+    return through.obj(function (doc, encoding, cb) {
+        var post, content
+        var slug = path.basename(doc.path, '.md').split('-').slice(3).join('-')
+        var txt = doc.contents.toString()
 
-        var content = opts.atom ? atom.entry(parsed) : require('./elements/article')(parsed).toString()
-        updated = updated || parsed.date
-
-        if (opts.atom || opts.concat) {
-            concat += content
-            return cb()
+        if (/^---\n/.test(txt)) {
+            var parts = txt.split('\n---\n')
+            post = yml.safeLoad(parts[0].replace(/^---\n/, ''))
+            content = parts.slice(1).join('\n---\n').replace(/^\n/, '')
+        } else {
+            post = {}
+            content = txt
         }
-        cb(null, new Vinyl({
-            path: name + '/index.html',
-            contents: new Buffer(html(parsed, content))
-        }))
-    }, function (cb) {
-        if (concat === '') {
-            return cb()
-        }
+        post.content = marked(content)
+        post.header = path.dirname(doc.path).includes('magazine') ? 'Distilled Magazine' : 'Distilled Pamphlets'
+        post.slug = '/' + slug
+        post.url = baseUrl + slug
 
-        var contents
-        if (opts.atom) {
-            contents = atom.feed(concat, updated)
-        }
-        else {
-            contents = html(opts.meta || {url: baseUrl}, concat)
-        }
-
-        cb(null, new Vinyl({
-            path: opts.path || 'index.html',
-            contents: new Buffer(contents)
-        }))
+        stream(slug + '.json', JSON.stringify(post, opts.replacer, opts.space), cb)
     })
 }
 
-function rustRoutes (name) {
+function collectJsonPosts (filename) {
+    var array = '['
+
+    return through.obj(function (doc, encoding, cb) {
+        array += doc.contents.toString()
+        array += ','
+        cb()
+    }, function (cb) {
+        filename = filename || 'posts.json'
+        array = array.replace(/\,$/, '') + ']'
+        stream(filename, array, cb)
+    })
+}
+
+function jsonPostsToPage (filename, data) {
+    return through.obj(function (doc, encoding, cb) {
+        var content
+        var posts = JSON.parse(doc.contents.toString())
+        var layout = require('./elements/article')
+
+        if (Array.isArray(posts)) {
+            data = data || {url: baseUrl}
+            content = posts.map(layout).join('\n')
+        } else {
+            data = posts
+            content = layout(data)
+        }
+        filename = filename  || doc.path.replace(/\.json$/, '/index.html')
+        stream(filename, wrap(data, content), cb)
+    })
+
+    function wrap (data, content) {
+        return '<!doctype html><html>' + require('./elements/head')(data) + '<body>' + content /*+ require('./elements/navigation')()*/ + '</body></html>'
+    }
+}
+
+function jsonPostsToFeed (filename) {
+    return through.obj(function (doc, encoding, cb) {
+        var content, updated
+        var posts = JSON.parse(doc.contents.toString())
+
+        if (Array.isArray(posts)) {
+            updated = posts[0].date
+            content = posts.map(atom.entry).join('\n')
+        } else {
+            throw 'Atom feed can only be generated from a collection'
+        }
+        filename = filename || doc.path.replace(/\.json$/, '.atom')
+        stream(filename, atom.feed(content, updated), cb)
+    })
+}
+
+function staticFilesToRust (filename) {
     var routes = []
 
     return through.obj(function (entry, _, cb) {
@@ -210,10 +256,8 @@ function rustRoutes (name) {
             ];
         `
 
-        cb(null, new Vinyl({
-            path: name || 'routes.rs',
-            contents: new Buffer(module)
-        }))
+        filename = filename || 'routes.rs',
+        stream(filename, module, cb)
     })
 
     function struct (route) {
@@ -225,29 +269,6 @@ function rustRoutes (name) {
 /**
  * Helpers:
  */
-function html (parsed, content) {
-    return '<!doctype html><html>' + require('./elements/head')(parsed) + '<body>' + content /*+ require('./elements/navigation')()*/ + '</body></html>'
-}
-
-function jekyll (txt, slug) {
-    var doc, content
-
-    if (/^---\n/.test(txt)) {
-        var parts = txt.split('\n---\n')
-        doc = yml.safeLoad(parts[0].replace(/^---\n/, ''))
-        content = parts.slice(1).join('\n---\n').replace(/^\n/, '')
-    }
-    else {
-        doc = {}
-        content = txt
-    }
-    doc.content = marked(content)
-    doc.slug = '/' + slug
-    doc.url = baseUrl + slug
-    
-    return doc
-}
-
 function editorials (folder) {
     var files = [
         '2012-07-22-letter-from-the-editor-in-chief.md',
@@ -272,4 +293,12 @@ function editorials (folder) {
             return 0
         }
     }
+}
+
+function stream (path, contents, cb) {
+    var file = new Vinyl({
+        path: path,
+        contents: new Buffer(contents)
+    })
+    cb(null, file)
 }
