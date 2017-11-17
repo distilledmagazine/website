@@ -109,7 +109,8 @@ article:first-child .surface {
 article:last-child {
   border-bottom: 5px solid var(--accent);
 }
-article section {
+article .content,
+article .info {
   display: inline-block;
   margin-top: 1.62em;
   padding: 1rem;

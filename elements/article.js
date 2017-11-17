@@ -8,10 +8,10 @@ module.exports = function (article, emit) {
           ${article.header}
           <small>${article.publication}</small>
         </header>
-        <section class="info">
+        <div class="info">
           <h1><a href=${article.slug}>${article.title}</a></h1>
           ${article.authors.sort().map(author)}
-        </section>
+        </div>
         ${content(article)}
       </div>
     </article>
@@ -25,10 +25,11 @@ function author (name) {
 }
 
 function content (article) {
-  var section = html`<section class="content"></section>`
-  section.innerHTML = article.date ? article.content + date(article.date) : article.content
-
-  return section
+  var content = html`<div class="content"></div>`
+  content.innerHTML = article.date ?
+        article.content + date(article.date) :
+        article.content
+  return content
 }
 
 function date (input) {
