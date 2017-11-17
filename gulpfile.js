@@ -197,7 +197,7 @@ function collectJsonPosts (filename) {
 
 function jsonPostsToPage (filename, data) {
     return through.obj(function (doc, encoding, cb) {
-        var content
+        var content, file
         var posts = JSON.parse(doc.contents.toString())
         var layout = require('./elements/article')
 
@@ -208,8 +208,8 @@ function jsonPostsToPage (filename, data) {
             data = posts
             content = layout(data)
         }
-        filename = filename  || doc.path.replace(/\.json$/, '/index.html')
-        stream(filename, wrap(data, content), cb)
+        file = filename || doc.path.replace(/\.json$/, '/index.html')
+        stream(file, wrap(data, content), cb)
     })
 
     function wrap (data, content) {
