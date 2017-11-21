@@ -177,7 +177,7 @@ function jekyllPostToJson (opts) {
         post.slug = '/' + slug
         post.url = baseUrl + slug
 
-        stream(slug + '.json', JSON.stringify(post, opts.replacer, opts.space), cb)
+        cb(null, vinyl(slug + '.json', JSON.stringify(post, opts.replacer, opts.space)))
     })
 }
 
@@ -191,7 +191,7 @@ function collectJsonPosts (filename) {
     }, function (cb) {
         filename = filename || 'posts.json'
         array = array.replace(/\,$/, '') + ']'
-        stream(filename, array, cb)
+        cb(null, vinyl(filename, array))
     })
 }
 
@@ -209,7 +209,7 @@ function jsonPostsToPage (filename, data) {
             content = layout(data)
         }
         file = filename || doc.path.replace(/\.json$/, '/index.html')
-        stream(file, wrap(data, content), cb)
+        cb(null, vinyl(file, wrap(data, content)))
     })
 
     function wrap (data, content) {
@@ -229,7 +229,7 @@ function jsonPostsToFeed (filename) {
             throw 'Atom feed can only be generated from a collection'
         }
         filename = filename || doc.path.replace(/\.json$/, '.atom')
-        stream(filename, atom.feed(content, updated), cb)
+        cb(null, vinyl(filename, atom.feed(content, updated)))
     })
 }
 
@@ -260,7 +260,7 @@ function staticFilesToRust (filename) {
         `
 
         filename = filename || 'routes.rs',
-        stream(filename, module, cb)
+        cb(null, vinyl(filename, module))
     })
 
     function struct (route) {
@@ -298,16 +298,14 @@ function editorials (folder) {
     }
 }
 
-function stream (path, contents, cb) {
+function vinyl (path, contents) {
     if (verbose()) {
-        gutil.log('Streaming', path)
+        gutil.log('Creaming', path)
     }
-
-    var file = new Vinyl({
+    return new Vinyl({
         path: path,
         contents: new Buffer(contents)
     })
-    cb(null, file)
 }
 
 function verbose () {
