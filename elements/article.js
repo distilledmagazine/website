@@ -1,4 +1,5 @@
 var html = require('choo/html')
+var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 module.exports = function (article, emit) {
   return html`
@@ -27,14 +28,11 @@ function author (name) {
 function content (article) {
   var content = html`<div class="content"></div>`
   content.innerHTML = article.date ?
-        article.content + date(article.date) :
+        article.content + date(new Date(article.date)) :
         article.content
   return content
 }
 
-function date (input) {
-  var date = new Date(input)
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-
+function date (date) {
   return `<time>${months[date.getMonth()]} ${date.getYear() + 1900}</time>`
 }
