@@ -5,6 +5,7 @@ var target = 'public'
 var Vinyl = require('vinyl')
 var atom = require('./atom')
 var autoprefixer = require('autoprefixer')
+var browserify = require('browserify')
 var changed = require('gulp-changed')
 var cp = require('child_process')
 var cssnano = require('cssnano')
@@ -18,6 +19,7 @@ var mime = require('mime-types')
 var path = require('path')
 var postcss = require('gulp-postcss')
 var sort = require('gulp-sort')
+var source = require('vinyl-source-stream')
 var through = require('through2')
 var variables = require('postcss-css-variables')
 var yml = require('js-yaml')
@@ -61,7 +63,8 @@ gulp.task('site', [
     'feed',
     'landing',
     'magazines',
-    'style'
+    'style',
+    'turbo'
 ])
 
 gulp.task('articles', ['prepare'], function () {
@@ -69,7 +72,7 @@ gulp.task('articles', ['prepare'], function () {
         .pipe(gulp.dest(target))
 })
 
-gulp.task('assets', function() {
+gulp.task('assets', function () {
     return gulp.src(globs['assets'])
         .pipe(changed(target))
         .pipe(gulp.dest(target))
@@ -80,7 +83,7 @@ gulp.task('feed', ['prepare'], function () {
         .pipe(gulp.dest(target))
 })
 
-gulp.task('landing', ['prepare'], function() {
+gulp.task('landing', ['prepare'], function () {
     return pamphlets.pipe(jsonPostsToPage('index.html'))
         .pipe(gulp.dest(target))
 })
@@ -95,7 +98,7 @@ gulp.task('magazines', folders('content/magazine', function (folder) {
         .pipe(gulp.dest(target))
 })) 
 
-gulp.task('style', function() {
+gulp.task('style', function () {
     var plugins = [
         autoprefixer(),
         variables(),
@@ -108,23 +111,30 @@ gulp.task('style', function() {
         .pipe(gulp.dest(target))
 })
 
+gulp.task('turbo', function () {
+    return browserify('./turbo.js').bundle()
+        .pipe(source('turbo.js'))
+        .pipe(gulp.dest(target))
+})
+
 
 /**
  * Development tasks
  */
-gulp.task('watch', ['site'], function() {
+gulp.task('watch', ['site'], function () {
     gulp.watch(globs['articles'], ['articles'])
     gulp.watch(globs['pamphlets'], ['feed', 'landing'])
     gulp.watch(globs['magazines'], ['magazines'])
     gulp.watch(globs['style'], ['style'])
     gulp.watch(globs['assets'], ['assets'])
+    gulp.watch('turbo.js', ['turbo'])
 
     gulp.watch(globs['elements'], ['articles', 'landing', 'magazines']).on('change', function(change) {
         delete require.cache[change.path]
     })
 })
 
-gulp.task('serve', ['watch'], function() {
+gulp.task('serve', ['watch'], function () {
     live.start({
         port: 1789,
         root: './public',

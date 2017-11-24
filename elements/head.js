@@ -36,6 +36,8 @@ module.exports = function (opts) {
       ${opts.title ? meta('itemprop', 'name')(opts.title) : meta('itemprop', 'name')('Distilled Pamphlets')}
       ${opts.description ? meta('itemprop', 'description')(opts.description) : ''}
       ${opts.cover ? meta('itemprop', 'image')(opts.cover) : ''}
+
+      <script src="/turbo.js"></script>
     </head>
   `
 }
