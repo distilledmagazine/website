@@ -1,4 +1,5 @@
 var html = require('choo/html')
+var raw = require('choo/html/raw')
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 module.exports = function (article, emit) {
@@ -26,11 +27,13 @@ function author (name) {
 }
 
 function content (article) {
-  var content = html`<div class="content"></div>`
-  content.innerHTML = article.date ?
-        article.content + date(new Date(article.date)) :
-        article.content
-  return content
+  var content = article.date ?
+    article.content + date(new Date(article.date)) :
+    article.content
+
+  return html`<div class="content">
+    ${raw(content)}
+  </div>`
 }
 
 function date (date) {
