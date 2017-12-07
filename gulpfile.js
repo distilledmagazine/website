@@ -1,4 +1,4 @@
-var articles, pamphlets
+var all, pamphlets
 var baseUrl = 'https://distilled.pm/'
 var target = 'public'
 
@@ -10,7 +10,6 @@ var changed = require('gulp-changed')
 var cp = require('child_process')
 var cssnano = require('cssnano')
 var del =  require('del')
-var folders = require('gulp-folders')
 var gulp = require('gulp')
 var gutil = require('gulp-util')
 var live = require('live-server')
@@ -37,8 +36,8 @@ var globs = {
     style: 'assets/style.css'
 }
 
-gulp.task('prepare', function() {
-    articles = gulp.src(globs['articles'])
+var prepare = function (done) {
+    all = gulp.src(globs['articles'])
         .pipe(changed(target))
         .pipe(jekyllPostToJson())
 
@@ -47,58 +46,55 @@ gulp.task('prepare', function() {
         .pipe(sort({asc: false}))
         .pipe(jekyllPostToJson())
         .pipe(collectJsonPosts())
-})
 
-gulp.task('clean', function () {
+    done()
+}
+
+var clean = function () {
     return del(target)
-})
+}
 
 
 /**
  * Build tasks
  */
-gulp.task('site', [
-    'articles',
-    'assets',
-    'feed',
-    'landing',
-    'magazines',
-    'style',
-    'turbo'
-])
-
-gulp.task('articles', ['prepare'], function () {
-    return articles.pipe(jsonPostsToPage())
+var articles = function () {
+    return all.pipe(jsonPostsToPage())
         .pipe(gulp.dest(target))
-})
+}
 
-gulp.task('assets', function () {
+var assets = function () {
     return gulp.src(globs['assets'])
         .pipe(changed(target))
         .pipe(gulp.dest(target))
-})
+}
 
-gulp.task('feed', ['prepare'], function () {
+var feed = function () {
     return pamphlets.pipe(jsonPostsToFeed('feed.atom'))
         .pipe(gulp.dest(target))
-})
+}
 
-gulp.task('landing', ['prepare'], function () {
+var homepage = function () {
     return pamphlets.pipe(jsonPostsToPage('index.html'))
         .pipe(gulp.dest(target))
-})
+}
 
-gulp.task('magazines', folders('content/magazine', function (folder) {
-    return gulp.src(path.join('content', 'magazine', folder, '**/*.md'))
-        .pipe(changed(target))
-        .pipe(sort(editorials(folder)))
-        .pipe(jekyllPostToJson())
-        .pipe(collectJsonPosts('distilled-magazine-' + folder + '.json'))
-        .pipe(jsonPostsToPage(false, {url: baseUrl + folder}))
-        .pipe(gulp.dest(target))
-})) 
+var magazine = function (issue) {
+    function run () {
+        return gulp.src(path.join('content', 'magazine', issue, '**/*.md'))
+            .pipe(changed(target))
+            .pipe(sort(editorials(issue)))
+            .pipe(jekyllPostToJson())
+            .pipe(collectJsonPosts('distilled-magazine-' + issue + '.json'))
+            .pipe(jsonPostsToPage(false, {url: baseUrl + issue}))
+            .pipe(gulp.dest(target))
+    }
 
-gulp.task('style', function () {
+    Object.defineProperty(run, 'name', {value: issue})
+    return run
+}
+
+var style = function () {
     var plugins = [
         autoprefixer(),
         variables(),
@@ -109,56 +105,82 @@ gulp.task('style', function () {
         .pipe(changed(target))
         .pipe(postcss(plugins))
         .pipe(gulp.dest(target))
-})
+}
 
-gulp.task('turbo', function () {
+var turbo = function () {
     return browserify('./turbo.js').bundle()
         .pipe(source('turbo.js'))
         .pipe(gulp.dest(target))
-})
+}
+
+var site = gulp.parallel(
+    articles,
+    assets,
+    feed,
+    homepage,
+    magazine('issue-1'),
+    magazine('issue-2'),
+    magazine('issue-3'),
+    magazine('issue-4'),
+    style,
+    turbo
+)
+
+var build = gulp.series(prepare, site)
 
 
 /**
  * Development tasks
  */
-gulp.task('watch', ['site'], function () {
-    gulp.watch(globs['articles'], ['articles'])
-    gulp.watch(globs['pamphlets'], ['feed', 'landing'])
-    gulp.watch(globs['magazines'], ['magazines'])
-    gulp.watch(globs['style'], ['style'])
-    gulp.watch(globs['assets'], ['assets'])
-    gulp.watch('turbo.js', ['turbo'])
+var watch = function (done) {
+    gulp.watch(globs['articles'], articles)
+    gulp.watch(globs['pamphlets'], gulp.parallel(feed, homepage))
+    gulp.watch(globs['magazines'], magazines)
+    gulp.watch(globs['style'], style)
+    gulp.watch(globs['assets'], assets)
+    gulp.watch('turbo.js', turbo)
 
-    gulp.watch(globs['elements'], ['articles', 'landing', 'magazines']).on('change', function(change) {
+    gulp.watch(globs['elements'], gulp.parallel(articles, homepage, magazines)).on('change', function(change) {
         delete require.cache[change.path]
     })
-})
 
-gulp.task('serve', ['watch'], function () {
+    done()
+}
+
+var serve = function () {
     live.start({
         port: 1789,
         root: './public',
         open: false,
         logLevel: 2
     })
-})
+}
 
 
 /**
- * Package tasks
+ * Rust compile tasks
  */
-gulp.task('routes', ['site'], function () {
+var routes = function () {
     return gulp.src(target + '/**/*')
         .pipe(staticFilesToRust())
         .pipe(gulp.dest('server'))
-})
+}
 
-gulp.task('default', ['routes'], function (done) {
+var bin = function (done) {
     var cargo = cp.spawn('cargo', ['build', '--release'])
     cargo.stdout.pipe(process.stdout)
     cargo.stderr.pipe(process.stderr)
     cargo.on('close', done)
-})
+}
+
+
+/**
+ * Expose tasks
+ */
+gulp.task('default', build)
+gulp.task('build', gulp.series(clean, build))
+gulp.task('compile', gulp.series(clean, build, routes, bin))
+gulp.task('serve', gulp.series(build, watch, serve))
 
 
 /**
