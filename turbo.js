@@ -1,26 +1,32 @@
-var anchor = require('scroll-to-anchor')
-var nanohistory = require('nanohistory')
-var nanohref = require('nanohref')
-var nanomorph = require('nanomorph')
+var choo = require('choo')
+var morph = require('nanomorph')
 
-nanohistory(request)
-nanohref(request)
+var turbo = choo()
+turbo.route('**', renderBody)
+turbo.use(serverRoute())
+turbo.mount('body')
 
-function request (location) {
-    var req = new XMLHttpRequest()
-    req.addEventListener('load', update(location))
-    req.responseType = 'document'
-    req.open('GET', location.href)
-    req.send()
+function renderBody () {
+    return document.body
 }
 
-function update (location) {
-    return function () {
-        var doc = this.responseXML
-        nanomorph(document.head, doc.head)
-        nanomorph(document.body, doc.body)
+function serverRoute () {
+    function get (href, cb) {
+        var req = new XMLHttpRequest()
+        req.addEventListener('load', cb)
+        req.responseType = 'document'
+        req.open('GET', href)
+        req.send()
+    }
 
-        location.hash ? anchor(location.hash, {behaviour: 'smooth'}) : window.scroll(0, 0)
-        window.history.pushState({}, null, location.href)
+    return function (state, bus) {
+        bus.on('resolve', function() {
+            get(state.href, function () {
+                var doc = this.responseXML
+                morph(document.head, doc.head)
+                morph(document.body, doc.body)
+                bus.emit('render')
+            })
+        })
     }
 }

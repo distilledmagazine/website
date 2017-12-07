@@ -2,7 +2,7 @@
   "dependencies": {
     "autoprefixer": "^7.1.6",
     "browserify": "^14.5.0",
-    "choo": "^6.6.0",
+    "choo": "https://github.com/brechtpm/choo#resolve-handling",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
@@ -15,8 +15,6 @@
     "live-server": "^1.2.0",
     "marked": "^0.3.6",
     "mime-types": "^2.1.17",
-    "nanohistory": "^1.0.0",
-    "nanohref": "^3.0.1",
     "nanomorph": "^5.1.3",
     "postcss-css-variables": "^0.8.0",
     "scroll-to-anchor": "^1.1.0",
