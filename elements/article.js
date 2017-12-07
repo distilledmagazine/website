@@ -4,8 +4,8 @@ var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 
 module.exports = function (article, emit) {
   return html`
-    <article style="background-image:url('${article.cover || '/covers/fallback.jpg'}')">
-      <div class="surface" data-controller="test">
+    <article data-controller="test">
+      <section>
         <header style="display:none">
           ${article.header}
           <small data-action="click->test#test">${article.publication}</small>
@@ -15,7 +15,8 @@ module.exports = function (article, emit) {
           ${article.authors.sort().map(author)}
         </div>
         ${content(article)}
-      </div>
+      </section>
+      <img class="cover" src=${article.cover || '/covers/fallback.jpg'}>
     </article>
   `
 }
@@ -31,9 +32,9 @@ function content (article) {
     article.content + date(new Date(article.date)) :
     article.content
 
-  return html`<div class="content">
+  return html`<section class="content">
     ${raw(content)}
-  </div>`
+  </section>`
 }
 
 function date (date) {
