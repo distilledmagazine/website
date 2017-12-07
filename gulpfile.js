@@ -135,12 +135,11 @@ var build = gulp.series(prepare, site)
 var watch = function (done) {
     gulp.watch(globs['articles'], articles)
     gulp.watch(globs['pamphlets'], gulp.parallel(feed, homepage))
-    gulp.watch(globs['magazines'], magazines)
     gulp.watch(globs['style'], style)
     gulp.watch(globs['assets'], assets)
     gulp.watch('turbo.js', turbo)
 
-    gulp.watch(globs['elements'], gulp.parallel(articles, homepage, magazines)).on('change', function(change) {
+    gulp.watch(globs['elements'], gulp.parallel(articles, homepage)).on('change', function(change) {
         delete require.cache[change.path]
     })
 
