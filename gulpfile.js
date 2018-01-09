@@ -10,6 +10,7 @@ var gutil = require('gulp-util')
 var live = require('live-server')
 var marked = require('marked')
 var path = require('path')
+var pbox = require('pbox')
 var postcss = require('gulp-postcss')
 var sort = require('gulp-sort')
 var through = require('through2')
@@ -155,10 +156,30 @@ gulp.task('default', build)
 gulp.task('build', gulp.series(clean, build))
 gulp.task('serve', gulp.series(build, watch, serve))
 
+gulp.task('test', function () {
+    return gulp.src(globs['pamphlets'])
+        .pipe(sort({asc: false}))
+        .pipe(concat('posts.md'))
+        .pipe(jekyllPostsToJson({space: 2}))
+        .pipe(gulp.dest(__dirname))
+})
+
 
 /**
  * Plugins:
  */
+function jekyllPostsToJson (opts) {
+    if (!opts) {
+        opts = {}
+    }
+
+    return through.obj(function (doc, encoding, cb) {
+        var filename = path.basename(doc.path.replace(/\.md$/, '.json'))
+        var posts = pbox.parse(doc.contents.toString())
+        cb(null, vinyl(filename, JSON.stringify(posts, opts.replacer, opts.space)))
+    })
+}
+
 function jekyllPostToJson (opts) {
     if (!opts) {
         opts = {}
