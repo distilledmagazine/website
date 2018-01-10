@@ -13,6 +13,8 @@ var path = require('path')
 var pbox = require('pbox')
 var postcss = require('gulp-postcss')
 var sort = require('gulp-sort')
+var sortBy = require('sort-by')
+var source = require('vinyl-source-stream')
 var through = require('through2')
 var variables = require('postcss-css-variables')
 var yml = require('js-yaml')
@@ -157,10 +159,16 @@ gulp.task('build', gulp.series(clean, build))
 gulp.task('serve', gulp.series(build, watch, serve))
 
 gulp.task('test', function () {
+    var props = {
+        content: (content) => marked(content.join('\n---\n')),
+        date: (date) => new Date(date)
+    }
+    var sort = sortBy('-date')
+
     return gulp.src(globs['pamphlets'])
-        .pipe(sort({asc: false}))
         .pipe(concat('posts.md'))
-        .pipe(jekyllPostsToJson({space: 2}))
+        .pipe(jekyllPostsToJson({pbox: {props, sort}}))
+        .pipe(jsonPostsToPage('posts.html'))
         .pipe(gulp.dest(__dirname))
 })
 
@@ -175,7 +183,7 @@ function jekyllPostsToJson (opts) {
 
     return through.obj(function (doc, encoding, cb) {
         var filename = path.basename(doc.path.replace(/\.md$/, '.json'))
-        var posts = pbox.parse(doc.contents.toString())
+        var posts = pbox.parse(doc.contents.toString(), opts.pbox)
         cb(null, vinyl(filename, JSON.stringify(posts, opts.replacer, opts.space)))
     })
 }

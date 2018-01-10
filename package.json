@@ -25,9 +25,10 @@
     "live-server": "^1.2.0",
     "marked": "^0.3.12",
     "pkg": "^4.3.0-beta.5",
-    "pbox": "^1.0.3",
+    "pbox": "^1.1.2",
     "postcss-css-variables": "^0.8.0",
-    "stimulus": "^0.9.0",
+    "scroll-to-anchor": "^1.1.0",
+    "sort-by": "^1.2.0",
     "through2": "^2.0.3",
     "turbolinks": "^5.1.1",
     "vinyl": "^2.1.0"
