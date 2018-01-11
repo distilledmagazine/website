@@ -159,15 +159,20 @@ gulp.task('build', gulp.series(clean, build))
 gulp.task('serve', gulp.series(build, watch, serve))
 
 gulp.task('test', function () {
-    var props = {
-        content: (content) => marked(content.join('\n---\n')),
-        date: (date) => new Date(date)
+    var slug = doc => '/' + path.basename(doc.path, '.md').split('-').slice(3).join('-')
+    var jsonOpts = {
+        concat: 'posts.json',
+        props: {
+            content: () => content => marked(content.join('\n---\n')),
+            date: () => date => new Date(date),
+            slug: doc => () => slug(doc),
+            url: doc => () => baseUrl + slug(doc)
+        },
+        sort: sortBy('-date')
     }
-    var sort = sortBy('-date')
 
     return gulp.src(globs['pamphlets'])
-        .pipe(concat('posts.md'))
-        .pipe(jekyllPostsToJson({pbox: {props, sort}}))
+        .pipe(jekyllPostsToJson(jsonOpts))
         .pipe(jsonPostsToPage('posts.html'))
         .pipe(gulp.dest(__dirname))
 })
@@ -180,11 +185,31 @@ function jekyllPostsToJson (opts) {
     if (!opts) {
         opts = {}
     }
+    var collected = []
+    var stringify = (data) => JSON.stringify(data, opts.replacer, opts.space)
 
     return through.obj(function (doc, encoding, cb) {
+        var props = {}
+
+        if (opts.props) for (var prop in opts.props) {
+            props[prop] = opts.props[prop](doc)
+        }
         var filename = path.basename(doc.path.replace(/\.md$/, '.json'))
-        var posts = pbox.parse(doc.contents.toString(), opts.pbox)
-        cb(null, vinyl(filename, JSON.stringify(posts, opts.replacer, opts.space)))
+        var parsed = pbox.parse(doc.contents.toString(), {props})
+
+        if (!opts.concat && !opts.sort) {
+            return cb(null, vinyl(doc.path, stringify(parsed)))
+        }
+        collected = collected.concat(parsed)
+        cb()
+    }, function (cb) {
+        if (!collected.length) {
+            return cb()
+        }
+        if (opts.sort) {
+            collected.sort(opts.sort)
+        }
+        cb(null, vinyl(opts.concat, stringify(collected)))
     })
 }
 
