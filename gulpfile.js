@@ -161,7 +161,6 @@ gulp.task('serve', gulp.series(build, watch, serve))
 gulp.task('test', function () {
     var slug = doc => '/' + path.basename(doc.path, '.md').split('-').slice(3).join('-')
     var jsonOpts = {
-        concat: 'posts.json',
         props: {
             content: () => content => marked(content.join('\n---\n')),
             date: () => date => new Date(date),
@@ -174,8 +173,9 @@ gulp.task('test', function () {
 
     return gulp.src(globs['pamphlets'])
         .pipe(jekyllPostsToJson(jsonOpts))
-        .pipe(jsonPostsToPage('posts.html'))
-        .pipe(gulp.dest(__dirname))
+        .pipe(streamJsonPosts())
+        .pipe(jsonPostsToPage())
+        .pipe(gulp.dest('posts'))
 })
 
 
@@ -199,7 +199,10 @@ function jekyllPostsToJson (opts) {
         var parsed = pbox.parse(doc.contents.toString(), {props})
 
         if (!opts.concat && !opts.sort) {
-            return cb(null, vinyl(doc.path, stringify(parsed)))
+            return cb(null, vinyl(filename, stringify(parsed)))
+        }
+        if (opts.sort) {
+            parsed.forEach(item => item._file = filename)
         }
         collected = collected.concat(parsed)
         cb()
@@ -211,6 +214,24 @@ function jekyllPostsToJson (opts) {
             collected.sort(opts.sort)
         }
         cb(null, vinyl(opts.concat, stringify(collected)))
+    })
+}
+
+function streamJsonPosts () {
+    return through.obj(function (doc, encoding, cb) {
+        var self = this
+        var data = JSON.parse(doc.contents.toString())
+
+        if (Array.isArray(data)) {
+            data.forEach(function (item) {
+                var file = item._file
+                delete item._file
+
+                self.push(vinyl(file, JSON.stringify(item)))
+            })
+            return cb()
+        }
+        cb(null, data)
     })
 }
 
