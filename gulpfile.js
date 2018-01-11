@@ -165,6 +165,7 @@ gulp.task('test', function () {
         props: {
             content: () => content => marked(content.join('\n---\n')),
             date: () => date => new Date(date),
+            header: doc => () => path.dirname(doc.path).includes('magazine') ? 'Distilled Magazine' : 'Distilled Pamphlets',
             slug: doc => () => slug(doc),
             url: doc => () => baseUrl + slug(doc)
         },
