@@ -37,7 +37,7 @@ module.exports = function (opts) {
       ${opts.description ? meta('itemprop', 'description')(opts.description) : ''}
       ${opts.cover ? meta('itemprop', 'image')(opts.cover) : ''}
 
-      <script src="/turbo.js"></script>
+      <script src="/bundle.js"></script>
     </head>
   `
 }

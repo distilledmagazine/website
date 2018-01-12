@@ -1,15 +1,11 @@
-var all, pamphlets
-var baseUrl = 'https://distilled.pm/'
-var target = 'public'
-
 var Vinyl = require('vinyl')
 var atom = require('./atom')
 var autoprefixer = require('autoprefixer')
 var browserify = require('browserify')
-var changed = require('gulp-changed')
 var cp = require('child_process')
 var cssnano = require('cssnano')
 var del =  require('del')
+var fs = require('fs')
 var gulp = require('gulp')
 var gutil = require('gulp-util')
 var live = require('live-server')
@@ -18,10 +14,13 @@ var mime = require('mime-types')
 var path = require('path')
 var postcss = require('gulp-postcss')
 var sort = require('gulp-sort')
-var source = require('vinyl-source-stream')
 var through = require('through2')
 var variables = require('postcss-css-variables')
 var yml = require('js-yaml')
+
+var all, pamphlets
+var baseUrl = 'https://distilled.pm/'
+var target = path.join(__dirname, 'public')
 
 
 /**
@@ -38,11 +37,9 @@ var globs = {
 
 var prepare = function (done) {
     all = gulp.src(globs['articles'])
-        .pipe(changed(target))
         .pipe(jekyllPostToJson())
 
     pamphlets = gulp.src(globs['pamphlets'])
-        .pipe(changed(target))
         .pipe(sort({asc: false}))
         .pipe(jekyllPostToJson())
         .pipe(collectJsonPosts())
@@ -65,7 +62,6 @@ var articles = function () {
 
 var assets = function () {
     return gulp.src(globs['assets'])
-        .pipe(changed(target))
         .pipe(gulp.dest(target))
 }
 
@@ -82,15 +78,14 @@ var homepage = function () {
 var magazine = function (issue) {
     function run () {
         return gulp.src(path.join('content', 'magazine', issue, '**/*.md'))
-            .pipe(changed(target))
             .pipe(sort(editorials(issue)))
             .pipe(jekyllPostToJson())
             .pipe(collectJsonPosts('distilled-magazine-' + issue + '.json'))
             .pipe(jsonPostsToPage(false, {url: baseUrl + issue}))
             .pipe(gulp.dest(target))
     }
-
     Object.defineProperty(run, 'name', {value: issue})
+
     return run
 }
 
@@ -102,15 +97,15 @@ var style = function () {
     ]
 
     return gulp.src(globs['style'])
-        .pipe(changed(target))
         .pipe(postcss(plugins))
         .pipe(gulp.dest(target))
 }
 
-var turbo = function () {
-    return browserify('./turbo.js').bundle()
-        .pipe(source('turbo.js'))
-        .pipe(gulp.dest(target))
+var js = function (done) {
+    var bundle = fs.createWriteStream(path.join(target, 'bundle.js'))
+    browserify('./client.js').bundle().pipe(bundle)
+    bundle.on('error', done)
+    bundle.on('finish', done)
 }
 
 var site = gulp.parallel(
@@ -123,7 +118,7 @@ var site = gulp.parallel(
     magazine('issue-3'),
     magazine('issue-4'),
     style,
-    turbo
+    js
 )
 
 var build = gulp.series(prepare, site)
@@ -137,7 +132,6 @@ var watch = function (done) {
     gulp.watch(globs['pamphlets'], gulp.parallel(feed, homepage))
     gulp.watch(globs['style'], style)
     gulp.watch(globs['assets'], assets)
-    gulp.watch('turbo.js', turbo)
 
     gulp.watch(globs['elements'], gulp.parallel(articles, homepage)).on('change', function(change) {
         delete require.cache[change.path]
