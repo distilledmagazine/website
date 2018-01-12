@@ -159,16 +159,8 @@ gulp.task('build', gulp.series(clean, build))
 gulp.task('serve', gulp.series(build, watch, serve))
 
 gulp.task('test', function () {
-    var slug = doc => '/' + path.basename(doc.path, '.md').split('-').slice(3).join('-')
     var jsonOpts = {
         concat: 'posts.json',
-        props: {
-            content: () => content => marked(content.join('\n---\n')),
-            date: () => date => new Date(date),
-            header: doc => () => path.dirname(doc.path).includes('magazine') ? 'Distilled Magazine' : 'Distilled Pamphlets',
-            slug: doc => () => slug(doc),
-            url: doc => () => baseUrl + slug(doc)
-        },
         sort: sortBy('-date')
     }
 
@@ -187,14 +179,18 @@ function jekyllPostsToJson (opts) {
         opts = {}
     }
     var collected = []
+    var slugify = doc => '/' + path.basename(doc.path, '.md').split('-').slice(3).join('-')
     var stringify = (data) => JSON.stringify(data, opts.replacer, opts.space)
 
     return through.obj(function (doc, encoding, cb) {
-        var props = {}
-
-        if (opts.props) for (var prop in opts.props) {
-            props[prop] = opts.props[prop](doc)
+        var props = {
+            content: content => marked(content.join('\n---\n')),
+            date: date => new Date(date),
+            header: () => path.dirname(doc.path).includes('magazine') ? 'Distilled Magazine' : 'Distilled Pamphlets',
+            slug: () => slugify(doc),
+            url: () => baseUrl + slugify(doc)
         }
+
         var filename = path.basename(doc.path.replace(/\.md$/, '.json'))
         var parsed = pbox.parse(doc.contents.toString(), {props})
 
