@@ -1,4 +1,6 @@
 node_modules
 public
-server/routes.rs
-target
+
+distilled-linux
+distilled-macos
+distilled-win.exe
