@@ -2,7 +2,6 @@ var Vinyl = require('vinyl')
 var atom = require('./atom')
 var autoprefixer = require('autoprefixer')
 var browserify = require('browserify')
-var cp = require('child_process')
 var cssnano = require('cssnano')
 var del =  require('del')
 var fs = require('fs')
@@ -151,28 +150,10 @@ var serve = function () {
 
 
 /**
- * Rust compile tasks
- */
-var routes = function () {
-    return gulp.src(target + '/**/*')
-        .pipe(staticFilesToRust())
-        .pipe(gulp.dest('server'))
-}
-
-var bin = function (done) {
-    var cargo = cp.spawn('cargo', ['build', '--release'])
-    cargo.stdout.pipe(process.stdout)
-    cargo.stderr.pipe(process.stderr)
-    cargo.on('close', done)
-}
-
-
-/**
  * Expose tasks
  */
 gulp.task('default', build)
 gulp.task('build', gulp.series(clean, build))
-gulp.task('compile', gulp.series(clean, build, routes, bin))
 gulp.task('serve', gulp.series(build, watch, serve))
 
 
@@ -257,41 +238,6 @@ function jsonPostsToFeed (filename) {
         cb(null, vinyl(filename, atom.feed(content, updated)))
     })
 }
-
-function staticFilesToRust (filename) {
-    var routes = []
-
-    return through.obj(function (entry, _, cb) {
-        if (entry.isDirectory()) {
-            return cb()
-        }
-        routes.push({
-            url: entry.path.replace(entry.base, '').replace(/[\/]?index.html$/, ''),
-            file: entry.path
-        })
-        cb()
-    }, function (cb) {
-        var module = `
-            #[derive(Clone, Debug, Hash, PartialEq)]
-            pub struct Route {
-                pub url: &'static str,
-                pub bytes: &'static [u8],
-                pub mime: &'static str
-            }
-
-            pub static ROUTES: &[Route; ${routes.length}] = &[
-                ${routes.map(struct).join(',\n')}
-            ];
-        `
-
-        filename = filename || 'routes.rs',
-        cb(null, vinyl(filename, module))
-    })
-
-    function struct (route) {
-        return `Route { url: "${route.url}", bytes: include_bytes!("${route.file}"), mime: "${mime.lookup(route.file)}" }`
-    }
-} 
 
 
 /**
