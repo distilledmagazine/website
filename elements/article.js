@@ -1,14 +1,14 @@
-var html = require('choo/html')
-var raw = require('choo/html/raw')
+var html = require('bel')
+var raw = require('bel/raw')
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 module.exports = function (article, emit) {
   return html`
     <article style="background-image:url('${article.cover || '/covers/fallback.jpg'}')">
-      <div class="surface">
+      <div class="surface" data-controller="test">
         <header style="display:none">
           ${article.header}
-          <small>${article.publication}</small>
+          <small data-action="click->test#test">${article.publication}</small>
         </header>
         <div class="info">
           <h1><a href=${article.slug}>${article.title}</a></h1>

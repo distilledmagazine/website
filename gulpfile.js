@@ -1,27 +1,24 @@
-var all, pamphlets
-var baseUrl = 'https://distilled.pm/'
-var target = 'public'
-
 var Vinyl = require('vinyl')
 var atom = require('./atom')
 var autoprefixer = require('autoprefixer')
 var browserify = require('browserify')
-var changed = require('gulp-changed')
-var cp = require('child_process')
 var cssnano = require('cssnano')
 var del =  require('del')
+var fs = require('fs')
 var gulp = require('gulp')
 var gutil = require('gulp-util')
 var live = require('live-server')
 var marked = require('marked')
-var mime = require('mime-types')
 var path = require('path')
 var postcss = require('gulp-postcss')
 var sort = require('gulp-sort')
-var source = require('vinyl-source-stream')
 var through = require('through2')
 var variables = require('postcss-css-variables')
 var yml = require('js-yaml')
+
+var all, pamphlets
+var baseUrl = 'https://distilled.pm/'
+var target = path.join(__dirname, 'public')
 
 
 /**
@@ -38,11 +35,9 @@ var globs = {
 
 var prepare = function (done) {
     all = gulp.src(globs['articles'])
-        .pipe(changed(target))
         .pipe(jekyllPostToJson())
 
     pamphlets = gulp.src(globs['pamphlets'])
-        .pipe(changed(target))
         .pipe(sort({asc: false}))
         .pipe(jekyllPostToJson())
         .pipe(collectJsonPosts())
@@ -65,7 +60,6 @@ var articles = function () {
 
 var assets = function () {
     return gulp.src(globs['assets'])
-        .pipe(changed(target))
         .pipe(gulp.dest(target))
 }
 
@@ -82,15 +76,14 @@ var homepage = function () {
 var magazine = function (issue) {
     function run () {
         return gulp.src(path.join('content', 'magazine', issue, '**/*.md'))
-            .pipe(changed(target))
             .pipe(sort(editorials(issue)))
             .pipe(jekyllPostToJson())
             .pipe(collectJsonPosts('distilled-magazine-' + issue + '.json'))
             .pipe(jsonPostsToPage(false, {url: baseUrl + issue}))
             .pipe(gulp.dest(target))
     }
-
     Object.defineProperty(run, 'name', {value: issue})
+
     return run
 }
 
@@ -102,15 +95,15 @@ var style = function () {
     ]
 
     return gulp.src(globs['style'])
-        .pipe(changed(target))
         .pipe(postcss(plugins))
         .pipe(gulp.dest(target))
 }
 
-var turbo = function () {
-    return browserify('./turbo.js').bundle()
-        .pipe(source('turbo.js'))
-        .pipe(gulp.dest(target))
+var js = function (done) {
+    var bundle = fs.createWriteStream(path.join(target, 'bundle.js'))
+    browserify('./client.js').bundle().pipe(bundle)
+    bundle.on('error', done)
+    bundle.on('finish', done)
 }
 
 var site = gulp.parallel(
@@ -123,7 +116,7 @@ var site = gulp.parallel(
     magazine('issue-3'),
     magazine('issue-4'),
     style,
-    turbo
+    js
 )
 
 var build = gulp.series(prepare, site)
@@ -137,7 +130,6 @@ var watch = function (done) {
     gulp.watch(globs['pamphlets'], gulp.parallel(feed, homepage))
     gulp.watch(globs['style'], style)
     gulp.watch(globs['assets'], assets)
-    gulp.watch('turbo.js', turbo)
 
     gulp.watch(globs['elements'], gulp.parallel(articles, homepage)).on('change', function(change) {
         delete require.cache[change.path]
@@ -157,28 +149,10 @@ var serve = function () {
 
 
 /**
- * Rust compile tasks
- */
-var routes = function () {
-    return gulp.src(target + '/**/*')
-        .pipe(staticFilesToRust())
-        .pipe(gulp.dest('server'))
-}
-
-var bin = function (done) {
-    var cargo = cp.spawn('cargo', ['build', '--release'])
-    cargo.stdout.pipe(process.stdout)
-    cargo.stderr.pipe(process.stderr)
-    cargo.on('close', done)
-}
-
-
-/**
  * Expose tasks
  */
 gulp.task('default', build)
 gulp.task('build', gulp.series(clean, build))
-gulp.task('compile', gulp.series(clean, build, routes, bin))
 gulp.task('serve', gulp.series(build, watch, serve))
 
 
@@ -263,41 +237,6 @@ function jsonPostsToFeed (filename) {
         cb(null, vinyl(filename, atom.feed(content, updated)))
     })
 }
-
-function staticFilesToRust (filename) {
-    var routes = []
-
-    return through.obj(function (entry, _, cb) {
-        if (entry.isDirectory()) {
-            return cb()
-        }
-        routes.push({
-            url: entry.path.replace(entry.base, '').replace(/[\/]?index.html$/, ''),
-            file: entry.path
-        })
-        cb()
-    }, function (cb) {
-        var module = `
-            #[derive(Clone, Debug, Hash, PartialEq)]
-            pub struct Route {
-                pub url: &'static str,
-                pub bytes: &'static [u8],
-                pub mime: &'static str
-            }
-
-            pub static ROUTES: &[Route; ${routes.length}] = &[
-                ${routes.map(struct).join(',\n')}
-            ];
-        `
-
-        filename = filename || 'routes.rs',
-        cb(null, vinyl(filename, module))
-    })
-
-    function struct (route) {
-        return `Route { url: "${route.url}", bytes: include_bytes!("${route.file}"), mime: "${mime.lookup(route.file)}" }`
-    }
-} 
 
 
 /**
