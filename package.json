@@ -5,7 +5,7 @@
     "assets": "public/**/*"
   },
   "scripts": {
-    "pkg": "pkg ."
+    "start": "gulp build && pkg ."
   },
   "dependencies": {
     "nanomorph": "^5.1.3",
