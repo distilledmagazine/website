@@ -2,27 +2,23 @@ var html = require('bel')
 var raw = require('bel/raw')
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
+var authors = require('./authors')
+
 module.exports = function (article, emit) {
   return html`
     <article style="background-image:url('${article.cover || '/covers/fallback.jpg'}')">
-      <div class="surface" data-controller="test">
+      <div class="surface">
         <header style="display:none">
           ${article.header}
-          <small data-action="click->test#test">${article.publication}</small>
+          <small>${article.publication}</small>
         </header>
         <div class="info">
           <h1><a href=${article.slug}>${article.title}</a></h1>
-          ${article.authors.sort().map(author)}
+          ${authors(article.authors.sort())}
         </div>
         ${content(article)}
       </div>
     </article>
-  `
-}
-
-function author (name) {
-  return html`
-    <div class="author">${name}</div>
   `
 }
 
