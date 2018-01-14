@@ -25,12 +25,11 @@ var target = path.join(__dirname, 'public')
  * Content sources
  */
 var globs = {
-    articles: ['content/magazine/**/*.md', 'content/pamphlets/*.md'],
     assets: ['assets/**', '!assets/**/*.css'],
     elements: 'elements/*.js',
-    magazines: 'content/magazine/**/*.md',
-    pamphlets: 'content/pamphlets/*.md',
-    style: 'assets/style.css'
+    magazines: 'assets/articles/magazine/**/*.md',
+    pamphlets: 'assets/articles/pamphlets/*.md',
+    style: 'assets/styles/style.css'
 }
 
 var assets = function () {
@@ -53,7 +52,7 @@ var clean = function () {
  * Build tasks
  */
 var articles = function () {
-    return gulp.src(globs['articles'])
+    return gulp.src([globs['magazines'], globs['pamphlets']])
         .pipe(pboxToJson())
         .pipe(jsonToPage())
         .pipe(gulp.dest(target))
@@ -77,7 +76,7 @@ var magazine = function (issue) {
     }
 
     function run () {
-        return gulp.src(path.join('content', 'magazine', issue, '**/*.md'))
+        return gulp.src(path.join('assets/articles/magazine', issue, '**/*.md'))
             .pipe(pboxToJson(collectOpts))
             .pipe(jsonToPage(false, {url: baseUrl + issue}))
             .pipe(gulp.dest(target))
