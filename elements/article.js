@@ -4,16 +4,16 @@ var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'A
 
 var authors = require('./authors')
 
-module.exports = function (article, emit) {
+module.exports = function (article, site) {
   return html`
     <article style="background-image:url('${article.cover || '/covers/fallback.jpg'}')">
       <div class="surface">
         <header style="display:none">
-          ${article.header}
+          ${site.name}
           <small>${article.publication}</small>
         </header>
         <div class="info">
-          <h1><a href=${article.slug}>${article.title}</a></h1>
+          <h1><a href=${article.permalink}>${article.title}</a></h1>
           ${authors(article.authors.sort())}
         </div>
         ${content(article)}

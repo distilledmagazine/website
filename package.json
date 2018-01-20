@@ -8,31 +8,23 @@
     "start": "gulp build && pkg ."
   },
   "dependencies": {
-    "nanomorph": "^5.1.3",
-    "serve": "^6.4.5",
-    "shuffle-array": "^1.0.1",
-    "stimulus": "^0.9.0"
+    "serve": "^6.4.8"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "bel": "^5.1.5",
-    "browserify": "^15.1.0",
+    "browserify": "^15.2.0",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
-    "gulp-folders": "^1.1.0",
     "gulp-postcss": "^7.0.1",
-    "gulp-sort": "^2.0.0",
-    "gulp-util": "^3.0.8",
-    "live-server": "^1.2.0",
-    "marked": "^0.3.12",
+    "nanomorph": "^5.1.3",
     "pkg": "^4.3.0-beta.5",
-    "pbox": "^1.1.2",
     "postcss-css-variables": "^0.8.0",
-    "scroll-to-anchor": "^1.1.0",
+    "shuffle-array": "^1.0.1",
     "sort-by": "^1.2.0",
-    "through2": "^2.0.3",
+    "stimulus": "^0.9.0",
     "turbolinks": "^5.1.1",
-    "vinyl": "^2.1.0"
+    "vinyl-press": "^0.1.3"
   }
 }
