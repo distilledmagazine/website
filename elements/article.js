@@ -23,9 +23,9 @@ module.exports = function (article, site) {
 }
 
 function content (article) {
-  var content = article.date ?
-    article.content + date(new Date(article.date)) :
-    article.content
+  var content = article.date
+    ? article.content + date(new Date(article.date))
+    : article.content
 
   return html`<div class="content">
     ${raw(content)}

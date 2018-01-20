@@ -5,7 +5,9 @@
     "assets": "public/**/*"
   },
   "scripts": {
-    "start": "gulp build && pkg ."
+    "start": "gulp build && pkg .",
+    "test": "standard && gulp build && serve public"
+
   },
   "dependencies": {
     "serve": "^6.4.8"
@@ -23,6 +25,7 @@
     "postcss-css-variables": "^0.8.0",
     "shuffle-array": "^1.0.1",
     "sort-by": "^1.2.0",
+    "standard": "^10.0.3",
     "stimulus": "^0.9.0",
     "turbolinks": "^5.1.1",
     "vinyl-press": "^0.1.3"
