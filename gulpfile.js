@@ -13,6 +13,14 @@ var variables = require('postcss-css-variables')
 var pamphlets
 var target = path.join(__dirname, 'public')
 
+gulp.task('rename', function() {
+  return gulp.src('assets/articles/**/*.md')
+    .pipe(require('gulp-rename')(function (path) {
+      path.basename = path.basename.split('-').slice(3).join('-')
+    }))
+    .pipe(gulp.dest('assets/articles'))
+})
+
 /**
  * Initialize press
  */
