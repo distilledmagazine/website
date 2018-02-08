@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
-    "bel": "^5.1.5",
+    "bel": "^5.1.6",
     "browserify": "^15.2.0",
     "cssnano": "^3.10.0",
     "del": "^3.0.0",
