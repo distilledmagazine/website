@@ -1,4 +1,4 @@
-var VinylPress = require('vinyl-press')
+var Pamphlet = require('pamphlet')
 var autoprefixer = require('autoprefixer')
 var browserify = require('browserify')
 var cssnano = require('cssnano')
@@ -16,7 +16,7 @@ var target = path.join(__dirname, 'public')
 /**
  * Initialize press
  */
-var press = VinylPress.init({
+var press = Pamphlet.init({
   name: 'Distilled Pamphlets',
   baseUrl: 'https://distilled.pm',
   feedUrl: '/feed.atom',
