@@ -49,15 +49,28 @@ body {
 /**
  * Basic elements:
  */
-h1, h2 {
-  font-variant: small-caps;
-}
 h1 {
-  font-size: 2.4rem;
+  background-color: var(--surface);
+  border-bottom: 5px solid var(--accent);
+  border-top: 5px solid var(--accent);
   font-weight: bold;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 1rem;
+  z-index: 1;
 }
 h1 a {
   text-decoration: none;
+}
+h1 small {
+  display: block !important;
+  float: right;
+  font-family: ;
+  font-weight: normal;
+  margin-top: .62em;
+}
+h2 {
+  font-variant: small-caps;
 }
 * + p,
 p + * {
@@ -84,7 +97,7 @@ time {
   font-variant: small-caps;
 }
 a, button {
-  text-decoration: underline dotted;
+  text-decoration: underline;
 }
 button {
   background-color: transparent;
@@ -95,23 +108,6 @@ button {
 /**
  * Layout styles:
  */
-header {
-  background-color: var(--surface);
-  border-bottom: 5px solid var(--accent);
-  border-top: 5px solid var(--accent);
-  display: block !important;
-  font-weight: bold;
-  padding: 1rem;
-  position: sticky;
-  top: 1rem;
-  z-index: 1;
-}
-header small {
-  float: right;
-  font-family: ;
-  font-weight: normal;
-  margin-top: .62em;
-}
 article {
   background-position: center;
   background-size: cover;
@@ -128,7 +124,7 @@ article:last-child {
   border-bottom: 5px solid var(--accent);
 }
 article .content,
-article .info {
+article .authors {
   display: inline-block;
   margin-top: 1.62em;
   padding: 1rem;
@@ -137,8 +133,9 @@ article .content {
   max-width: 100vw;
   width: 31rem;
 }
-article .info {
+article .authors {
   float: right;
+  font-variant: small-caps;
   max-width: 19rem;
   position: sticky;
   top: 7rem;
@@ -146,8 +143,6 @@ article .info {
 }
 article .author {
   display: block;
-  font-size: 1rem;
-  margin-top: 1.4em;
 }
 article .author + .author {
   margin-top: .4em;
@@ -157,7 +152,7 @@ article .author + .author {
   header {
     position: static;
   }
-  article .info {
+  article .authors {
     float: unset;
     max-width: 100%;
     position: static;
@@ -179,7 +174,7 @@ article .author + .author {
   article .content {
     margin-left: 1rem;
   }
-  article .info {
+  article .authors {
     margin-right: 1rem;
   }
 }
@@ -199,7 +194,7 @@ article .author + .author {
   article .content {
     margin-left: 2rem;
   }
-  article .info {
+  article .authors {
     margin-right: 2rem;
   }
 }
