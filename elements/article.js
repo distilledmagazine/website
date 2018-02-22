@@ -10,7 +10,7 @@ module.exports = function (article, site) {
       <div class="surface">
         <h1>
           <a href=${article.permalink}>${article.title}</a>
-          <small style="display:none">${article.publication}</small>
+          ${article.date ? date(new Date(article.date)) : ''}
         </h1>
         ${content(article)}
         ${authors(article.authors.sort())}
@@ -20,15 +20,13 @@ module.exports = function (article, site) {
 }
 
 function content (article) {
-  var content = article.date
-    ? article.content + date(new Date(article.date))
-    : article.content
-
   return html`<section class="content">
-    ${raw(content)}
+    ${raw(article.content)}
   </section>`
 }
 
 function date (date) {
-  return `<time>${months[date.getMonth()]} ${date.getYear() + 1900}</time>`
+  return html`<time>
+    ${months[date.getMonth()]} ${date.getYear() + 1900}
+  </time>`
 }
