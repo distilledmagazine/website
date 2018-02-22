@@ -46,5 +46,3 @@ Nothing is permanent. Everything changes. What we are building together is merci
 Our community won’t last forever, but it is indeed a refuge for our own inestimable humanity.
 
 We humbly invite you to join us,
-
-Sarang
