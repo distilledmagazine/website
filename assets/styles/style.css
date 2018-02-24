@@ -54,7 +54,7 @@ h1 {
   border-bottom: 5px solid var(--accent);
   border-top: 5px solid var(--accent);
   font-weight: bold;
-  padding: 1rem 2rem;
+  padding: 1rem;
   position: sticky;
   top: 1rem;
   z-index: 1;
@@ -142,7 +142,7 @@ article .author + .author {
 }
 
 @media (max-width: 50rem) {
-  header {
+  h1 {
     position: static;
   }
   article .authors {
@@ -160,7 +160,7 @@ article .author + .author {
   html {
     font-size: 110%;
   }
-  header {
+  h1 {
     padding-right: 2rem;
     padding-left: 2rem;
   }
@@ -180,7 +180,7 @@ article .author + .author {
   html {
     font-size: 150%;
   }
-  header {
+  h1 {
     padding-right: 3rem;
     padding-left: 3rem;
   }
