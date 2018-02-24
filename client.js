@@ -4,4 +4,4 @@ var Turbolinks = require('turbolinks')
 Turbolinks.start()
 
 var app = Application.start()
-app.register('authors', require('./controllers/authors-controller'))
+app.register('contributors', require('./controllers/contributors-controller'))

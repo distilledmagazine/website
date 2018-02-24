@@ -117,7 +117,7 @@ article:last-child {
   border-bottom: 5px solid var(--accent);
 }
 article .content,
-article .authors {
+article .contributors {
   display: inline-block;
   margin-top: 1.62em;
   padding: 1rem;
@@ -126,7 +126,7 @@ article .content {
   max-width: 100vw;
   width: 31rem;
 }
-article .authors {
+article .contributors {
   float: right;
   font-variant: small-caps;
   max-width: 19rem;
@@ -134,10 +134,10 @@ article .authors {
   top: 7rem;
   text-align: right;
 }
-article .author {
+article .contributor {
   display: block;
 }
-article .author + .author {
+article .contributor + .contributor {
   margin-top: .4em;
 }
 
@@ -145,7 +145,7 @@ article .author + .author {
   h1 {
     position: static;
   }
-  article .authors {
+  article .contributors {
     float: unset;
     max-width: 100%;
     position: static;
@@ -167,7 +167,7 @@ article .author + .author {
   article .content {
     margin-left: 1rem;
   }
-  article .authors {
+  article .contributors {
     margin-right: 1rem;
   }
 }
@@ -187,7 +187,7 @@ article .author + .author {
   article .content {
     margin-left: 2rem;
   }
-  article .authors {
+  article .contributors {
     margin-right: 2rem;
   }
 }

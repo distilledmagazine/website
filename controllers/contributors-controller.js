@@ -1,11 +1,11 @@
 var { Controller } = require('stimulus')
-var authors = require('../elements/authors')
+var contributors = require('../elements/contributors')
 var morph = require('nanomorph')
 var shuffle = require('shuffle-array')
 
-module.exports = class AuthorsController extends Controller {
+module.exports = class ContributorsController extends Controller {
   initialize () {
-    morph(this.element, authors(this.shuffled))
+    morph(this.element, contributors(this.shuffled))
   }
 
   get shuffled () {

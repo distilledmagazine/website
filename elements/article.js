@@ -2,7 +2,7 @@ var html = require('bel')
 var raw = require('bel/raw')
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-var authors = require('./authors')
+var contributors = require('./contributors')
 
 module.exports = function (article, site) {
   return html`
@@ -13,7 +13,7 @@ module.exports = function (article, site) {
           ${article.date ? date(new Date(article.date)) : ''}
         </h1>
         ${content(article)}
-        ${authors(article.authors.sort())}
+        ${contributors(article.authors.sort())}
       </div>
     </article>
   `
