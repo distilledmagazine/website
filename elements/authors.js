@@ -1,9 +1,9 @@
 var html = require('bel')
 
 module.exports = function (authors) {
-  return html`<div data-controller="authors">
+  return html`<section class="authors" data-controller="authors">
     ${authors.map(author)}
-  </div>`
+  </section>`
 }
 
 function author (name) {

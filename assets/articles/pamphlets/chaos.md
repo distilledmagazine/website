@@ -1,5 +1,5 @@
 ---
-title: How to Act in Times of Chaos
+title: How to Act in Times of Chaos?
 publication: Issue 1, Volume 2
 cover: /covers/chaos.jpg
 date: '16 april 2017'

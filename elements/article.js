@@ -8,30 +8,25 @@ module.exports = function (article, site) {
   return html`
     <article style="background-image:url('${article.cover || '/covers/fallback.jpg'}')">
       <div class="surface">
-        <header style="display:none">
-          ${site.name}
-          <small>${article.publication}</small>
-        </header>
-        <div class="info">
-          <h1><a href=${article.permalink}>${article.title}</a></h1>
-          ${authors(article.authors.sort())}
-        </div>
+        <h1>
+          <a href=${article.permalink}>${article.title}</a>
+          ${article.date ? date(new Date(article.date)) : ''}
+        </h1>
         ${content(article)}
+        ${authors(article.authors.sort())}
       </div>
     </article>
   `
 }
 
 function content (article) {
-  var content = article.date
-    ? article.content + date(new Date(article.date))
-    : article.content
-
-  return html`<div class="content">
-    ${raw(content)}
-  </div>`
+  return html`<section class="content">
+    ${raw(article.content)}
+  </section>`
 }
 
 function date (date) {
-  return `<time>${months[date.getMonth()]} ${date.getYear() + 1900}</time>`
+  return html`<time>
+    ${months[date.getMonth()]} ${date.getYear() + 1900}
+  </time>`
 }
