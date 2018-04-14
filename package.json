@@ -6,12 +6,12 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.2.5",
-    "bel": "^5.1.6",
     "browserify": "^15.2.0",
     "cssnano": "^3.10.0",
     "fast-glob": "^2.2.0",
     "glob-the-builder": "^0.4.0",
     "gulp-postcss": "^7.0.1",
+    "nanohtml": "^1.2.2",
     "nanomorph": "^5.1.3",
     "pamphlet": "^0.1.1",
     "postcss-css-variables": "^0.8.0",

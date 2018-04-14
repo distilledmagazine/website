@@ -1,5 +1,5 @@
-var html = require('bel')
-var raw = require('bel/raw')
+var html = require('nanohtml')
+var raw = require('nanohtml/raw')
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 var contributors = require('./contributors')

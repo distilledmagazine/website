@@ -1,4 +1,4 @@
-var html = require('bel')
+var html = require('nanohtml')
 
 module.exports = function (contributors) {
   return html`<section class="contributors" data-controller="contributors">
