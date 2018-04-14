@@ -1,6 +1,7 @@
 {
   "name": "distilled",
   "scripts": {
+    "distill": "node distill.js --all --clean",
     "test": "standard"
   },
   "devDependencies": {
@@ -8,16 +9,20 @@
     "bel": "^5.1.6",
     "browserify": "^15.2.0",
     "cssnano": "^3.10.0",
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
+    "fast-glob": "^2.2.0",
+    "glob-the-builder": "^0.4.0",
     "gulp-postcss": "^7.0.1",
     "nanomorph": "^5.1.3",
     "pamphlet": "^0.1.1",
     "postcss-css-variables": "^0.8.0",
+    "pull-many": "^1.0.8",
+    "pull-promise-end": "^1.0.1",
+    "pull-vinyl": "^1.2.0",
     "shuffle-array": "^1.0.1",
     "sort-by": "^1.2.0",
     "standard": "^10.0.3",
     "stimulus": "^0.9.0",
+    "stream-to-pull-stream": "^1.7.2",
     "turbolinks": "^5.1.1"
   }
 }
