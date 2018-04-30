@@ -16,7 +16,7 @@
     "pamphlet": "^0.1.1",
     "postcss-css-variables": "^0.8.0",
     "pull-many": "^1.0.8",
-    "pull-promise-end": "^1.0.1",
+    "pull-resolve": "^1.1.0",
     "pull-vinyl": "^1.2.0",
     "shuffle-array": "^1.0.1",
     "sort-by": "^1.2.0",

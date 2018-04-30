@@ -3,12 +3,12 @@ var Pamphlet = require('pamphlet')
 var autoprefixer = require('autoprefixer')
 var browserify = require('browserify')
 var cssnano = require('cssnano')
-var end = require('pull-promise-end')
 var fg = require('fast-glob')
 var many = require('pull-many')
 var path = require('path')
 var postcss = require('gulp-postcss')
 var pull = require('lazy-build/pull')
+var resolve = require('pull-resolve')
 var sortBy = require('sort-by')
 var toPull = require('stream-to-pull-stream')
 var variables = require('postcss-css-variables')
@@ -68,7 +68,7 @@ build.add('distilled-magazine-issue-*/index.html', async function (params) {
     )
   })
 
-  return end(many(streams))
+  return resolve(many(streams))
 })
 
 build.add('**/index.html', function (params) {
