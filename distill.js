@@ -110,7 +110,7 @@ build.add('bundle.js', function () {
 
 build.add('covers/*', function (params) {
   return pull(
-    build.src(`assets/covers/${params[0]}`),
+    build.read(`assets/covers/${params[0]}`),
     build.target(src => path.join('covers', src.base)),
     build.write()
   )
@@ -118,13 +118,13 @@ build.add('covers/*', function (params) {
 
 build.add('fonts/**/*', function (params) {
   return pull(
-    build.src(`assets/fonts/${params[0]}/${params[1]}`),
+    build.read(`assets/fonts/${params[0]}/${params[1]}`),
     build.target(src => path.join('fonts', src.dir.split(path.sep).pop(), src.base)),
     build.write()
   )
 })
 
-build.command()
+build.cli()
 
 /**
  * Helpers:
