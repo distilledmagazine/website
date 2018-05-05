@@ -1,45 +1,23 @@
+var Path = require('lazy-path')
 var chokidar = require('chokidar')
 var cp = require('child_process')
-var path = require('path')
-var opts = {
-  ignoreInitial: true
-}
 
-var articles = chokidar.watch('./assets/**/*.md', opts)
-articles.on('add', article)
-articles.on('change', article)
-articles.on('unlink', article)
-
-var elements = chokidar.watch('./elements/*.js', opts)
-elements.on('change', element)
-
-var styles = chokidar.watch('./assets/styles/*.css', opts)
-styles.on('add', style)
-styles.on('change', style)
-styles.on('unlink', style)
-
-function article (file) {
-  var name = path.basename(file, '.md')
+watch('./assets/**/*.md', function article (path) {
   var targets = []
-  targets.push(`${name}/index.html`)
+  targets.push(`${path.name}/index.html`)
   if (file.includes('/pamphlets/')) {
     targets.push('index.html')
   }
-  build(...targets)
-  log(file, targets)
-}
+  return targets
+})
 
-function element (file) {
-  var target = '**/*.html'
-  build(target)
-  log(file, target)
-}
+watch('./elements/*.js', function element () {
+  return '**/*.html'
+})
 
-function style (file) {
-  var target = path.basename(file)
-  build(target)
-  log(file, target)
-}
+watch('./assets/styles/*.css', function style (path) {
+  return path.base
+})
 
 function build (...targets) {
   cp.fork('./distill', [
@@ -53,4 +31,18 @@ function log (file, targets) {
   var targetlist = Array.isArray(targets) ? targets.join(', ') : targets
   var msg = file + ' -> ' + targetlist
   process.stdout.write(msg + '\n')
+}
+
+function watch (files, map) {
+  var handler = path => {
+    var targets = map(Path.from(file))
+    build(...targets)
+    log(file, targets)
+  }
+  var watcher = chokidar.watch(files, {
+    ignoreInitial: true
+  })
+  watcher.on('add', handler)
+  watcher.on('change', handler)
+  watcher.on('unlink', handler)
 }
