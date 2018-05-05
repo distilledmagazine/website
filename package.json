@@ -9,7 +9,7 @@
     "browserify": "^15.2.0",
     "cssnano": "^3.10.0",
     "fast-glob": "^2.2.0",
-    "lazy-build": "^2.0.1",
+    "lazy-build": "^2.0.4",
     "gulp-postcss": "^7.0.1",
     "nanohtml": "^1.2.2",
     "nanomorph": "^5.1.3",
