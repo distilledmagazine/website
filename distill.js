@@ -32,7 +32,7 @@ var pmOpts = {
 
 build.add('index.html', function () {
   return pull(
-    vinyl.src(`assets/articles/pamphlets/*.md`),
+    vinyl.src(`assets/pamphlets/*.md`),
     toPull.duplex(press.fromFile(pmOpts)),
     toPull.duplex(press.toHtml('index.html')),
     build.target(src => 'index.html'),
@@ -42,7 +42,7 @@ build.add('index.html', function () {
 
 build.add('feed.atom', function (params) {
   return pull(
-    vinyl.src(`assets/articles/pamphlets/*.md`),
+    vinyl.src(`assets/pamphlets/*.md`),
     toPull.duplex(press.fromFile(pmOpts)),
     toPull.duplex(press.toAtom('feed.atom')),
     build.target(src => 'feed.atom'),
@@ -56,7 +56,7 @@ build.add('distilled-magazine-issue-*/index.html', async function (params) {
     sort: editorials(),
     reverse: true
   }
-  var issues = await fg('assets/articles/magazine/issue-' + params[0], {onlyDirectories: true})
+  var issues = await fg('assets/magazine/issue-' + params[0], {onlyDirectories: true})
   var streams = issues.map(issue => {
     var number = issue.split('-').pop()
     return pull(
@@ -74,8 +74,8 @@ build.add('distilled-magazine-issue-*/index.html', async function (params) {
 build.add('**/index.html', function (params) {
   return pull(
     many([
-      vinyl.src(`assets/articles/magazine/**/${params[0]}.md`),
-      vinyl.src(`assets/articles/pamphlets/${params[0]}.md`)
+      vinyl.src(`assets/magazine/**/${params[0]}.md`),
+      vinyl.src(`assets/pamphlets/${params[0]}.md`)
     ]),
     toPull.duplex(press.fromFile()),
     toPull.duplex(press.toHtml()),
