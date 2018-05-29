@@ -4,5 +4,3 @@ distilled-magazine-issue-*/index.html
 **/index.html
 *.css
 bundle.js
-covers/*
-fonts/**/*
