@@ -14,7 +14,7 @@ var toPull = require('stream-to-pull-stream')
 var variables = require('postcss-css-variables')
 var vinyl = require('pull-vinyl')
 
-var build = Build.dest(build.args.dest || 'public')
+var build = Build.dest('public')
 
 var press = Pamphlet.init({
   name: 'Distilled Pamphlets',
