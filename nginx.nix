@@ -7,7 +7,7 @@
     forceSSL = true;
 
     locations."/" = {
-      root = "/var/distilled/public";
+      root = "/ipfs/QmY7NgQEnbxh2TF15RWa1v2CzrPesi1SqztxeephYnZjdM";
       tryFiles = "$uri $uri/index.html $uri.html =404";
     };
   };
